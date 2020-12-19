@@ -11223,7 +11223,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201207052400297" modified="20201207052531093" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201207053002288" modified="20201219060053806" tags="PS4" title="ライザのアトリエ">
+<div created="20201207053002288" modified="20201219061933242" tags="PS4" title="ライザのアトリエ">
 <pre>|入手|メイン|Lv|素材|復元|h
 |アマタイト鉱 || 17|メディウム薬骨 |MRF7 |
 |ウインドプラント || 17|メディウム薬骨 |MRF7 |
@@ -11239,27 +11239,43 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 アイテム追加
 &lt;$edit-text tiddler='ライザのアトリエ/DataHolder' index='newItemName' tag='input'/&gt;
 
+&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;
+&lt;td valign=&quot;top&quot;&gt;
 入手素材
 &lt;$select tiddler='ライザのアトリエ/DataHolder' index='targetItem'&gt;
 &lt;$list filter=[tag[ライザのアトリエ]tag[アイテム]sort[]]&gt;
 &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$list filter='[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]'/&gt;&lt;/option&gt;
 &lt;/$list&gt;
 &lt;/$select&gt;
+&lt;br/&gt;
+原料素材
 
+&lt;/td&gt;
+&lt;td valign=&quot;top&quot;&gt;
 原料素材
 &lt;$select tiddler='ライザのアトリエ/DataHolder' index='baseItem'&gt;
 &lt;$list filter=[tag[ライザのアトリエ]tag[アイテム]sort[]]&gt;
 &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$list filter='[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]'/&gt;&lt;/option&gt;
 &lt;/$list&gt;
 &lt;/$select&gt;
-
+&lt;br/&gt;
+入手素材
+&lt;ul&gt;
+&lt;$list filter=[{ライザのアトリエ/DataHolder##baseItem}indexes[]sort[]]&gt;
+&lt;li&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td valign=&quot;top&quot;&gt;
 メイン
 &lt;$checkbox tiddler='ライザのアトリエ/DataHolder' index='isMain' checked='true' unchecked='false'/&gt;
 
 &lt;$button&gt;
 &lt;$action-setfield $tiddler={{ライザのアトリエ/DataHolder##baseItem}} $index= {{ライザのアトリエ/DataHolder##targetItem}} $value= {{ライザのアトリエ/DataHolder##isMain}}/&gt;
 save
-&lt;/$button&gt;</pre>
+&lt;/$button&gt;
+&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</pre>
 </div>
 <div created="20201219050004802" modified="20201219060111599" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
 <pre>{
