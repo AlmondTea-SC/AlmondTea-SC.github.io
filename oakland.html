@@ -437,13 +437,13 @@ Error message and password prompt
 
 <li>PS4</li>
 
-<li>ライザ/DataHolder</li>
-
-<li>ライザ/アマタイト鉱</li>
-
-<li>ライザ/メディウム薬骨</li>
-
 <li>ライザのアトリエ</li>
+
+<li>ライザのアトリエ/DataHolder</li>
+
+<li>ライザのアトリエ/アマタイト鉱</li>
+
+<li>ライザのアトリエ/メディウム薬骨</li>
 
 </ul>
 </p>
@@ -10052,7 +10052,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201218234855103" list="ライザ/メディウム薬骨 ライザ/アマタイト鉱 ライザのアトリエ ライザ/DataHolder" modified="20201218234855103" title="$:/StoryList">
+<div created="20201218234855103" list="ライザのアトリエ/メディウム薬骨 ライザのアトリエ/アマタイト鉱 ライザのアトリエ ライザのアトリエ/DataHolder" modified="20201218234855103" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -11223,16 +11223,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201207052400297" modified="20201207052531093" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201219050004802" modified="20201219050135698" tags="ライザのアトリエ DataHolder" title="ライザ/DataHolder">
-<pre></pre>
-</div>
-<div created="20201211052302667" modified="20201211052444900" tags="ライザのアトリエ アイテム" title="ライザ/アマタイト鉱">
-<pre></pre>
-</div>
-<div created="20201211052448548" modified="20201211052607734" tags="ライザのアトリエ アイテム" title="ライザ/メディウム薬骨">
-<pre></pre>
-</div>
-<div created="20201207053002288" modified="20201218235204403" tags="PS4" title="ライザのアトリエ">
+<div created="20201207053002288" modified="20201219053225141" tags="PS4" title="ライザのアトリエ">
 <pre>|入手|メイン|Lv|素材|復元|h
 |アマタイト鉱 || 17|メディウム薬骨 |MRF7 |
 |ウインドプラント || 17|メディウム薬骨 |MRF7 |
@@ -11245,7 +11236,33 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 |苦い根っこ |★| 17|メディウム薬骨 |MRF7 |
 |古き騎士の紋章 || 17|メディウム薬骨 |MRF7 |
 
-&lt;$list filter=[tag[ライザのアトリエ]tag[アイテム]]/&gt;</pre>
+入手素材
+&lt;$select tiddler='ライザのアトリエ/DataHolder' index='targetItem'&gt;
+&lt;$list filter=[tag[ライザのアトリエ]tag[アイテム]]&gt;
+&lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$list filter='[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]'/&gt;&lt;/option&gt;
+&lt;/$list&gt;
+&lt;/$select&gt;
+
+原料素材
+&lt;$select tiddler='ライザのアトリエ/DataHolder' index='baseItem'&gt;
+&lt;$list filter=[tag[ライザのアトリエ]tag[アイテム]]&gt;
+&lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$list filter='[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]'/&gt;&lt;/option&gt;
+&lt;/$list&gt;
+&lt;/$select&gt;
+
+</pre>
+</div>
+<div created="20201219050004802" modified="20201219053221235" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
+<pre>{
+    &quot;targetItem&quot;: &quot;ライザのアトリエ/メディウム薬骨&quot;,
+    &quot;baseItem&quot;: &quot;ライザのアトリエ/アマタイト鉱&quot;
+}</pre>
+</div>
+<div created="20201211052302667" modified="20201219050703430" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/アマタイト鉱">
+<pre></pre>
+</div>
+<div created="20201211052448548" modified="20201219050648227" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/メディウム薬骨">
+<pre></pre>
 </div>
 
 
