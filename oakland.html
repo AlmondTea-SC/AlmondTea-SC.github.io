@@ -11223,7 +11223,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201207052400297" modified="20201207052531093" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201207053002288" modified="20201219053225141" tags="PS4" title="ライザのアトリエ">
+<div created="20201207053002288" modified="20201219060053806" tags="PS4" title="ライザのアトリエ">
 <pre>|入手|メイン|Lv|素材|復元|h
 |アマタイト鉱 || 17|メディウム薬骨 |MRF7 |
 |ウインドプラント || 17|メディウム薬骨 |MRF7 |
@@ -11236,33 +11236,46 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 |苦い根っこ |★| 17|メディウム薬骨 |MRF7 |
 |古き騎士の紋章 || 17|メディウム薬骨 |MRF7 |
 
+アイテム追加
+&lt;$edit-text tiddler='ライザのアトリエ/DataHolder' index='newItemName' tag='input'/&gt;
+
 入手素材
 &lt;$select tiddler='ライザのアトリエ/DataHolder' index='targetItem'&gt;
-&lt;$list filter=[tag[ライザのアトリエ]tag[アイテム]]&gt;
+&lt;$list filter=[tag[ライザのアトリエ]tag[アイテム]sort[]]&gt;
 &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$list filter='[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]'/&gt;&lt;/option&gt;
 &lt;/$list&gt;
 &lt;/$select&gt;
 
 原料素材
 &lt;$select tiddler='ライザのアトリエ/DataHolder' index='baseItem'&gt;
-&lt;$list filter=[tag[ライザのアトリエ]tag[アイテム]]&gt;
+&lt;$list filter=[tag[ライザのアトリエ]tag[アイテム]sort[]]&gt;
 &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$list filter='[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]'/&gt;&lt;/option&gt;
 &lt;/$list&gt;
 &lt;/$select&gt;
 
-</pre>
+メイン
+&lt;$checkbox tiddler='ライザのアトリエ/DataHolder' index='isMain' checked='true' unchecked='false'/&gt;
+
+&lt;$button&gt;
+&lt;$action-setfield $tiddler={{ライザのアトリエ/DataHolder##baseItem}} $index= {{ライザのアトリエ/DataHolder##targetItem}} $value= {{ライザのアトリエ/DataHolder##isMain}}/&gt;
+save
+&lt;/$button&gt;</pre>
 </div>
-<div created="20201219050004802" modified="20201219053221235" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
+<div created="20201219050004802" modified="20201219060111599" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
 <pre>{
-    &quot;targetItem&quot;: &quot;ライザのアトリエ/メディウム薬骨&quot;,
-    &quot;baseItem&quot;: &quot;ライザのアトリエ/アマタイト鉱&quot;
+    &quot;targetItem&quot;: &quot;ライザのアトリエ/アマタイト鉱&quot;,
+    &quot;baseItem&quot;: &quot;ライザのアトリエ/メディウム薬骨&quot;,
+    &quot;isMain&quot;: &quot;false&quot;,
+    &quot;newItemName&quot;: &quot;ウインドプラント&quot;
 }</pre>
 </div>
 <div created="20201211052302667" modified="20201219050703430" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/アマタイト鉱">
 <pre></pre>
 </div>
-<div created="20201211052448548" modified="20201219050648227" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/メディウム薬骨">
-<pre></pre>
+<div created="20201211052448548" modified="20201219055430035" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/メディウム薬骨" type="application/json">
+<pre>{
+    &quot;ライザのアトリエ/アマタイト鉱&quot;: &quot;false&quot;
+}</pre>
 </div>
 
 
