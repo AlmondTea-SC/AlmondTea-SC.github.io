@@ -451,9 +451,15 @@ Error message and password prompt
 
 <li>ライザのアトリエ/スカイバブル</li>
 
+<li>ライザのアトリエ/スピリットフェザー</li>
+
 <li>ライザのアトリエ/メディウム薬骨</li>
 
 <li>ライザのアトリエ/共振の玉石</li>
+
+<li>ライザのアトリエ/苦い根っこ</li>
+
+<li>ライザのアトリエ/古き騎士の紋章</li>
 
 <li>ライザのアトリエ/大きな羽根</li>
 
@@ -11235,7 +11241,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201207052400297" modified="20201207052531093" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201207053002288" modified="20201220015123204" tags="PS4" title="ライザのアトリエ">
+<div created="20201207053002288" modified="20201220015735441" tags="PS4" title="ライザのアトリエ">
 <pre>|入手|メイン|Lv|素材|復元|h
 |アマタイト鉱 || 17|メディウム薬骨 |MRF7 |
 |ウインドプラント || 17|メディウム薬骨 |MRF7 |
@@ -11254,6 +11260,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 &lt;$list filter=&quot;[&lt;itemName&gt;addprefix[/]addprefix[ライザのアトリエ]!is[tiddler]]&quot;&gt;
 &lt;$button&gt;
 &lt;$action-createtiddler $basetitle=&lt;&lt;currentTiddler&gt;&gt; tags=&quot;ライザのアトリエ アイテム&quot; text=&quot;&quot;/&gt;
+&lt;$action-setfield $tiddler=&quot;ライザのアトリエ/DataHolder&quot; $index=targetItem $value=&lt;&lt;currentTiddler&gt;&gt;/&gt;
 add
 &lt;/$button&gt;
 &lt;/$list&gt;
@@ -11305,12 +11312,12 @@ save
 &lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</pre>
 </div>
-<div created="20201219050004802" modified="20201220015339069" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
+<div created="20201219050004802" modified="20201220015828798" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
 <pre>{
-    &quot;targetItem&quot;: &quot;ライザのアトリエ/スカイバブル&quot;,
+    &quot;targetItem&quot;: &quot;ライザのアトリエ/古き騎士の紋章&quot;,
     &quot;baseItem&quot;: &quot;ライザのアトリエ/メディウム薬骨&quot;,
-    &quot;isMain&quot;: &quot;false&quot;,
-    &quot;newItemName&quot;: &quot;スカイバブル&quot;
+    &quot;newItemName&quot;: &quot;古き騎士の紋章&quot;,
+    &quot;isMain&quot;: &quot;false&quot;
 }</pre>
 </div>
 <div created="20201211052302667" modified="20201219050703430" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/アマタイト鉱">
@@ -11328,7 +11335,10 @@ save
 <div created="20201220015329483" modified="20201220015329483" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/スカイバブル">
 <pre></pre>
 </div>
-<div created="20201211052448548" modified="20201220015340113" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/メディウム薬骨" type="application/json">
+<div created="20201220015647217" modified="20201220015647217" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/スピリットフェザー">
+<pre></pre>
+</div>
+<div created="20201211052448548" modified="20201220015830332" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/メディウム薬骨" type="application/json">
 <pre>{
     &quot;ライザのアトリエ/アマタイト鉱&quot;: &quot;false&quot;,
     &quot;ライザのアトリエ/ウインドプラント&quot;: &quot;false&quot;,
@@ -11336,10 +11346,19 @@ save
     &quot;ライザのアトリエ/大きな羽根&quot;: &quot;false&quot;,
     &quot;ライザのアトリエ/共振の玉石&quot;: &quot;false&quot;,
     &quot;ライザのアトリエ/サビついた剣&quot;: &quot;false&quot;,
-    &quot;ライザのアトリエ/スカイバブル&quot;: &quot;false&quot;
+    &quot;ライザのアトリエ/スカイバブル&quot;: &quot;false&quot;,
+    &quot;ライザのアトリエ/スピリットフェザー&quot;: &quot;&quot;,
+    &quot;ライザのアトリエ/苦い根っこ&quot;: &quot;true&quot;,
+    &quot;ライザのアトリエ/古き騎士の紋章&quot;: &quot;false&quot;
 }</pre>
 </div>
 <div created="20201220015241667" modified="20201220015241667" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/共振の玉石">
+<pre></pre>
+</div>
+<div created="20201220015808775" modified="20201220015808775" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/苦い根っこ">
+<pre></pre>
+</div>
+<div created="20201220015827721" modified="20201220015827721" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/古き騎士の紋章">
 <pre></pre>
 </div>
 <div created="20201220015215311" modified="20201220015215311" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/大きな羽根">
