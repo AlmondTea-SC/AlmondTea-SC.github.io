@@ -11223,7 +11223,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201207052400297" modified="20201207052531093" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201207053002288" modified="20201220012748360" tags="PS4" title="ライザのアトリエ">
+<div created="20201207053002288" modified="20201220014538177" tags="PS4" title="ライザのアトリエ">
 <pre>|入手|メイン|Lv|素材|復元|h
 |アマタイト鉱 || 17|メディウム薬骨 |MRF7 |
 |ウインドプラント || 17|メディウム薬骨 |MRF7 |
@@ -11239,10 +11239,12 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 アイテム追加
 &lt;$edit-text tiddler='ライザのアトリエ/DataHolder' index='newItemName' tag='input'/&gt;
 &lt;$set name=&quot;itemName&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=newItemName&gt;
+&lt;$list filter=&quot;[&lt;itemName&gt;addprefix[/]addprefix[ライザのアトリエ]]&quot;&gt;
 &lt;$button&gt;
-&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&quot;This is newly created tiddler&quot; tags=&quot;OneTag [[Another Tag]]&quot; text=&lt;&lt;now &quot;Today is DDth, MMM YYYY&quot;&gt;&gt;/&gt;
-Click me!
+&lt;$action-createtiddler $basetitle=&lt;&lt;currentTiddler&gt;&gt; tags=&quot;ライザのアトリエ アイテム&quot; text=&quot;&quot;/&gt;
+add
 &lt;/$button&gt;
+&lt;/$list&gt;
 &lt;/$set&gt;
 
 &lt;table&gt;&lt;tbody&gt;&lt;tr&gt;
