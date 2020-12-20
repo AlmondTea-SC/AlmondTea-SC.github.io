@@ -11223,7 +11223,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201207052400297" modified="20201207052531093" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201207053002288" modified="20201220011831447" tags="PS4" title="ライザのアトリエ">
+<div created="20201207053002288" modified="20201220012748360" tags="PS4" title="ライザのアトリエ">
 <pre>|入手|メイン|Lv|素材|復元|h
 |アマタイト鉱 || 17|メディウム薬骨 |MRF7 |
 |ウインドプラント || 17|メディウム薬骨 |MRF7 |
@@ -11238,6 +11238,12 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 
 アイテム追加
 &lt;$edit-text tiddler='ライザのアトリエ/DataHolder' index='newItemName' tag='input'/&gt;
+&lt;$set name=&quot;itemName&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=newItemName&gt;
+&lt;$button&gt;
+&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&quot;This is newly created tiddler&quot; tags=&quot;OneTag [[Another Tag]]&quot; text=&lt;&lt;now &quot;Today is DDth, MMM YYYY&quot;&gt;&gt;/&gt;
+Click me!
+&lt;/$button&gt;
+&lt;/$set&gt;
 
 &lt;table&gt;&lt;tbody&gt;&lt;tr&gt;
 &lt;td valign=&quot;top&quot;&gt;
@@ -11285,7 +11291,7 @@ save
 &lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</pre>
 </div>
-<div created="20201219050004802" modified="20201220011002671" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
+<div created="20201219050004802" modified="20201220012034110" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
 <pre>{
     &quot;targetItem&quot;: &quot;ライザのアトリエ/アマタイト鉱&quot;,
     &quot;baseItem&quot;: &quot;ライザのアトリエ/メディウム薬骨&quot;,
