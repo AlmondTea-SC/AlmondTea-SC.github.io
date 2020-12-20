@@ -10070,7 +10070,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="ライザのアトリエ/メディウム薬骨 ライザのアトリエ/アマタイト鉱 ライザのアトリエ ライザのアトリエ/DataHolder" title="$:/StoryList">
+<div list="ライザのアトリエ" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -11241,20 +11241,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201207052400297" modified="20201207052531093" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201207053002288" modified="20201220015735441" tags="PS4" title="ライザのアトリエ">
-<pre>|入手|メイン|Lv|素材|復元|h
-|アマタイト鉱 || 17|メディウム薬骨 |MRF7 |
-|ウインドプラント || 17|メディウム薬骨 |MRF7 |
-|エメラルドグラス |★| 17|メディウム薬骨 |MRF7 |
-|大きな羽根 || 17|メディウム薬骨 |MRF7 |
-|共振の玉石 || 17|メディウム薬骨 |MRF7 |
-|サビついた剣 || 17|メディウム薬骨 |MRF7 |
-|スカイバブル || 17|メディウム薬骨 |MRF7 |
-|スピリットフェザー || 17|メディウム薬骨 |MRF7 |
-|苦い根っこ |★| 17|メディウム薬骨 |MRF7 |
-|古き騎士の紋章 || 17|メディウム薬骨 |MRF7 |
-
-アイテム追加
+<div created="20201207053002288" modified="20201220021801628" tags="PS4" title="ライザのアトリエ">
+<pre>アイテム追加
 &lt;$edit-text tiddler='ライザのアトリエ/DataHolder' index='newItemName' tag='input'/&gt;
 &lt;$set name=&quot;itemName&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=newItemName&gt;
 &lt;$list filter=&quot;[&lt;itemName&gt;addprefix[/]addprefix[ライザのアトリエ]!is[tiddler]]&quot;&gt;
@@ -11278,8 +11266,13 @@ add
 原料素材
 &lt;$set name=&quot;target&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=targetItem&gt;
 &lt;ul&gt;
-&lt;$list filter=&quot;[tag[ライザのアトリエ]tag[アイテム]has:index&lt;target&gt;sort[]removeprefix[ライザのアトリエ]removeprefix[/]]&quot;&gt;
-&lt;li&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/li&gt;
+&lt;$list filter=&quot;[tag[ライザのアトリエ]tag[アイテム]has:index&lt;target&gt;sort[]]&quot;&gt;
+&lt;li&gt;
+&lt;$reveal stateTitle=&lt;&lt;currentTiddler&gt;&gt; stateIndex=&lt;&lt;target&gt;&gt; type=match text=true&gt;★&lt;/$reveal&gt;
+&lt;$list filter=&quot;[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]&quot;&gt;
+&lt;&lt;currentTiddler&gt;&gt;
+&lt;/$list&gt;
+&lt;/li&gt;
 &lt;/$list&gt;
 &lt;/ul&gt;
 &lt;/$set&gt;
@@ -11296,8 +11289,13 @@ add
 入手素材
 &lt;$set name=&quot;base&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=baseItem&gt;
 &lt;ul&gt;
-&lt;$list filter=&quot;[&lt;base&gt;indexes[]sort[]removeprefix[ライザのアトリエ]removeprefix[/]]&quot;&gt;
-&lt;li&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/li&gt;
+&lt;$list filter=&quot;[&lt;base&gt;indexes[]sort[]]&quot;&gt;
+&lt;li&gt;
+&lt;$reveal stateTitle=&lt;&lt;base&gt;&gt; stateIndex=&lt;&lt;currentTiddler&gt;&gt; type=match text=true&gt;★&lt;/$reveal&gt;
+&lt;$list filter=&quot;[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]&quot;&gt;
+&lt;&lt;currentTiddler&gt;&gt;
+&lt;/$list&gt;
+&lt;/li&gt;
 &lt;/$list&gt;
 &lt;/ul&gt;
 &lt;/$set&gt;
@@ -11312,9 +11310,9 @@ save
 &lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</pre>
 </div>
-<div created="20201219050004802" modified="20201220015828798" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
+<div created="20201219050004802" modified="20201220021621988" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
 <pre>{
-    &quot;targetItem&quot;: &quot;ライザのアトリエ/古き騎士の紋章&quot;,
+    &quot;targetItem&quot;: &quot;ライザのアトリエ/エメラルドグラス&quot;,
     &quot;baseItem&quot;: &quot;ライザのアトリエ/メディウム薬骨&quot;,
     &quot;newItemName&quot;: &quot;古き騎士の紋章&quot;,
     &quot;isMain&quot;: &quot;false&quot;
