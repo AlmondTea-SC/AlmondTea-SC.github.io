@@ -437,6 +437,8 @@ Error message and password prompt
 
 <li>PS4</li>
 
+<li>system/select</li>
+
 <li>ライザのアトリエ</li>
 
 <li>ライザのアトリエ/DataHolder</li>
@@ -10086,7 +10088,7 @@ Error message and password prompt
 <div created="20201218234816879" modified="20201218234816879" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20201207055701361" modified="20201220084506834" title="$:/state/sidebar">
+<div created="20201207055701361" modified="20201220094609109" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20201207045155385" modified="20201207045155385" title="$:/state/tab--1498284803">
@@ -10110,7 +10112,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201220084238685" list="ライザのアトリエ" modified="20201220084238685" title="$:/StoryList">
+<div created="20201220084238685" list="ライザのアトリエ" modified="20201220093741869" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -11281,7 +11283,24 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201207052400297" modified="20201207052531093" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201207053002288" modified="20201220084448005" tags="PS4" title="ライザのアトリエ">
+<div created="20201220085152290" modified="20201220094621188" tags="$:/tags/Macro" title="system/select">
+<pre>\define _state() $(labelName)$/$(stateTiddler)$
+\define select(index:&quot;selected&quot; filter state:&quot;DataHolder&quot; label)
+&lt;$set name=&quot;labelName&quot; filter=&lt;&lt;label&gt;&gt; value=&quot;$label$&quot; emptyValue=&lt;&lt;currentTiddler&gt;&gt;&gt;
+&lt;$set name=&quot;indexName&quot; value=&quot;$index$&quot;&gt;
+&lt;$set name=&quot;stateTiddler&quot; value=&quot;$state$&quot;&gt;
+&lt;$select tiddler=&lt;&lt;_state&gt;&gt;  index=&lt;&lt;indexName&gt;&gt;&gt;
+&lt;$list filter=&quot;[tag&lt;labelName&gt;sort[]$filter$]&quot;&gt;
+&lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$list filter='[all[current]removeprefix&lt;labelName&gt;removeprefix[/]]'/&gt;&lt;/option&gt;
+&lt;/$list&gt;
+&lt;/$list&gt;
+&lt;/$select&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;
+\end</pre>
+</div>
+<div created="20201207053002288" modified="20201220094244916" tags="PS4" title="ライザのアトリエ">
 <pre>アイテム追加
 &lt;$edit-text tiddler='ライザのアトリエ/DataHolder' index='newItemName' tag='input'/&gt;
 &lt;$set name=&quot;itemName&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=newItemName&gt;
@@ -11297,11 +11316,7 @@ add
 &lt;table&gt;&lt;tbody&gt;&lt;tr&gt;
 &lt;td valign=&quot;top&quot;&gt;
 入手素材
-&lt;$select tiddler='ライザのアトリエ/DataHolder' index='targetItem'&gt;
-&lt;$list filter=[tag[ライザのアトリエ]tag[アイテム]sort[]]&gt;
-&lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$list filter='[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]'/&gt;&lt;/option&gt;
-&lt;/$list&gt;
-&lt;/$select&gt;
+&lt;&lt;select index:targetItem filter:&quot;tag[アイテム]&quot;&gt;&gt;
 &lt;hr/&gt;
 原料素材
 &lt;$set name=&quot;target&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=targetItem&gt;
@@ -11326,11 +11341,7 @@ add
 &lt;/td&gt;
 &lt;td valign=&quot;top&quot;&gt;
 原料素材
-&lt;$select tiddler='ライザのアトリエ/DataHolder' index='baseItem'&gt;
-&lt;$list filter=[tag[ライザのアトリエ]tag[アイテム]sort[]]&gt;
-&lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$list filter='[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]'/&gt;&lt;/option&gt;
-&lt;/$list&gt;
-&lt;/$select&gt;
+&lt;&lt;select index:baseItem filter:&quot;tag[アイテム]&quot;&gt;&gt;
 &lt;hr/&gt;
 入手素材
 &lt;$set name=&quot;base&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=baseItem&gt;
@@ -11369,9 +11380,9 @@ remove
 &lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</pre>
 </div>
-<div created="20201219050004802" modified="20201220084453405" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
+<div created="20201219050004802" modified="20201220094020765" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
 <pre>{
-    &quot;targetItem&quot;: &quot;ライザのアトリエ/苦い根っこ&quot;,
+    &quot;targetItem&quot;: &quot;ライザのアトリエ/スピリットフラワー&quot;,
     &quot;baseItem&quot;: &quot;ライザのアトリエ/安らぎの花&quot;,
     &quot;newItemName&quot;: &quot;病忘れの花&quot;,
     &quot;isMain&quot;: &quot;false&quot;
