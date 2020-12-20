@@ -10052,7 +10052,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201218234855103" list="ライザのアトリエ/メディウム薬骨 ライザのアトリエ/アマタイト鉱 ライザのアトリエ ライザのアトリエ/DataHolder" modified="20201218234855103" title="$:/StoryList">
+<div list="ライザのアトリエ/メディウム薬骨 ライザのアトリエ/アマタイト鉱 ライザのアトリエ ライザのアトリエ/DataHolder" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -11223,7 +11223,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201207052400297" modified="20201207052531093" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201207053002288" modified="20201219061933242" tags="PS4" title="ライザのアトリエ">
+<div created="20201207053002288" modified="20201220011831447" tags="PS4" title="ライザのアトリエ">
 <pre>|入手|メイン|Lv|素材|復元|h
 |アマタイト鉱 || 17|メディウム薬骨 |MRF7 |
 |ウインドプラント || 17|メディウム薬骨 |MRF7 |
@@ -11247,8 +11247,15 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$list filter='[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]'/&gt;&lt;/option&gt;
 &lt;/$list&gt;
 &lt;/$select&gt;
-&lt;br/&gt;
+&lt;hr/&gt;
 原料素材
+&lt;$set name=&quot;target&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=targetItem&gt;
+&lt;ul&gt;
+&lt;$list filter=&quot;[tag[ライザのアトリエ]tag[アイテム]has:index&lt;target&gt;sort[]removeprefix[ライザのアトリエ]removeprefix[/]]&quot;&gt;
+&lt;li&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;
+&lt;/$set&gt;
 
 &lt;/td&gt;
 &lt;td valign=&quot;top&quot;&gt;
@@ -11258,17 +11265,18 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$list filter='[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]'/&gt;&lt;/option&gt;
 &lt;/$list&gt;
 &lt;/$select&gt;
-&lt;br/&gt;
+&lt;hr/&gt;
 入手素材
+&lt;$set name=&quot;base&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=baseItem&gt;
 &lt;ul&gt;
-&lt;$list filter=[{ライザのアトリエ/DataHolder##baseItem}indexes[]sort[]]&gt;
+&lt;$list filter=&quot;[&lt;base&gt;indexes[]sort[]removeprefix[ライザのアトリエ]removeprefix[/]]&quot;&gt;
 &lt;li&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/li&gt;
 &lt;/$list&gt;
 &lt;/ul&gt;
+&lt;/$set&gt;
 &lt;/td&gt;
 &lt;td valign=&quot;top&quot;&gt;
-メイン
-&lt;$checkbox tiddler='ライザのアトリエ/DataHolder' index='isMain' checked='true' unchecked='false'/&gt;
+&lt;$checkbox tiddler='ライザのアトリエ/DataHolder' index='isMain' checked='true' unchecked='false'&gt;メイン&lt;/$checkbox&gt;
 
 &lt;$button&gt;
 &lt;$action-setfield $tiddler={{ライザのアトリエ/DataHolder##baseItem}} $index= {{ライザのアトリエ/DataHolder##targetItem}} $value= {{ライザのアトリエ/DataHolder##isMain}}/&gt;
@@ -11277,7 +11285,7 @@ save
 &lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</pre>
 </div>
-<div created="20201219050004802" modified="20201219060111599" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
+<div created="20201219050004802" modified="20201220011002671" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
 <pre>{
     &quot;targetItem&quot;: &quot;ライザのアトリエ/アマタイト鉱&quot;,
     &quot;baseItem&quot;: &quot;ライザのアトリエ/メディウム薬骨&quot;,
