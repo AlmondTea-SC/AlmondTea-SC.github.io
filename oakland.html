@@ -11241,7 +11241,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201207052400297" modified="20201207052531093" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201207053002288" modified="20201220021801628" tags="PS4" title="ライザのアトリエ">
+<div created="20201207053002288" modified="20201220022706885" tags="PS4" title="ライザのアトリエ">
 <pre>アイテム追加
 &lt;$edit-text tiddler='ライザのアトリエ/DataHolder' index='newItemName' tag='input'/&gt;
 &lt;$set name=&quot;itemName&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=newItemName&gt;
@@ -11268,10 +11268,16 @@ add
 &lt;ul&gt;
 &lt;$list filter=&quot;[tag[ライザのアトリエ]tag[アイテム]has:index&lt;target&gt;sort[]]&quot;&gt;
 &lt;li&gt;
-&lt;$reveal stateTitle=&lt;&lt;currentTiddler&gt;&gt; stateIndex=&lt;&lt;target&gt;&gt; type=match text=true&gt;★&lt;/$reveal&gt;
+&lt;$reveal stateTitle=&lt;&lt;currentTiddler&gt;&gt; stateIndex=&lt;&lt;target&gt;&gt; type=match text=true&gt;
 &lt;$list filter=&quot;[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]&quot;&gt;
-&lt;&lt;currentTiddler&gt;&gt;
+&lt;span style= &quot;color:red;&quot;&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/span&gt;
 &lt;/$list&gt;
+&lt;/$reveal&gt;
+&lt;$reveal stateTitle=&lt;&lt;currentTiddler&gt;&gt; stateIndex=&lt;&lt;target&gt;&gt; type=nomatch text=true&gt;
+&lt;$list filter=&quot;[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]&quot;&gt;
+&lt;span style= &quot;color:red;&quot;&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$reveal&gt;
 &lt;/li&gt;
 &lt;/$list&gt;
 &lt;/ul&gt;
@@ -11291,10 +11297,16 @@ add
 &lt;ul&gt;
 &lt;$list filter=&quot;[&lt;base&gt;indexes[]sort[]]&quot;&gt;
 &lt;li&gt;
-&lt;$reveal stateTitle=&lt;&lt;base&gt;&gt; stateIndex=&lt;&lt;currentTiddler&gt;&gt; type=match text=true&gt;★&lt;/$reveal&gt;
+&lt;$reveal stateTitle=&lt;&lt;base&gt;&gt; stateIndex=&lt;&lt;currentTiddler&gt;&gt; type=match text=true&gt;
+&lt;$list filter=&quot;[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]&quot;&gt;
+&lt;span style= &quot;color:red;&quot;&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$reveal&gt;
+&lt;$reveal stateTitle=&lt;&lt;base&gt;&gt; stateIndex=&lt;&lt;currentTiddler&gt;&gt; type=nomatch text=true&gt;
 &lt;$list filter=&quot;[all[current]removeprefix[ライザのアトリエ]removeprefix[/]]&quot;&gt;
 &lt;&lt;currentTiddler&gt;&gt;
 &lt;/$list&gt;
+&lt;/$reveal&gt;
 &lt;/li&gt;
 &lt;/$list&gt;
 &lt;/ul&gt;
