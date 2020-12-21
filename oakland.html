@@ -10112,7 +10112,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201220084238685" list="ライザのアトリエ" modified="20201220093741869" title="$:/StoryList">
+<div list="ライザのアトリエ" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -11300,7 +11300,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 &lt;/$set&gt;
 \end</pre>
 </div>
-<div created="20201207053002288" modified="20201220094244916" tags="PS4" title="ライザのアトリエ">
+<div created="20201207053002288" modified="20201221035451476" tags="PS4" title="ライザのアトリエ">
 <pre>アイテム追加
 &lt;$edit-text tiddler='ライザのアトリエ/DataHolder' index='newItemName' tag='input'/&gt;
 &lt;$set name=&quot;itemName&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=newItemName&gt;
@@ -11364,7 +11364,7 @@ add
 &lt;/$set&gt;
 &lt;/td&gt;
 &lt;td valign=&quot;top&quot;&gt;
-&lt;$checkbox tiddler='ライザのアトリエ/DataHolder' index='isMain' checked='true' unchecked='false'&gt;メイン&lt;/$checkbox&gt;
+&lt;$checkbox tiddler='ライザのアトリエ/DataHolder' index='isMain' checked='potMain' unchecked='potSub'&gt;メイン&lt;/$checkbox&gt;
 
 &lt;$button&gt;
 &lt;$action-setfield $tiddler={{ライザのアトリエ/DataHolder##baseItem}} $index={{ライザのアトリエ/DataHolder##targetItem}} $value={{ライザのアトリエ/DataHolder##isMain}}/&gt;
@@ -11380,12 +11380,12 @@ remove
 &lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</pre>
 </div>
-<div created="20201219050004802" modified="20201220094020765" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
+<div created="20201219050004802" modified="20201221035603429" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
 <pre>{
-    &quot;targetItem&quot;: &quot;ライザのアトリエ/スピリットフラワー&quot;,
-    &quot;baseItem&quot;: &quot;ライザのアトリエ/安らぎの花&quot;,
+    &quot;targetItem&quot;: &quot;ライザのアトリエ/共振の玉石&quot;,
+    &quot;baseItem&quot;: &quot;ライザのアトリエ/土魚の暴牙&quot;,
     &quot;newItemName&quot;: &quot;病忘れの花&quot;,
-    &quot;isMain&quot;: &quot;false&quot;
+    &quot;isMain&quot;: &quot;potSub&quot;
 }</pre>
 </div>
 <div created="20201220055507552" modified="20201220055507552" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/アイヒェ">
@@ -11512,8 +11512,18 @@ remove
 <div created="20201220042803551" modified="20201220042803551" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/大きな骨">
 <pre></pre>
 </div>
-<div created="20201220042850566" modified="20201220042850566" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/土魚の暴牙">
-<pre></pre>
+<div created="20201220042850566" modified="20201221035604571" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/土魚の暴牙" type="application/json">
+<pre>{
+    &quot;ライザのアトリエ/エメラルドグラス&quot;: &quot;potMain&quot;,
+    &quot;ライザのアトリエ/動物の毛皮&quot;: &quot;potMain&quot;,
+    &quot;ライザのアトリエ/スカイバブル&quot;: &quot;potSub&quot;,
+    &quot;ライザのアトリエ/スピリットフェザー&quot;: &quot;potSub&quot;,
+    &quot;ライザのアトリエ/サビついた剣&quot;: &quot;potSub&quot;,
+    &quot;ライザのアトリエ/古き騎士の紋章&quot;: &quot;potSub&quot;,
+    &quot;ライザのアトリエ/ウインドプラント&quot;: &quot;potSub&quot;,
+    &quot;ライザのアトリエ/大きな羽根&quot;: &quot;potSub&quot;,
+    &quot;ライザのアトリエ/共振の玉石&quot;: &quot;potSub&quot;
+}</pre>
 </div>
 <div created="20201220055536554" modified="20201220055536554" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/動物の毛皮">
 <pre></pre>
