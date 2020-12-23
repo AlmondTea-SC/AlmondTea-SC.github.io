@@ -11442,7 +11442,7 @@ $text$
 &lt;/$set&gt;
 \end</pre>
 </div>
-<div created="20201207053002288" modified="20201223075751360" tags="PS4" title="ライザのアトリエ">
+<div created="20201207053002288" modified="20201223081200622" tags="PS4" title="ライザのアトリエ">
 <pre>\define _parent()
 ライザのアトリエ/$(item)$
 \end
@@ -11455,7 +11455,7 @@ $text$
 
 &lt;$list filter=&quot;memo1 memo2 memo3 memo4&quot; variable=&quot;index&quot;&gt;
 
-&lt;&lt;index&gt;&gt;&lt;$macrocall $name=&quot;copyField&quot; from=&quot;workingItem&quot; to=&lt;&lt;index&gt;&gt; text=&quot;→&quot;/&gt;&lt;$macrocall $name=&quot;select&quot; index=&lt;&lt;index&gt;&gt; filter=&quot;tag[アイテム]&quot;/&gt;
+&lt;&lt;index&gt;&gt;&lt;$macrocall $name=&quot;copyField&quot; from=&quot;workingItem&quot; to=&lt;&lt;index&gt;&gt; text=&quot;→&quot; class=&quot;tc-btn-invisible&quot;/&gt;&lt;$macrocall $name=&quot;select&quot; index=&lt;&lt;index&gt;&gt; filter=&quot;tag[アイテム]&quot;/&gt;
 &lt;$macrocall $name=&quot;copyField&quot; from=&lt;&lt;index&gt;&gt; to=&quot;targetItem&quot; text=&quot;→入手素材&quot;/&gt;
 &lt;$macrocall $name=&quot;copyField&quot; from=&lt;&lt;index&gt;&gt; to=&quot;baseItem&quot; text=&quot;→原料素材&quot;/&gt;
 
@@ -11464,7 +11464,7 @@ $text$
 &lt;table&gt;&lt;tbody&gt;&lt;tr&gt;
 &lt;td valign=&quot;top&quot;&gt;
 入手素材
-&lt;&lt;copyField from:workingItem to:targetItem text:&quot;→&quot;&gt;&gt;
+&lt;&lt;copyField from:workingItem to:targetItem text:&quot;→&quot; class:&quot;tc-btn-invisible&quot;&gt;&gt;
 &lt;&lt;select index:targetItem filter:&quot;tag[アイテム]&quot;&gt;&gt;
 &lt;hr/&gt;
 原料素材
@@ -11488,7 +11488,7 @@ $text$
 &lt;/td&gt;
 &lt;td valign=&quot;top&quot;&gt;
 原料素材
-&lt;&lt;copyField from:workingItem to:baseItem text:&quot;→&quot;&gt;&gt;
+&lt;&lt;copyField from:workingItem to:baseItem text:&quot;→&quot; class:&quot;tc-btn-invisible&quot;&gt;&gt;
 &lt;&lt;select index:baseItem filter:&quot;tag[アイテム]&quot;&gt;&gt;
 &lt;hr/&gt;
 入手素材
