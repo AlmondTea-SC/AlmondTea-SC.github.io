@@ -157,6 +157,8 @@ Error message and password prompt
 
 <li>$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/sidebar</li>
 
+<li>$:/config/RelinkOnRename</li>
+
 <li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/new-here</li>
 
 <li>$:/core</li>
@@ -425,6 +427,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
 
+<li>Android</li>
+
 <li>HomeToolbar</li>
 
 <li>JumpToolbar</li>
@@ -569,6 +573,12 @@ Error message and password prompt
 
 <li>ライザのアトリエ/彗星岩</li>
 
+<li>遊戯王Duel Links</li>
+
+<li>遊戯王Duel Links/DataHolder</li>
+
+<li>遊戯王Duel Links/闇遊戯</li>
+
 </ul>
 </p>
 
@@ -606,6 +616,9 @@ Error message and password prompt
 </div>
 <div created="20201207054304931" modified="20201207054315423" title="$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/sidebar">
 <pre>hide</pre>
+</div>
+<div created="20201224064855006" modified="20201224064855006" title="$:/config/RelinkOnRename">
+<pre>yes</pre>
 </div>
 <div created="20201207052851801" modified="20201207052851801" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/new-here">
 <pre>show</pre>
@@ -10152,8 +10165,8 @@ Error message and password prompt
 <div created="20201218234816879" modified="20201218234816879" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20201207055701361" modified="20201224031343723" title="$:/state/sidebar">
-<pre>no</pre>
+<div created="20201207055701361" modified="20201224064125305" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
 <div created="20201207045155385" modified="20201223053121064" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Standard</pre>
@@ -10167,8 +10180,8 @@ Error message and password prompt
 <div created="20201207044535656" modified="20201211051758511" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20201207054717446" modified="20201223052958949" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20201207054717446" modified="20201224064944616" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Tools</pre>
 </div>
 <div created="20201207051738719" modified="20201207054816835" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
@@ -10176,7 +10189,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="ライザのアトリエ" title="$:/StoryList">
+<div created="20201224064052872" list="$:/ControlPanel ライザのアトリエ [[遊戯王Duel Links]]" modified="20201224065528727" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -10233,11 +10246,11 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;768&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1024&quot;
+            &quot;text&quot;: &quot;1080&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -11314,6 +11327,9 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201207045223453" modified="20201207045229060" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
+<div created="20201224064058284" modified="20201224064103263" tags="Menu" title="Android">
+<pre>&lt;&lt;myToc&gt;&gt;</pre>
+</div>
 <div created="20201207050423843" modified="20201207050605974" tags="$:/tags/TopLeftBar mySystemTiddler" title="HomeToolbar">
 <pre>&lt;$link to=&quot;Menu&quot;&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;{{$:/core/images/home-button}}&lt;/$button&gt;&lt;/$link&gt;</pre>
 </div>
@@ -11347,7 +11363,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201207052400297" modified="20201207052531093" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201223020509283" modified="20201224030848129" tags="$:/tags/Macro" title="system/addTiddler">
+<div created="20201223020509283" modified="20201224064537709" tags="$:/tags/Macro" title="system/addTiddler">
 <pre>\define addTiddler(index:&quot;name&quot; tag:&quot;tag&quot; state:&quot;DataHolder&quot;)
 &lt;$set name=&quot;indexName&quot; value=&quot;$index$&quot;&gt;
 &lt;$set name=&quot;tagName&quot; value=&quot;$tag$&quot;&gt;
@@ -11359,9 +11375,9 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 &lt;/$button&gt;
 &lt;$set name=&quot;title&quot; tiddler=&lt;&lt;_state&gt;&gt; index=&lt;&lt;indexName&gt;&gt;&gt;
 &lt;$list filter=&quot;[&lt;title&gt;minlength[1]]&quot; variable=&quot;dummy&quot;&gt;
-&lt;$list filter=&quot;[&lt;title&gt;addprefix[/]addprefix&lt;currentTiddler&gt;!is[tiddler]]&quot;&gt;
+&lt;$list filter=&quot;[&lt;title&gt;addprefix[/]addprefix&lt;currentTiddler&gt;!is[tiddler]]&quot; variable=&quot;title&quot;&gt;
 &lt;$button actions=&quot;$actions$&quot;&gt;
-&lt;$action-createtiddler $basetitle=&lt;&lt;currentTiddler&gt;&gt; tags=&lt;&lt;_tags&gt;&gt; text=&quot;&quot;/&gt;
+&lt;$action-createtiddler $basetitle=&lt;&lt;title&gt;&gt; tags=&lt;&lt;_tags&gt;&gt; text=&quot;&quot;/&gt;
 add
 &lt;/$button&gt;
 &lt;/$list&gt;
@@ -11443,23 +11459,23 @@ $text$
 &lt;/$set&gt;
 \end</pre>
 </div>
-<div created="20201224014301970" modified="20201224015459021" tags="$:/tags/Macro" title="system/utilities">
+<div created="20201224014301970" modified="20201224064203309" tags="$:/tags/Macro" title="system/utilities">
 <pre>\define _state() $(currentTiddler)$/$(stateTiddler)$
-\define _tags() [[$(currentTiddler)$] $(tagName)$
+\define _tags() [[$(currentTiddler)$]] $(tagName)$
 \define _fullName() $(currentTiddler)$/$(childName)$</pre>
 </div>
-<div created="20201207053002288" modified="20201224031526002" tags="PS4" title="ライザのアトリエ">
+<div color="#008040" created="20201207053002288" modified="20201224065105787" tags="PS4" title="ライザのアトリエ">
 <pre>\define memoTitle() $(index)$→
 
 アイテム
-&lt;&lt;addTiddler index:&quot;workingItem&quot; tag:&quot;アイテム&quot;&gt;&gt;
+&lt;&lt;addTiddler index:&quot;workingItem&quot; tag:&quot;Item&quot;&gt;&gt;
 &lt;&lt;copyField from:workingItem to:targetItem text:&quot;→入手素材&quot;&gt;&gt;
 &lt;&lt;copyField from:workingItem to:baseItem text:&quot;→原料素材&quot;&gt;&gt;
-&lt;&lt;candidateList index:&quot;workingItem&quot; tag:&quot;アイテム&quot;&gt;&gt;
+&lt;&lt;candidateList index:&quot;workingItem&quot; tag:&quot;Item&quot;&gt;&gt;
 
 &lt;$list filter=&quot;memo1 memo2 memo3 memo4&quot; variable=&quot;index&quot;&gt;
 
-&lt;$macrocall $name=&quot;copyField&quot; from=&quot;workingItem&quot; to=&lt;&lt;index&gt;&gt; text=&lt;&lt;memoTitle&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;&lt;$macrocall $name=&quot;select&quot; index=&lt;&lt;index&gt;&gt; filter=&quot;tag[アイテム]&quot;/&gt;
+&lt;$macrocall $name=&quot;copyField&quot; from=&quot;workingItem&quot; to=&lt;&lt;index&gt;&gt; text=&lt;&lt;memoTitle&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;&lt;$macrocall $name=&quot;select&quot; index=&lt;&lt;index&gt;&gt; filter=&quot;tag[Item]&quot;/&gt;
 &lt;$macrocall $name=&quot;copyField&quot; from=&lt;&lt;index&gt;&gt; to=&quot;targetItem&quot; text=&quot;→入手素材&quot;/&gt;
 &lt;$macrocall $name=&quot;copyField&quot; from=&lt;&lt;index&gt;&gt; to=&quot;baseItem&quot; text=&quot;→原料素材&quot;/&gt;
 
@@ -11468,12 +11484,12 @@ $text$
 &lt;table&gt;&lt;tbody&gt;&lt;tr&gt;
 &lt;td valign=&quot;top&quot;&gt;
 &lt;&lt;copyField from:workingItem to:targetItem text:&quot;入手素材→&quot; class:&quot;tc-btn-invisible&quot;&gt;&gt;
-&lt;&lt;select index:targetItem filter:&quot;tag[アイテム]&quot;&gt;&gt;
+&lt;&lt;select index:targetItem filter:&quot;tag[Item]&quot;&gt;&gt;
 &lt;hr/&gt;
 原料素材
 &lt;$set name=&quot;target&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;targetItem&quot;&gt;
 &lt;ul&gt;
-&lt;$list filter=&quot;[tag&lt;currentTiddler&gt;tag[アイテム]has:index&lt;target&gt;removeprefix&lt;currentTiddler&gt;removeprefix[/]sort[]]&quot; variable=&quot;childName&quot;&gt;
+&lt;$list filter=&quot;[tag&lt;currentTiddler&gt;tag[Item]has:index&lt;target&gt;removeprefix&lt;currentTiddler&gt;removeprefix[/]sort[]]&quot; variable=&quot;childName&quot;&gt;
 &lt;li&gt;
 &lt;$reveal stateTitle=&lt;&lt;_fullName&gt;&gt; stateIndex=&lt;&lt;target&gt;&gt; type=&quot;match&quot; text=&quot;potMain&quot;&gt;
 &lt;span style= &quot;background:yellow;&quot;&gt;
@@ -11491,7 +11507,7 @@ $text$
 &lt;/td&gt;
 &lt;td valign=&quot;top&quot;&gt;
 &lt;&lt;copyField from:workingItem to:baseItem text:&quot;原料素材→&quot; class:&quot;tc-btn-invisible&quot;&gt;&gt;
-&lt;&lt;select index:baseItem filter:&quot;tag[アイテム]&quot;&gt;&gt;
+&lt;&lt;select index:baseItem filter:&quot;tag[Item]&quot;&gt;&gt;
 &lt;hr/&gt;
 入手素材
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;baseItem&quot;&gt;
@@ -11551,37 +11567,37 @@ remove
     &quot;memo4&quot;: &quot;創生の逆さ石&quot;
 }</pre>
 </div>
-<div created="20201220055507552" modified="20201220055507552" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/アイヒェ">
+<div created="20201220055507552" modified="20201224064856629" tags="ライザのアトリエ Item" title="ライザのアトリエ/アイヒェ">
 <pre></pre>
 </div>
-<div created="20201211052302667" modified="20201219050703430" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/アマタイト鉱">
+<div created="20201211052302667" modified="20201224064856630" tags="ライザのアトリエ Item" title="ライザのアトリエ/アマタイト鉱">
 <pre></pre>
 </div>
-<div created="20201220014548846" modified="20201220014548846" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/ウインドプラント">
+<div created="20201220014548846" modified="20201224064856631" tags="ライザのアトリエ Item" title="ライザのアトリエ/ウインドプラント">
 <pre></pre>
 </div>
-<div created="20201220015154824" modified="20201220015154824" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/エメラルドグラス">
+<div created="20201220015154824" modified="20201224064856631" tags="ライザのアトリエ Item" title="ライザのアトリエ/エメラルドグラス">
 <pre></pre>
 </div>
-<div created="20201220063310233" modified="20201220063310233" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/きれいな貝殻">
+<div created="20201220063310233" modified="20201224064856632" tags="ライザのアトリエ Item" title="ライザのアトリエ/きれいな貝殻">
 <pre></pre>
 </div>
-<div created="20201220055615292" modified="20201220055615292" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/きれいな水">
+<div created="20201220055615292" modified="20201224064856632" tags="ライザのアトリエ Item" title="ライザのアトリエ/きれいな水">
 <pre></pre>
 </div>
-<div created="20201221041428735" modified="20201221041446763" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/クミネの実" type="application/json">
+<div created="20201221041428735" modified="20201224064856633" tags="ライザのアトリエ Item" title="ライザのアトリエ/クミネの実" type="application/json">
 <pre>{}</pre>
 </div>
-<div created="20201222041000779" modified="20201222041000779" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/クミネの毒液">
+<div created="20201222041000779" modified="20201224064856633" tags="ライザのアトリエ Item" title="ライザのアトリエ/クミネの毒液">
 <pre></pre>
 </div>
-<div created="20201223034225067" modified="20201223034225067" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/ケモノ肉">
+<div created="20201223034225067" modified="20201224064856633" tags="ライザのアトリエ Item" title="ライザのアトリエ/ケモノ肉">
 <pre></pre>
 </div>
-<div created="20201222034141500" modified="20201222035040511" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/コベリナイト" type="application/json">
+<div created="20201222034141500" modified="20201224064856633" tags="ライザのアトリエ Item" title="ライザのアトリエ/コベリナイト" type="application/json">
 <pre>{}</pre>
 </div>
-<div created="20201220015305158" modified="20201223114242200" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/サビついた剣" type="application/json">
+<div created="20201220015305158" modified="20201224064856634" tags="ライザのアトリエ Item" title="ライザのアトリエ/サビついた剣" type="application/json">
 <pre>{
     &quot;サルディン&quot;: &quot;potMain&quot;,
     &quot;アマタイト鉱&quot;: &quot;potMain&quot;,
@@ -11600,34 +11616,34 @@ remove
     &quot;きれいな水&quot;: &quot;potSub&quot;
 }</pre>
 </div>
-<div created="20201220042638098" modified="20201220042638098" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/サルディン">
+<div created="20201220042638098" modified="20201224064856634" tags="ライザのアトリエ Item" title="ライザのアトリエ/サルディン">
 <pre></pre>
 </div>
-<div created="20201220061152222" modified="20201220061152222" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/スイートリーフ">
+<div created="20201220061152222" modified="20201224064856634" tags="ライザのアトリエ Item" title="ライザのアトリエ/スイートリーフ">
 <pre></pre>
 </div>
-<div created="20201220015329483" modified="20201220015329483" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/スカイバブル">
+<div created="20201220015329483" modified="20201224064856634" tags="ライザのアトリエ Item" title="ライザのアトリエ/スカイバブル">
 <pre></pre>
 </div>
-<div created="20201220015647217" modified="20201220015647217" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/スピリットフェザー">
+<div created="20201220015647217" modified="20201224064856634" tags="ライザのアトリエ Item" title="ライザのアトリエ/スピリットフェザー">
 <pre></pre>
 </div>
-<div created="20201220055556437" modified="20201220055556437" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/スピリットフラワー">
+<div created="20201220055556437" modified="20201224064856635" tags="ライザのアトリエ Item" title="ライザのアトリエ/スピリットフラワー">
 <pre></pre>
 </div>
-<div created="20201223033410104" modified="20201223033410104" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/セイタカトーン">
+<div created="20201223033410104" modified="20201224064856635" tags="ライザのアトリエ Item" title="ライザのアトリエ/セイタカトーン">
 <pre></pre>
 </div>
-<div created="20201223120445369" modified="20201223120445369" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/デルフィローズ">
+<div created="20201223120445369" modified="20201224064856635" tags="ライザのアトリエ Item" title="ライザのアトリエ/デルフィローズ">
 <pre></pre>
 </div>
-<div created="20201220061215555" modified="20201220061215555" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/トーン">
+<div created="20201220061215555" modified="20201224064856635" tags="ライザのアトリエ Item" title="ライザのアトリエ/トーン">
 <pre></pre>
 </div>
-<div created="20201223115049285" modified="20201223115049285" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/ナナシ草">
+<div created="20201223115049285" modified="20201224064856635" tags="ライザのアトリエ Item" title="ライザのアトリエ/ナナシ草">
 <pre></pre>
 </div>
-<div created="20201223033832982" modified="20201224031314832" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/パールクリスタル" type="application/json">
+<div created="20201223033832982" modified="20201224064856636" tags="ライザのアトリエ Item" title="ライザのアトリエ/パールクリスタル" type="application/json">
 <pre>{
     &quot;サルディン&quot;: &quot;potMain&quot;,
     &quot;大貝の白玉&quot;: &quot;potMain&quot;,
@@ -11642,22 +11658,22 @@ remove
     &quot;プルムル&quot;: &quot;potMain&quot;
 }</pre>
 </div>
-<div created="20201221041558487" modified="20201221041558487" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/ぷにぷに玉・金">
+<div created="20201221041558487" modified="20201224064856636" tags="ライザのアトリエ Item" title="ライザのアトリエ/ぷにぷに玉・金">
 <pre></pre>
 </div>
-<div created="20201222041021484" modified="20201222041021484" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/ぷにぷに玉・黒">
+<div created="20201222041021484" modified="20201224064856636" tags="ライザのアトリエ Item" title="ライザのアトリエ/ぷにぷに玉・黒">
 <pre></pre>
 </div>
-<div created="20201220042742291" modified="20201220042742291" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/ぷにぷに玉・青">
+<div created="20201220042742291" modified="20201224064856636" tags="ライザのアトリエ Item" title="ライザのアトリエ/ぷにぷに玉・青">
 <pre></pre>
 </div>
-<div created="20201223033334131" modified="20201223033334131" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/ぷにぷに玉・緑">
+<div created="20201223033334131" modified="20201224064856636" tags="ライザのアトリエ Item" title="ライザのアトリエ/ぷにぷに玉・緑">
 <pre></pre>
 </div>
-<div created="20201223121546870" modified="20201223121546870" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/プルムル">
+<div created="20201223121546870" modified="20201224064856637" tags="ライザのアトリエ Item" title="ライザのアトリエ/プルムル">
 <pre></pre>
 </div>
-<div created="20201211052448548" modified="20201223051447719" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/メディウム薬骨" type="application/json">
+<div created="20201211052448548" modified="20201224064856637" tags="ライザのアトリエ Item" title="ライザのアトリエ/メディウム薬骨" type="application/json">
 <pre>{
     &quot;ウインドプラント&quot;: &quot;potSub&quot;,
     &quot;エメラルドグラス&quot;: &quot;potMain&quot;,
@@ -11671,7 +11687,7 @@ remove
     &quot;アマタイト鉱&quot;: &quot;potSub&quot;
 }</pre>
 </div>
-<div created="20201222040636843" modified="20201223051831570" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/よく燃える樹皮" type="application/json">
+<div created="20201222040636843" modified="20201224064856637" tags="ライザのアトリエ Item" title="ライザのアトリエ/よく燃える樹皮" type="application/json">
 <pre>{
     &quot;アマタイト鉱&quot;: &quot;potMain&quot;,
     &quot;紙くず&quot;: &quot;potMain&quot;,
@@ -11682,7 +11698,7 @@ remove
     &quot;ぷにぷに玉・黒&quot;: &quot;potSub&quot;
 }</pre>
 </div>
-<div created="20201220063019441" modified="20201223051515012" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/安らぎの花" type="application/json">
+<div created="20201220063019441" modified="20201224064856637" tags="ライザのアトリエ Item" title="ライザのアトリエ/安らぎの花" type="application/json">
 <pre>{
     &quot;きれいな貝殻&quot;: &quot;potMain&quot;,
     &quot;病忘れの花&quot;: &quot;potMain&quot;,
@@ -11694,7 +11710,7 @@ remove
     &quot;土魚の暴牙&quot;: &quot;potSub&quot;
 }</pre>
 </div>
-<div created="20201220055257863" modified="20201223052002177" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/化石樹" type="application/json">
+<div created="20201220055257863" modified="20201224064856637" tags="ライザのアトリエ Item" title="ライザのアトリエ/化石樹" type="application/json">
 <pre>{
     &quot;七色葡萄&quot;: &quot;potMain&quot;,
     &quot;アイヒェ&quot;: &quot;potMain&quot;,
@@ -11710,7 +11726,7 @@ remove
     &quot;スイートリーフ&quot;: &quot;potSub&quot;
 }</pre>
 </div>
-<div created="20201220060826552" modified="20201223051729662" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/何かのタマゴ" type="application/json">
+<div created="20201220060826552" modified="20201224064856637" tags="ライザのアトリエ Item" title="ライザのアトリエ/何かのタマゴ" type="application/json">
 <pre>{
     &quot;サルディン&quot;: &quot;potMain&quot;,
     &quot;生ゴミ&quot;: &quot;potMain&quot;,
@@ -11724,10 +11740,10 @@ remove
     &quot;共振の玉石&quot;: &quot;potSub&quot;
 }</pre>
 </div>
-<div created="20201223115554279" modified="20201223115554279" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/甘露岩">
+<div created="20201223115554279" modified="20201224064856637" tags="ライザのアトリエ Item" title="ライザのアトリエ/甘露岩">
 <pre></pre>
 </div>
-<div created="20201222034540133" modified="20201223051805178" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/巨大なツメ" type="application/json">
+<div created="20201222034540133" modified="20201224064856637" tags="ライザのアトリエ Item" title="ライザのアトリエ/巨大なツメ" type="application/json">
 <pre>{
     &quot;コベリナイト&quot;: &quot;potMain&quot;,
     &quot;大きな羽根&quot;: &quot;potMain&quot;,
@@ -11740,7 +11756,7 @@ remove
     &quot;共振の玉石&quot;: &quot;potSub&quot;
 }</pre>
 </div>
-<div created="20201220015241667" modified="20201223115647398" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/共振の玉石" type="application/json">
+<div created="20201220015241667" modified="20201224064856638" tags="ライザのアトリエ Item" title="ライザのアトリエ/共振の玉石" type="application/json">
 <pre>{
     &quot;白灰砂&quot;: &quot;potMain&quot;,
     &quot;甘露岩&quot;: &quot;potMain&quot;,
@@ -11753,28 +11769,28 @@ remove
     &quot;共振の玉石&quot;: &quot;potSub&quot;
 }</pre>
 </div>
-<div created="20201220015808775" modified="20201220015808775" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/苦い根っこ">
+<div created="20201220015808775" modified="20201224064856638" tags="ライザのアトリエ Item" title="ライザのアトリエ/苦い根っこ">
 <pre></pre>
 </div>
-<div created="20201220015827721" modified="20201220015827721" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/古き騎士の紋章">
+<div created="20201220015827721" modified="20201224064856638" tags="ライザのアトリエ Item" title="ライザのアトリエ/古き騎士の紋章">
 <pre></pre>
 </div>
-<div created="20201220060205879" modified="20201220060205879" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/紙くず">
+<div created="20201220060205879" modified="20201224064856638" tags="ライザのアトリエ Item" title="ライザのアトリエ/紙くず">
 <pre></pre>
 </div>
-<div created="20201220061239047" modified="20201220061239047" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/自然油">
+<div created="20201220061239047" modified="20201224064856638" tags="ライザのアトリエ Item" title="ライザのアトリエ/自然油">
 <pre></pre>
 </div>
-<div created="20201220052249374" modified="20201220052249374" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/七色葡萄">
+<div created="20201220052249374" modified="20201224064856638" tags="ライザのアトリエ Item" title="ライザのアトリエ/七色葡萄">
 <pre></pre>
 </div>
-<div created="20201221040334175" modified="20201221040334175" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/小さな結晶">
+<div created="20201221040334175" modified="20201224064856638" tags="ライザのアトリエ Item" title="ライザのアトリエ/小さな結晶">
 <pre></pre>
 </div>
-<div created="20201221040402183" modified="20201221040402183" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/新鮮な肉">
+<div created="20201221040402183" modified="20201224064856639" tags="ライザのアトリエ Item" title="ライザのアトリエ/新鮮な肉">
 <pre></pre>
 </div>
-<div created="20201220042709172" modified="20201223051618111" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/正体不明の原石" type="application/json">
+<div created="20201220042709172" modified="20201224064856639" tags="ライザのアトリエ Item" title="ライザのアトリエ/正体不明の原石" type="application/json">
 <pre>{
     &quot;七色葡萄&quot;: &quot;potMain&quot;,
     &quot;小さな結晶&quot;: &quot;potMain&quot;,
@@ -11787,13 +11803,13 @@ remove
     &quot;共振の玉石&quot;: &quot;potSub&quot;
 }</pre>
 </div>
-<div created="20201222033254135" modified="20201222033254135" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/生ゴミ">
+<div created="20201222033254135" modified="20201224064856640" tags="ライザのアトリエ Item" title="ライザのアトリエ/生ゴミ">
 <pre></pre>
 </div>
-<div created="20201223120317105" modified="20201223120317105" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/創生の逆さ石">
+<div created="20201223120317105" modified="20201224064856641" tags="ライザのアトリエ Item" title="ライザのアトリエ/創生の逆さ石">
 <pre></pre>
 </div>
-<div created="20201221041057651" modified="20201223051651536" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/束縛する鋼糸" type="application/json">
+<div created="20201221041057651" modified="20201224064856642" tags="ライザのアトリエ Item" title="ライザのアトリエ/束縛する鋼糸" type="application/json">
 <pre>{
     &quot;クミネの実&quot;: &quot;potMain&quot;,
     &quot;束縛する鋼糸&quot;: &quot;potMain&quot;,
@@ -11805,16 +11821,16 @@ remove
     &quot;共振の玉石&quot;: &quot;potSub&quot;
 }</pre>
 </div>
-<div created="20201220015215311" modified="20201220015215311" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/大きな羽根">
+<div created="20201220015215311" modified="20201224064856643" tags="ライザのアトリエ Item" title="ライザのアトリエ/大きな羽根">
 <pre></pre>
 </div>
-<div created="20201220042803551" modified="20201220042803551" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/大きな骨">
+<div created="20201220042803551" modified="20201224064856643" tags="ライザのアトリエ Item" title="ライザのアトリエ/大きな骨">
 <pre></pre>
 </div>
-<div created="20201223034147314" modified="20201223034147314" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/大貝の白玉">
+<div created="20201223034147314" modified="20201224064856644" tags="ライザのアトリエ Item" title="ライザのアトリエ/大貝の白玉">
 <pre></pre>
 </div>
-<div created="20201220042850566" modified="20201223051545408" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/土魚の暴牙" type="application/json">
+<div created="20201220042850566" modified="20201224064856644" tags="ライザのアトリエ Item" title="ライザのアトリエ/土魚の暴牙" type="application/json">
 <pre>{
     &quot;エメラルドグラス&quot;: &quot;potMain&quot;,
     &quot;動物の毛皮&quot;: &quot;potMain&quot;,
@@ -11827,10 +11843,10 @@ remove
     &quot;共振の玉石&quot;: &quot;potSub&quot;
 }</pre>
 </div>
-<div created="20201220055536554" modified="20201220055536554" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/動物の毛皮">
+<div created="20201220055536554" modified="20201224064856645" tags="ライザのアトリエ Item" title="ライザのアトリエ/動物の毛皮">
 <pre></pre>
 </div>
-<div created="20201223033012176" modified="20201223115056945" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/燃えカス" type="application/json">
+<div created="20201223033012176" modified="20201224064856645" tags="ライザのアトリエ Item" title="ライザのアトリエ/燃えカス" type="application/json">
 <pre>{
     &quot;病忘れの花&quot;: &quot;potMain&quot;,
     &quot;クミネの実&quot;: &quot;potMain&quot;,
@@ -11842,19 +11858,33 @@ remove
     &quot;ナナシ草&quot;: &quot;potMain&quot;
 }</pre>
 </div>
-<div created="20201223113525200" modified="20201223113525200" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/白灰砂">
+<div created="20201223113525200" modified="20201224064856645" tags="ライザのアトリエ Item" title="ライザのアトリエ/白灰砂">
 <pre></pre>
 </div>
-<div created="20201220063333558" modified="20201220063333558" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/病忘れの花">
+<div created="20201220063333558" modified="20201224064856645" tags="ライザのアトリエ Item" title="ライザのアトリエ/病忘れの花">
 <pre></pre>
 </div>
-<div created="20201222034856369" modified="20201222034856369" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/風化した石材">
+<div created="20201222034856369" modified="20201224064856646" tags="ライザのアトリエ Item" title="ライザのアトリエ/風化した石材">
 <pre></pre>
 </div>
-<div created="20201220042822650" modified="20201220042822650" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/魔獣の背ビレ">
+<div created="20201220042822650" modified="20201224064856646" tags="ライザのアトリエ Item" title="ライザのアトリエ/魔獣の背ビレ">
 <pre></pre>
 </div>
-<div created="20201223120237428" modified="20201223120237428" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/彗星岩">
+<div created="20201223120237428" modified="20201224064856646" tags="ライザのアトリエ Item" title="ライザのアトリエ/彗星岩">
+<pre></pre>
+</div>
+<div color="#008040" created="20201224064107352" modified="20201224065439584" tags="Android" title="遊戯王Duel Links">
+<pre>|!キャラクター |&lt;&lt;addTiddler index:&quot;workCharacter&quot; tag:&quot;Character&quot;&gt;&gt; |
+|!スキル |&lt;&lt;addTiddler index:&quot;workSkill&quot; tag:&quot;Skill&quot;&gt;&gt; |
+|!デッキ |&lt;&lt;addTiddler index:&quot;workDeck&quot; tag:&quot;Deck&quot;&gt;&gt; |
+</pre>
+</div>
+<div created="20201224064254432" modified="20201224064256285" title="遊戯王Duel Links/DataHolder" type="application/json">
+<pre>{
+    &quot;workCharacter&quot;: &quot;闇遊戯&quot;
+}</pre>
+</div>
+<div created="20201224064805764" modified="20201224064805764" tags="[[遊戯王Duel Links]] Character" title="遊戯王Duel Links/闇遊戯">
 <pre></pre>
 </div>
 
