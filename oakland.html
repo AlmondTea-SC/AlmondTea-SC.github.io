@@ -10152,8 +10152,8 @@ Error message and password prompt
 <div created="20201218234816879" modified="20201218234816879" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20201207055701361" modified="20201224014209554" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20201207055701361" modified="20201224031343723" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20201207045155385" modified="20201223053121064" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Standard</pre>
@@ -11448,7 +11448,7 @@ $text$
 \define _tags() [[$(currentTiddler)$] $(tagName)$
 \define _fullName() $(currentTiddler)$/$(childName)$</pre>
 </div>
-<div created="20201207053002288" modified="20201224020325953" tags="PS4" title="ライザのアトリエ">
+<div created="20201207053002288" modified="20201224031305548" tags="PS4" title="ライザのアトリエ">
 <pre>アイテム
 &lt;&lt;addTiddler index:&quot;workingItem&quot; tag:&quot;アイテム&quot;&gt;&gt;
 &lt;&lt;copyField from:workingItem to:targetItem text:&quot;→入手素材&quot;&gt;&gt;
@@ -11470,17 +11470,17 @@ $text$
 &lt;&lt;select index:targetItem filter:&quot;tag[アイテム]&quot;&gt;&gt;
 &lt;hr/&gt;
 原料素材
-&lt;$set name=&quot;target&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=&quot;targetItem&quot;&gt;
+&lt;$set name=&quot;target&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;targetItem&quot;&gt;
 &lt;ul&gt;
-&lt;$list filter=&quot;[tag[ライザのアトリエ]tag[アイテム]has:index&lt;target&gt;removeprefix[ライザのアトリエ/]sort[]]&quot; variable=&quot;childName&quot;&gt;
+&lt;$list filter=&quot;[tag&lt;currentTiddler&gt;tag[アイテム]has:index&lt;target&gt;removeprefix&lt;currentTiddler&gt;removeprefix[/]sort[]]&quot; variable=&quot;childName&quot;&gt;
 &lt;li&gt;
 &lt;$reveal stateTitle=&lt;&lt;_fullName&gt;&gt; stateIndex=&lt;&lt;target&gt;&gt; type=&quot;match&quot; text=&quot;potMain&quot;&gt;
 &lt;span style= &quot;background:yellow;&quot;&gt;
-&lt;$macrocall $name=&quot;setField&quot; label=&quot;ライザのアトリエ&quot; data=&lt;&lt;childName&gt;&gt; to=&quot;workingItem&quot; text=&lt;&lt;childName&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
+&lt;$macrocall $name=&quot;setField&quot; data=&lt;&lt;childName&gt;&gt; to=&quot;workingItem&quot; text=&lt;&lt;childName&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
 &lt;/span&gt;
 &lt;/$reveal&gt;
 &lt;$reveal stateTitle=&lt;&lt;_fullName&gt;&gt; stateIndex=&lt;&lt;target&gt;&gt; type=&quot;nomatch&quot; text=&quot;potMain&quot;&gt;
-&lt;$macrocall $name=&quot;setField&quot; label=&quot;ライザのアトリエ&quot; data=&lt;&lt;childName&gt;&gt; to=&quot;workingItem&quot; text=&lt;&lt;childName&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
+&lt;$macrocall $name=&quot;setField&quot; data=&lt;&lt;childName&gt;&gt; to=&quot;workingItem&quot; text=&lt;&lt;childName&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
 &lt;/$reveal&gt;
 &lt;/li&gt;
 &lt;/$list&gt;
@@ -11494,17 +11494,17 @@ $text$
 &lt;&lt;select index:baseItem filter:&quot;tag[アイテム]&quot;&gt;&gt;
 &lt;hr/&gt;
 入手素材
-&lt;$set name=&quot;childName&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=&quot;baseItem&quot;&gt;
+&lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;baseItem&quot;&gt;
 &lt;ul&gt;
-&lt;$list filter=&quot;[[ライザのアトリエ/]addsuffix&lt;childName&gt;indexes[]sort[]]&quot; variable=&quot;target&quot;&gt;
+&lt;$list filter=&quot;[all[current]addsuffix[/]addsuffix&lt;childName&gt;indexes[]sort[]]&quot; variable=&quot;target&quot;&gt;
 &lt;li&gt;
 &lt;$reveal stateTitle=&lt;&lt;_fullName&gt;&gt; stateIndex=&lt;&lt;target&gt;&gt; type=&quot;match&quot; text=&quot;potMain&quot;&gt;
 &lt;span style= &quot;background:yellow;&quot;&gt;
-&lt;$macrocall $name=&quot;setField&quot; label=&quot;ライザのアトリエ&quot; data=&lt;&lt;target&gt;&gt; to=&quot;workingItem&quot; text=&lt;&lt;target&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
+&lt;$macrocall $name=&quot;setField&quot; data=&lt;&lt;target&gt;&gt; to=&quot;workingItem&quot; text=&lt;&lt;target&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
 &lt;/span&gt;
 &lt;/$reveal&gt;
 &lt;$reveal stateTitle=&lt;&lt;_fullName&gt;&gt; stateIndex=&lt;&lt;target&gt;&gt; type=&quot;nomatch&quot; text=&quot;potMain&quot;&gt;
-&lt;$macrocall $name=&quot;setField&quot; label=&quot;ライザのアトリエ&quot; data=&lt;&lt;target&gt;&gt; to=&quot;workingItem&quot; text=&lt;&lt;target&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
+&lt;$macrocall $name=&quot;setField&quot; data=&lt;&lt;target&gt;&gt; to=&quot;workingItem&quot; text=&lt;&lt;target&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
 &lt;/$reveal&gt;
 &lt;/li&gt;
 &lt;/$list&gt;
@@ -11512,36 +11512,42 @@ $text$
 &lt;/$set&gt;
 &lt;/td&gt;
 &lt;td valign=&quot;top&quot;&gt;
-&lt;$checkbox tiddler='ライザのアトリエ/DataHolder' index='isMain' checked='potMain' unchecked='potSub'&gt;メイン&lt;/$checkbox&gt;
+&lt;$checkbox tiddler=&lt;&lt;dataHolder&gt;&gt; index='isMain' checked='potMain' unchecked='potSub'&gt;メイン&lt;/$checkbox&gt;
 
-&lt;$set name=&quot;childName&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=&quot;baseItem&quot;&gt;
+&lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;baseItem&quot;&gt;
+&lt;$set name=&quot;targetItem&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;targetItem&quot;&gt;
+&lt;$set name=&quot;isMain&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;isMain&quot;&gt;
 &lt;$button&gt;
-&lt;$action-setfield $tiddler=&lt;&lt;_fullName&gt;&gt; $index={{ライザのアトリエ/DataHolder##targetItem}} $value={{ライザのアトリエ/DataHolder##isMain}}/&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;_fullName&gt;&gt; $index=&lt;&lt;targetItem&gt;&gt; $value=&lt;&lt;isMain&gt;&gt;/&gt;
 save
 &lt;/$button&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;
 &lt;/$set&gt;
 
 &lt;hr/&gt;
 
 &lt;$button&gt;
-&lt;$set name=&quot;childName&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=&quot;baseItem&quot;&gt;
-&lt;$action-setfield $tiddler=&lt;&lt;_fullName&gt;&gt; $index={{ライザのアトリエ/DataHolder##targetItem}}/&gt;
+&lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;baseItem&quot;&gt;
+&lt;$set name=&quot;targetItem&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;targetItem&quot;&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;_fullName&gt;&gt; $index=&lt;&lt;targetItem&gt;&gt;/&gt;
 remove
+&lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$button&gt;
 &lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</pre>
 </div>
-<div created="20201219050004802" modified="20201224020338297" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
+<div created="20201219050004802" modified="20201224031333419" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
 <pre>{
-    &quot;targetItem&quot;: &quot;プルムル&quot;,
+    &quot;targetItem&quot;: &quot;彗星岩&quot;,
     &quot;baseItem&quot;: &quot;パールクリスタル&quot;,
     &quot;newItemName&quot;: &quot;サビついた剣&quot;,
-    &quot;isMain&quot;: &quot;potMain&quot;,
+    &quot;isMain&quot;: &quot;potSub&quot;,
     &quot;memo1&quot;: &quot;彗星岩&quot;,
     &quot;memo2&quot;: &quot;創生の逆さ石&quot;,
     &quot;memo3&quot;: &quot;デルフィローズ&quot;,
-    &quot;workingItem&quot;: &quot;プルムル&quot;
+    &quot;workingItem&quot;: &quot;パールクリスタル&quot;
 }</pre>
 </div>
 <div created="20201220055507552" modified="20201220055507552" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/アイヒェ">
@@ -11620,7 +11626,7 @@ remove
 <div created="20201223115049285" modified="20201223115049285" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/ナナシ草">
 <pre></pre>
 </div>
-<div created="20201223033832982" modified="20201224020341365" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/パールクリスタル" type="application/json">
+<div created="20201223033832982" modified="20201224031314832" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/パールクリスタル" type="application/json">
 <pre>{
     &quot;サルディン&quot;: &quot;potMain&quot;,
     &quot;大貝の白玉&quot;: &quot;potMain&quot;,
