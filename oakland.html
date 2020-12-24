@@ -445,9 +445,13 @@ Error message and password prompt
 
 <li>system/copyField</li>
 
+<li>system/dataHolder</li>
+
 <li>system/select</li>
 
 <li>system/setField</li>
+
+<li>system/utilities</li>
 
 <li>ライザのアトリエ</li>
 
@@ -10148,8 +10152,8 @@ Error message and password prompt
 <div created="20201218234816879" modified="20201218234816879" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20201207055701361" modified="20201223114829436" title="$:/state/sidebar">
-<pre>no</pre>
+<div created="20201207055701361" modified="20201224014209554" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
 <div created="20201207045155385" modified="20201223053121064" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Standard</pre>
@@ -10172,7 +10176,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201223114026123" list="ライザのアトリエ" modified="20201223114818262" title="$:/StoryList">
+<div created="20201224014217619" list="system/dataHolder system/utilities $:/AdvancedSearch system/setField system/select system/copyField system/childName system/candidateList system/addTiddler ライザのアトリエ" modified="20201224015704217" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -10181,8 +10185,8 @@ Error message and password prompt
 <div created="20201207051944324" list="JumpToolbar HomeToolbar" modified="20201207051944324" title="$:/tags/TopLeftBar">
 <pre></pre>
 </div>
-<div created="20201207045152966" modified="20201223053249355" title="$:/temp/advancedsearch">
-<pre></pre>
+<div created="20201207045152966" modified="20201224015351533" title="$:/temp/advancedsearch">
+<pre>label</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -10229,11 +10233,11 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;768&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1024&quot;
+            &quot;text&quot;: &quot;1080&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -11343,12 +11347,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201207052400297" modified="20201207052531093" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201223020509283" modified="20201223080550070" tags="$:/tags/Macro" title="system/addTiddler">
-<pre>\define _state() $(labelName)$/$(stateTiddler)$
-\define _tags() $(labelName)$ $(tagName)$
-\define _startsWith() $(labelName)$/$(inputData)$
-\define addTiddler(index:&quot;name&quot; tag:&quot;tag&quot; state:&quot;DataHolder&quot; label)
-&lt;$set name=&quot;labelName&quot; filter=&lt;&lt;label&gt;&gt; value=&quot;$label$&quot; emptyValue=&lt;&lt;currentTiddler&gt;&gt;&gt;
+<div created="20201223020509283" modified="20201224014906005" tags="$:/tags/Macro" title="system/addTiddler">
+<pre>\define addTiddler(index:&quot;name&quot; tag:&quot;tag&quot; state:&quot;DataHolder&quot;)
 &lt;$set name=&quot;indexName&quot; value=&quot;$index$&quot;&gt;
 &lt;$set name=&quot;tagName&quot; value=&quot;$tag$&quot;&gt;
 &lt;$set name=&quot;stateTiddler&quot; value=&quot;$state$&quot;&gt;
@@ -11359,7 +11359,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 &lt;/$button&gt;
 &lt;$set name=&quot;title&quot; tiddler=&lt;&lt;_state&gt;&gt; index=&lt;&lt;indexName&gt;&gt;&gt;
 &lt;$list filter=&quot;[&lt;title&gt;minlength[1]]&quot;&gt;
-&lt;$list filter=&quot;[&lt;title&gt;addprefix[/]addprefix&lt;labelName&gt;!is[tiddler]]&quot;&gt;
+&lt;$list filter=&quot;[&lt;title&gt;addprefix[/]addprefix&lt;currentTiddler&gt;!is[tiddler]]&quot;&gt;
 &lt;$button actions=&quot;$actions$&quot;&gt;
 &lt;$action-createtiddler $basetitle=&lt;&lt;currentTiddler&gt;&gt; tags=&lt;&lt;_tags&gt;&gt; text=&quot;&quot;/&gt;
 add
@@ -11370,23 +11370,18 @@ add
 &lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
-&lt;/$set&gt;
 \end</pre>
 </div>
-<div created="20201223075415378" modified="20201223075723987" tags="$:/tags/Macro" title="system/candidateList">
-<pre>\define _state() $(labelName)$/$(stateTiddler)$
-\define _tags() $(labelName)$ $(tagName)$
-\define _startsWith() $(labelName)$/$(inputData)$
-\define candidateList(index:&quot;name&quot; tag:&quot;tag&quot; state:&quot;DataHolder&quot; label)
-&lt;$set name=&quot;labelName&quot; filter=&lt;&lt;label&gt;&gt; value=&quot;$label$&quot; emptyValue=&lt;&lt;currentTiddler&gt;&gt;&gt;
+<div created="20201223075415378" modified="20201224015401378" tags="$:/tags/Macro" title="system/candidateList">
+<pre>\define candidateList(index:&quot;name&quot; tag:&quot;tag&quot; state:&quot;DataHolder&quot;)
 &lt;$set name=&quot;indexName&quot; value=&quot;$index$&quot;&gt;
 &lt;$set name=&quot;tagName&quot; value=&quot;$tag$&quot;&gt;
 &lt;$set name=&quot;stateTiddler&quot; value=&quot;$state$&quot;&gt;
-&lt;$set name=&quot;inputData&quot; tiddler=&lt;&lt;_state&gt;&gt; index=&lt;&lt;indexName&gt;&gt;&gt;
-&lt;$list filter=&quot;[&lt;inputData&gt;minlength[1]]&quot;&gt;
+&lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;_state&gt;&gt; index=&lt;&lt;indexName&gt;&gt;&gt;
+&lt;$list filter=&quot;[&lt;childName&gt;minlength[1]]&quot;&gt;
 &lt;ul&gt;
-&lt;$list filter=&quot;[tag&lt;labelName&gt;tag&lt;tagName&gt;prefix&lt;_startsWith&gt;sort[]!&lt;_startsWith&gt;]&quot;&gt;
-&lt;$list filter=&quot;[&lt;currentTiddler&gt;split[/]rest[]join[/]]&quot;&gt;
+&lt;$list filter=&quot;[tag&lt;currentTiddler&gt;tag&lt;tagName&gt;prefix&lt;_fullName&gt;sort[]!&lt;_fullName&gt;]&quot;&gt;
+&lt;$list filter=&quot;[all[current]split[/]rest[]join[/]]&quot;&gt;
 &lt;li&gt;
 &lt;$button class=&quot;tc-btn-invisible tc-tiddlylink&quot;&gt;
 &lt;$action-setfield $tiddler=&lt;&lt;_state&gt;&gt; $index=&lt;&lt;indexName&gt;&gt; $value=&lt;&lt;currentTiddler&gt;&gt;/&gt;
@@ -11401,18 +11396,13 @@ add
 &lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
-&lt;/$set&gt;
 \end</pre>
 </div>
-<div created="20201223013422557" modified="20201223060848410" tags="$:/tags/Macro" title="system/childName">
-<pre>\define childName(label)
-&lt;$set name=&quot;labelName&quot; filter=&lt;&lt;label&gt;&gt; value=&quot;$label$&quot; emptyValue=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$list filter=&quot;[&lt;labelName&gt;split[/]rest[]join[/]]&quot;&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$list&gt;&lt;/$set&gt;
-\end</pre>
+<div created="20201223013422557" modified="20201224015204630" tags="$:/tags/Macro" title="system/childName">
+<pre>\define childName() &lt;$list filter=&quot;[all[current]split[/]rest[]join[/]]&quot;&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$list&gt;</pre>
 </div>
-<div created="20201223062233005" modified="20201223062247830" tags="$:/tags/Macro" title="system/copyField">
-<pre>\define _state() $(labelName)$/$(stateTiddler)$
-\define copyField(from to:&quot;to&quot; text:&quot;copy&quot; class:&quot;&quot; state:&quot;DataHolder&quot; label)
-&lt;$set name=&quot;labelName&quot; filter=&lt;&lt;label&gt;&gt; value=&quot;$label$&quot; emptyValue=&lt;&lt;currentTiddler&gt;&gt;&gt;
+<div created="20201223062233005" modified="20201224015410219" tags="$:/tags/Macro" title="system/copyField">
+<pre>\define copyField(from to:&quot;to&quot; text:&quot;copy&quot; class:&quot;&quot; state:&quot;DataHolder&quot;)
 &lt;$set name=&quot;stateTiddler&quot; value=&quot;$state$&quot;&gt;
 &lt;$set name=&quot;data&quot; tiddler=&lt;&lt;_state&gt;&gt; index=&quot;$from$&quot;&gt;
 &lt;$button class=&quot;$class$&quot;&gt;
@@ -11423,16 +11413,16 @@ $text$
 &lt;/$set&gt;
 \end</pre>
 </div>
-<div created="20201220085152290" modified="20201223080332018" tags="$:/tags/Macro" title="system/select">
-<pre>\define _state() $(labelName)$/$(stateTiddler)$
-\define select(index:&quot;selected&quot; filter state:&quot;DataHolder&quot; label)
-&lt;$set name=&quot;labelName&quot; filter=&lt;&lt;label&gt;&gt; value=&quot;$label$&quot; emptyValue=&lt;&lt;currentTiddler&gt;&gt;&gt;
+<div created="20201224015502772" modified="20201224015515732" tags="$:/tags/Macro" title="system/dataHolder">
+<pre>\define dataHolder() $(currentTiddler)$/DataHolder</pre>
+</div>
+<div created="20201220085152290" modified="20201224015418692" tags="$:/tags/Macro" title="system/select">
+<pre>\define select(index:&quot;selected&quot; filter state:&quot;DataHolder&quot;)
 &lt;$set name=&quot;indexName&quot; value=&quot;$index$&quot;&gt;
 &lt;$set name=&quot;stateTiddler&quot; value=&quot;$state$&quot;&gt;
 &lt;$select tiddler=&lt;&lt;_state&gt;&gt;  index=&lt;&lt;indexName&gt;&gt;&gt;
-&lt;$list filter=&quot;[tag&lt;labelName&gt;$filter$removeprefix&lt;labelName&gt;removeprefix[/]sort[]]&quot;&gt;
+&lt;$list filter=&quot;[tag&lt;currentTiddler&gt;$filter$removeprefix&lt;currentTiddler&gt;removeprefix[/]sort[]]&quot;&gt;
 &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/option&gt;
-&lt;/$list&gt;
 &lt;/$list&gt;
 &lt;/$select&gt;
 &lt;$button class=&quot;tc-btn-invisible&quot;&gt;
@@ -11441,13 +11431,10 @@ $text$
 &lt;/$button&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
-&lt;/$set&gt;
 \end</pre>
 </div>
-<div created="20201223030511818" modified="20201223062348762" tags="$:/tags/Macro" title="system/setField">
-<pre>\define _state() $(labelName)$/$(stateTiddler)$
-\define setField(data:&quot;&quot; to:&quot;to&quot; text:&quot;copy&quot; class:&quot;&quot; state:&quot;DataHolder&quot; label)
-&lt;$set name=&quot;labelName&quot; filter=&lt;&lt;label&gt;&gt; value=&quot;$label$&quot; emptyValue=&lt;&lt;currentTiddler&gt;&gt;&gt;
+<div created="20201223030511818" modified="20201224015345043" tags="$:/tags/Macro" title="system/setField">
+<pre>\define setField(data:&quot;&quot; to:&quot;to&quot; text:&quot;copy&quot; class:&quot;&quot; state:&quot;DataHolder&quot;)
 &lt;$set name=&quot;stateTiddler&quot; value=&quot;$state$&quot;&gt;
 &lt;$button class=&quot;$class$&quot;&gt;
 &lt;$action-setfield $tiddler=&lt;&lt;_state&gt;&gt; $index=&quot;$to$&quot; $value=&quot;$data$&quot;/&gt;
@@ -11456,7 +11443,12 @@ $text$
 &lt;/$set&gt;
 \end</pre>
 </div>
-<div created="20201207053002288" modified="20201223114239683" tags="PS4" title="ライザのアトリエ">
+<div created="20201224014301970" modified="20201224015459021" tags="$:/tags/Macro" title="system/utilities">
+<pre>\define _state() $(currentTiddler)$/$(stateTiddler)$
+\define _tags() [[$(currentTiddler)$] $(tagName)$
+\define _fullName() $(currentTiddler)$/$(childName)$</pre>
+</div>
+<div created="20201207053002288" modified="20201224015758073" tags="PS4" title="ライザのアトリエ">
 <pre>\define _parent()
 ライザのアトリエ/$(item)$
 \end
@@ -11536,22 +11528,24 @@ save
 &lt;hr/&gt;
 
 &lt;$button&gt;
-&lt;$action-setfield $tiddler={{ライザのアトリエ/DataHolder##baseItem}} $index={{ライザのアトリエ/DataHolder##targetItem}}/&gt;
+&lt;$set name=&quot;childName&quot; tiddler=&quot;ライザのアトリエ/DataHolder&quot; index=&quot;baseItem&quot;&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;_fullName&gt;&gt; $index={{ライザのアトリエ/DataHolder##targetItem}}/&gt;
 remove
+&lt;/$set&gt;
 &lt;/$button&gt;
 &lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</pre>
 </div>
-<div created="20201219050004802" modified="20201223121623452" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
+<div created="20201219050004802" modified="20201224015659503" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
 <pre>{
-    &quot;targetItem&quot;: &quot;ケモノ肉&quot;,
+    &quot;targetItem&quot;: &quot;プルムル&quot;,
     &quot;baseItem&quot;: &quot;パールクリスタル&quot;,
     &quot;newItemName&quot;: &quot;サビついた剣&quot;,
-    &quot;isMain&quot;: &quot;potSub&quot;,
+    &quot;isMain&quot;: &quot;potMain&quot;,
     &quot;memo1&quot;: &quot;彗星岩&quot;,
     &quot;memo2&quot;: &quot;創生の逆さ石&quot;,
     &quot;memo3&quot;: &quot;デルフィローズ&quot;,
-    &quot;workingItem&quot;: &quot;プルムル&quot;
+    &quot;workingItem&quot;: &quot;パールクリスタル&quot;
 }</pre>
 </div>
 <div created="20201220055507552" modified="20201220055507552" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/アイヒェ">
@@ -11630,7 +11624,7 @@ remove
 <div created="20201223115049285" modified="20201223115049285" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/ナナシ草">
 <pre></pre>
 </div>
-<div created="20201223033832982" modified="20201223121624617" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/パールクリスタル" type="application/json">
+<div created="20201223033832982" modified="20201224015806822" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/パールクリスタル" type="application/json">
 <pre>{
     &quot;サルディン&quot;: &quot;potMain&quot;,
     &quot;大貝の白玉&quot;: &quot;potMain&quot;,
@@ -11640,9 +11634,9 @@ remove
     &quot;何かのタマゴ&quot;: &quot;potSub&quot;,
     &quot;魔獣の背ビレ&quot;: &quot;potSub&quot;,
     &quot;共振の玉石&quot;: &quot;potSub&quot;,
-    &quot;プルムル&quot;: &quot;potMain&quot;,
     &quot;ぷにぷに玉・青&quot;: &quot;potSub&quot;,
-    &quot;きれいな水&quot;: &quot;potSub&quot;
+    &quot;きれいな水&quot;: &quot;potSub&quot;,
+    &quot;プルムル&quot;: &quot;potMain&quot;
 }</pre>
 </div>
 <div created="20201221041558487" modified="20201221041558487" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/ぷにぷに玉・金">
