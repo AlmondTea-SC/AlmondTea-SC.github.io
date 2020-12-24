@@ -11448,8 +11448,10 @@ $text$
 \define _tags() [[$(currentTiddler)$] $(tagName)$
 \define _fullName() $(currentTiddler)$/$(childName)$</pre>
 </div>
-<div created="20201207053002288" modified="20201224031305548" tags="PS4" title="ライザのアトリエ">
-<pre>アイテム
+<div created="20201207053002288" modified="20201224031526002" tags="PS4" title="ライザのアトリエ">
+<pre>\define memoTitle() $(index)$→
+
+アイテム
 &lt;&lt;addTiddler index:&quot;workingItem&quot; tag:&quot;アイテム&quot;&gt;&gt;
 &lt;&lt;copyField from:workingItem to:targetItem text:&quot;→入手素材&quot;&gt;&gt;
 &lt;&lt;copyField from:workingItem to:baseItem text:&quot;→原料素材&quot;&gt;&gt;
@@ -11457,7 +11459,7 @@ $text$
 
 &lt;$list filter=&quot;memo1 memo2 memo3 memo4&quot; variable=&quot;index&quot;&gt;
 
-&lt;&lt;index&gt;&gt;&lt;$macrocall $name=&quot;copyField&quot; from=&quot;workingItem&quot; to=&lt;&lt;index&gt;&gt; text=&quot;→&quot; class=&quot;tc-btn-invisible&quot;/&gt;&lt;$macrocall $name=&quot;select&quot; index=&lt;&lt;index&gt;&gt; filter=&quot;tag[アイテム]&quot;/&gt;
+&lt;$macrocall $name=&quot;copyField&quot; from=&quot;workingItem&quot; to=&lt;&lt;index&gt;&gt; text=&lt;&lt;memoTitle&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;&lt;$macrocall $name=&quot;select&quot; index=&lt;&lt;index&gt;&gt; filter=&quot;tag[アイテム]&quot;/&gt;
 &lt;$macrocall $name=&quot;copyField&quot; from=&lt;&lt;index&gt;&gt; to=&quot;targetItem&quot; text=&quot;→入手素材&quot;/&gt;
 &lt;$macrocall $name=&quot;copyField&quot; from=&lt;&lt;index&gt;&gt; to=&quot;baseItem&quot; text=&quot;→原料素材&quot;/&gt;
 
@@ -11465,8 +11467,7 @@ $text$
 
 &lt;table&gt;&lt;tbody&gt;&lt;tr&gt;
 &lt;td valign=&quot;top&quot;&gt;
-入手素材
-&lt;&lt;copyField from:workingItem to:targetItem text:&quot;→&quot; class:&quot;tc-btn-invisible&quot;&gt;&gt;
+&lt;&lt;copyField from:workingItem to:targetItem text:&quot;入手素材→&quot; class:&quot;tc-btn-invisible&quot;&gt;&gt;
 &lt;&lt;select index:targetItem filter:&quot;tag[アイテム]&quot;&gt;&gt;
 &lt;hr/&gt;
 原料素材
@@ -11489,8 +11490,7 @@ $text$
 
 &lt;/td&gt;
 &lt;td valign=&quot;top&quot;&gt;
-原料素材
-&lt;&lt;copyField from:workingItem to:baseItem text:&quot;→&quot; class:&quot;tc-btn-invisible&quot;&gt;&gt;
+&lt;&lt;copyField from:workingItem to:baseItem text:&quot;原料素材→&quot; class:&quot;tc-btn-invisible&quot;&gt;&gt;
 &lt;&lt;select index:baseItem filter:&quot;tag[アイテム]&quot;&gt;&gt;
 &lt;hr/&gt;
 入手素材
@@ -11538,16 +11538,16 @@ remove
 &lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</pre>
 </div>
-<div created="20201219050004802" modified="20201224031333419" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
+<div created="20201219050004802" modified="20201224031544408" tags="ライザのアトリエ DataHolder" title="ライザのアトリエ/DataHolder" type="application/json">
 <pre>{
-    &quot;targetItem&quot;: &quot;彗星岩&quot;,
+    &quot;targetItem&quot;: &quot;プルムル&quot;,
     &quot;baseItem&quot;: &quot;パールクリスタル&quot;,
     &quot;newItemName&quot;: &quot;サビついた剣&quot;,
     &quot;isMain&quot;: &quot;potSub&quot;,
     &quot;memo1&quot;: &quot;彗星岩&quot;,
     &quot;memo2&quot;: &quot;創生の逆さ石&quot;,
     &quot;memo3&quot;: &quot;デルフィローズ&quot;,
-    &quot;workingItem&quot;: &quot;パールクリスタル&quot;
+    &quot;workingItem&quot;: &quot;プルムル&quot;
 }</pre>
 </div>
 <div created="20201220055507552" modified="20201220055507552" tags="ライザのアトリエ アイテム" title="ライザのアトリエ/アイヒェ">
