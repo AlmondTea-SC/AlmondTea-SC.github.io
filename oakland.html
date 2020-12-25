@@ -775,6 +775,8 @@ Error message and password prompt
 
 <li>遊戯王Duel Links/聖なる守護</li>
 
+<li>遊戯王Duel Links/聖騎士</li>
+
 <li>遊戯王Duel Links/赤き竜の痣:ドラゴン・ヘッド</li>
 
 <li>遊戯王Duel Links/赤き竜の痣:ドラゴン・レッグ</li>
@@ -10418,7 +10420,7 @@ Error message and password prompt
 <div created="20201218234816879" modified="20201218234816879" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20201207055701361" modified="20201225004401932" title="$:/state/sidebar">
+<div created="20201207055701361" modified="20201225005711301" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20201207045155385" modified="20201223053121064" title="$:/state/tab--1498284803">
@@ -10442,7 +10444,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201225004358231" list="ライザのアトリエ [[遊戯王Duel Links]]" modified="20201225004358231" title="$:/StoryList">
+<div created="20201225004358231" list="ライザのアトリエ [[遊戯王Duel Links]]" modified="20201225005214747" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -12194,7 +12196,7 @@ remove
 <div created="20201223120237428" modified="20201224064856646" tags="ライザのアトリエ Item" title="ライザのアトリエ/彗星岩">
 <pre></pre>
 </div>
-<div color="#008040" created="20201224064107352" icon="icon/fas fa-dice-d6" modified="20201225005036518" tags="Android" title="遊戯王Duel Links">
+<div color="#008040" created="20201224064107352" icon="icon/fas fa-dice-d6" modified="20201225005207172" tags="Android" title="遊戯王Duel Links">
 <pre>\define linkSkill()
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;character&quot;&gt;
 &lt;$set name=&quot;skill&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;skill&quot;&gt;
@@ -12224,12 +12226,11 @@ remove
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;deck&quot;&gt;
 &lt;$set name=&quot;skill&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;skill&quot;&gt;
 &lt;$list filter=&quot;[&lt;_fullName&gt;is[tiddler]]&quot;&gt;
-&lt;$tiddler tiddler=&lt;&lt;_fullName&gt;&gt;&gt;
 &lt;$radio index=&lt;&lt;skill&gt;&gt; value=&quot;10&quot;&gt; 勝負を決める&lt;/$radio&gt;&lt;br/&gt;
 &lt;$radio index=&lt;&lt;skill&gt;&gt; value=&quot;7&quot;&gt; 有利に進める&lt;/$radio&gt;&lt;br/&gt;
 &lt;$radio index=&lt;&lt;skill&gt;&gt; value=&quot;3&quot;&gt; ピンチに役立つ&lt;/$radio&gt;&lt;br/&gt;
 &lt;$radio index=&lt;&lt;skill&gt;&gt; value=&quot;1&quot;&gt; あった方が良い&lt;/$radio&gt;&lt;br/&gt;
-&lt;/$tiddler&gt;
+&lt;$radio index=&lt;&lt;skill&gt;&gt;&gt; 不要&lt;/$radio&gt;&lt;br/&gt;
 &lt;/$list&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
@@ -12248,13 +12249,13 @@ remove
 |&lt;&lt;candidateList index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |&lt;|~|
 </pre>
 </div>
-<div created="20201224064254432" modified="20201225005044350" title="遊戯王Duel Links/DataHolder" type="application/json">
+<div created="20201224064254432" modified="20201225005600063" title="遊戯王Duel Links/DataHolder" type="application/json">
 <pre>{
     &quot;workCharacter&quot;: &quot;十六夜アキ&quot;,
-    &quot;character&quot;: &quot;海馬モクバ(DSOD)&quot;,
-    &quot;skill&quot;: &quot;ドラゴニック・リンカネーション&quot;,
+    &quot;character&quot;: &quot;闇遊戯&quot;,
+    &quot;skill&quot;: &quot;あーばよ!&quot;,
     &quot;workSkill&quot;: &quot;利便ジャー&amp;デス・ドラゴン&quot;,
-    &quot;deck&quot;: &quot;アロマ&quot;
+    &quot;deck&quot;: &quot;聖騎士&quot;
 }</pre>
 </div>
 <div created="20201224081336849" modified="20201224081336849" tags="[[遊戯王Duel Links]] Skill" title="遊戯王Duel Links/LP増強α">
@@ -12278,8 +12279,11 @@ remove
 <div created="20201224081951967" modified="20201224081951967" tags="[[遊戯王Duel Links]] Skill" title="遊戯王Duel Links/アイアイ・アイアン">
 <pre></pre>
 </div>
-<div created="20201225004350918" modified="20201225004350918" tags="[[遊戯王Duel Links]] Deck" title="遊戯王Duel Links/アロマ">
-<pre></pre>
+<div created="20201225004350918" modified="20201225005248036" tags="[[遊戯王Duel Links]] Deck" title="遊戯王Duel Links/アロマ" type="application/json">
+<pre>{
+    &quot;LP増強α&quot;: &quot;1&quot;,
+    &quot;絆の力!&quot;: &quot;7&quot;
+}</pre>
 </div>
 <div created="20201224074645161" modified="20201224075910032" tags="[[遊戯王Duel Links]] Character" title="遊戯王Duel Links/イシズ・イシュタール" type="application/json">
 <pre>{
@@ -12605,6 +12609,11 @@ remove
 </div>
 <div created="20201224080405400" modified="20201224080405400" tags="[[遊戯王Duel Links]] Skill" title="遊戯王Duel Links/聖なる守護">
 <pre></pre>
+</div>
+<div created="20201225005557700" modified="20201225005623228" tags="[[遊戯王Duel Links]] Deck" title="遊戯王Duel Links/聖騎士" type="application/json">
+<pre>{
+    &quot;あーばよ!&quot;: &quot;1&quot;
+}</pre>
 </div>
 <div created="20201224081927137" modified="20201224081927137" tags="[[遊戯王Duel Links]] Skill" title="遊戯王Duel Links/赤き竜の痣:ドラゴン・ヘッド">
 <pre></pre>
