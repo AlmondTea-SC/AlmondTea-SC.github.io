@@ -12194,7 +12194,7 @@ remove
 <div created="20201223120237428" modified="20201224064856646" tags="ライザのアトリエ Item" title="ライザのアトリエ/彗星岩">
 <pre></pre>
 </div>
-<div color="#008040" created="20201224064107352" icon="icon/fas fa-dice-d6" modified="20201225004339020" tags="Android" title="遊戯王Duel Links">
+<div color="#008040" created="20201224064107352" icon="icon/fas fa-dice-d6" modified="20201225005036518" tags="Android" title="遊戯王Duel Links">
 <pre>\define linkSkill()
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;character&quot;&gt;
 &lt;$set name=&quot;skill&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;skill&quot;&gt;
@@ -12220,6 +12220,21 @@ remove
 &lt;/ul&gt;
 &lt;/$set&gt;
 \end
+\define selectLevel()
+&lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;deck&quot;&gt;
+&lt;$set name=&quot;skill&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;skill&quot;&gt;
+&lt;$list filter=&quot;[&lt;_fullName&gt;is[tiddler]]&quot;&gt;
+&lt;$tiddler tiddler=&lt;&lt;_fullName&gt;&gt;&gt;
+&lt;$radio index=&lt;&lt;skill&gt;&gt; value=&quot;10&quot;&gt; 勝負を決める&lt;/$radio&gt;&lt;br/&gt;
+&lt;$radio index=&lt;&lt;skill&gt;&gt; value=&quot;7&quot;&gt; 有利に進める&lt;/$radio&gt;&lt;br/&gt;
+&lt;$radio index=&lt;&lt;skill&gt;&gt; value=&quot;3&quot;&gt; ピンチに役立つ&lt;/$radio&gt;&lt;br/&gt;
+&lt;$radio index=&lt;&lt;skill&gt;&gt; value=&quot;1&quot;&gt; あった方が良い&lt;/$radio&gt;&lt;br/&gt;
+&lt;/$tiddler&gt;
+&lt;/$list&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;
+
+\end
 
 | キャラクター | スキル &lt;&lt;linkSkill&gt;&gt; |h
 |&lt;&lt;addTiddler index:&quot;character&quot; tag:&quot;Character&quot;&gt;&gt; |&lt;&lt;addTiddler index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |
@@ -12228,12 +12243,12 @@ remove
 |スキル&lt;br/&gt;&lt;&lt;listSkill&gt;&gt; |&lt;|
 
 | デッキ | スキル | 相性 |h
-|&lt;&lt;addTiddler index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt; |&lt;&lt;addTiddler index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |
-|&lt;&lt;select index:&quot;deck&quot; filter:&quot;tag[Deck]&quot;&gt;&gt; |&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt; |
-|&lt;&lt;candidateList index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |&lt;|
+|&lt;&lt;addTiddler index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt; |&lt;&lt;addTiddler index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |&lt;&lt;selectLevel&gt;&gt; |
+|&lt;&lt;select index:&quot;deck&quot; filter:&quot;tag[Deck]&quot;&gt;&gt; |&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt; |~|
+|&lt;&lt;candidateList index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |&lt;|~|
 </pre>
 </div>
-<div created="20201224064254432" modified="20201225004347595" title="遊戯王Duel Links/DataHolder" type="application/json">
+<div created="20201224064254432" modified="20201225005044350" title="遊戯王Duel Links/DataHolder" type="application/json">
 <pre>{
     &quot;workCharacter&quot;: &quot;十六夜アキ&quot;,
     &quot;character&quot;: &quot;海馬モクバ(DSOD)&quot;,
