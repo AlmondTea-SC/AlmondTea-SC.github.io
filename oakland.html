@@ -10497,11 +10497,11 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;768&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1024&quot;
+            &quot;text&quot;: &quot;1080&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -12192,49 +12192,8 @@ remove
 <div created="20201223120237428" modified="20201224064856646" tags="ライザのアトリエ Item" title="ライザのアトリエ/彗星岩">
 <pre></pre>
 </div>
-<div color="#008040" created="20201224064107352" icon="icon/fas fa-dice-d6" modified="20201224074431392" tags="Android" title="遊戯王Duel Links">
-<pre>|!キャラクター |&lt;&lt;addTiddler index:&quot;character&quot; tag:&quot;Character&quot;&gt;&gt; |^&lt;&lt;candidateList index:&quot;character&quot; tag:&quot;Character&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt; |
-|!スキル |&lt;&lt;addTiddler index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |~|
-|!デッキ |&lt;&lt;addTiddler index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt; |~|
-
-&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;
-&lt;td valign=&quot;top&quot;&gt;
-&lt;&lt;select index:&quot;character&quot; filter:&quot;tag[Character]&quot;&gt;&gt;
-&lt;hr/&gt;
-スキル
-&lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;character&quot;&gt;
-&lt;ul&gt;
-&lt;$list filter=&quot;[all[current]addsuffix[/]addsuffix&lt;childName&gt;indexes[]sort[]]&quot; variable=&quot;target&quot;&gt;
-&lt;li&gt;
-&lt;$macrocall $name=&quot;setField&quot; data=&lt;&lt;target&gt;&gt; to=&quot;skill&quot; text=&lt;&lt;target&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
-&lt;/li&gt;
-&lt;/$list&gt;
-&lt;/ul&gt;
-&lt;/$set&gt;
-
-&lt;/td&gt;
-&lt;td valign=&quot;top&quot;&gt;
-&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt;
-&lt;hr/&gt;
-おすすめデッキ
-&lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;baseItem&quot;&gt;
-&lt;ul&gt;
-&lt;$list filter=&quot;[all[current]addsuffix[/]addsuffix&lt;childName&gt;indexes[]sort[]]&quot; variable=&quot;target&quot;&gt;
-&lt;li&gt;
-&lt;$reveal stateTitle=&lt;&lt;_fullName&gt;&gt; stateIndex=&lt;&lt;target&gt;&gt; type=&quot;match&quot; text=&quot;potMain&quot;&gt;
-&lt;span style= &quot;background:yellow;&quot;&gt;
-&lt;$macrocall $name=&quot;setField&quot; data=&lt;&lt;target&gt;&gt; to=&quot;workingItem&quot; text=&lt;&lt;target&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
-&lt;/span&gt;
-&lt;/$reveal&gt;
-&lt;$reveal stateTitle=&lt;&lt;_fullName&gt;&gt; stateIndex=&lt;&lt;target&gt;&gt; type=&quot;nomatch&quot; text=&quot;potMain&quot;&gt;
-&lt;$macrocall $name=&quot;setField&quot; data=&lt;&lt;target&gt;&gt; to=&quot;workingItem&quot; text=&lt;&lt;target&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
-&lt;/$reveal&gt;
-&lt;/li&gt;
-&lt;/$list&gt;
-&lt;/ul&gt;
-&lt;/$set&gt;
-&lt;/td&gt;
-&lt;td valign=&quot;top&quot;&gt;
+<div color="#008040" created="20201224064107352" icon="icon/fas fa-dice-d6" modified="20201225003758352" tags="Android" title="遊戯王Duel Links">
+<pre>\define linkSkill()
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;character&quot;&gt;
 &lt;$set name=&quot;skill&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;skill&quot;&gt;
 &lt;$button&gt;
@@ -12247,14 +12206,31 @@ remove
 &lt;/$button&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
-&lt;/td&gt;
-&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</pre>
+\end
+\define listSkill()
+&lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;character&quot;&gt;
+&lt;ul&gt;
+&lt;$list filter=&quot;[all[current]addsuffix[/]addsuffix&lt;childName&gt;indexes[]sort[]]&quot; variable=&quot;target&quot;&gt;
+&lt;li&gt;
+&lt;$macrocall $name=&quot;setField&quot; data=&lt;&lt;target&gt;&gt; to=&quot;skill&quot; text=&lt;&lt;target&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
+&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;
+&lt;/$set&gt;
+\end
+
+| キャラクター | スキル &lt;&lt;linkSkill&gt;&gt; |h
+|&lt;&lt;addTiddler index:&quot;character&quot; tag:&quot;Character&quot;&gt;&gt; |&lt;&lt;addTiddler index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |
+|&lt;&lt;select index:&quot;character&quot; filter:&quot;tag[Character]&quot;&gt;&gt; |&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt; |
+|&lt;&lt;candidateList index:&quot;character&quot; tag:&quot;Character&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |&lt;|
+|スキル&lt;br/&gt;&lt;&lt;listSkill&gt;&gt; |&lt;|
+</pre>
 </div>
-<div created="20201224064254432" modified="20201224082013231" title="遊戯王Duel Links/DataHolder" type="application/json">
+<div created="20201224064254432" modified="20201225003804410" title="遊戯王Duel Links/DataHolder" type="application/json">
 <pre>{
     &quot;workCharacter&quot;: &quot;十六夜アキ&quot;,
     &quot;character&quot;: &quot;海馬モクバ(DSOD)&quot;,
-    &quot;skill&quot;: &quot;あーばよ!&quot;,
+    &quot;skill&quot;: &quot;ドラゴニック・リンカネーション&quot;,
     &quot;workSkill&quot;: &quot;利便ジャー&amp;デス・ドラゴン&quot;
 }</pre>
 </div>
@@ -12480,16 +12456,16 @@ remove
     &quot;ドローセンス:光&quot;: &quot;true&quot;
 }</pre>
 </div>
-<div created="20201224075657369" modified="20201224082014547" tags="[[遊戯王Duel Links]] Character" title="遊戯王Duel Links/海馬モクバ(DSOD)" type="application/json">
+<div created="20201224075657369" modified="20201225004144789" tags="[[遊戯王Duel Links]] Character" title="遊戯王Duel Links/海馬モクバ(DSOD)" type="application/json">
 <pre>{
     &quot;ドローセンス:光&quot;: &quot;true&quot;,
     &quot;ドローセンス:風&quot;: &quot;true&quot;,
-    &quot;ドラゴニック・リンカネーション&quot;: &quot;true&quot;,
     &quot;ディフェンス・チャージ&quot;: &quot;true&quot;,
     &quot;お前の力はオレには通用しない&quot;: &quot;true&quot;,
     &quot;おとり戦術&quot;: &quot;true&quot;,
     &quot;LP増強Ω&quot;: &quot;true&quot;,
-    &quot;あーばよ!&quot;: &quot;true&quot;
+    &quot;あーばよ!&quot;: &quot;true&quot;,
+    &quot;ドラゴニック・リンカネーション&quot;: &quot;true&quot;
 }</pre>
 </div>
 <div created="20201224073931724" modified="20201224081631892" tags="[[遊戯王Duel Links]] Character" title="遊戯王Duel Links/海馬瀬人(DM)" type="application/json">
