@@ -12420,7 +12420,7 @@ $text$
 <div created="20201223120237428" modified="20201224064856646" tags="ライザのアトリエ Item" title="ライザのアトリエ/彗星岩">
 <pre></pre>
 </div>
-<div color="#008040" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20201227090423694" tags="Android" title="遊戯王Duel Links">
+<div color="#008040" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20201227093446929" tags="Android" title="遊戯王Duel Links">
 <pre>\define linkSkill()
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;character&quot;&gt;
 &lt;$set name=&quot;skill&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;skill&quot;&gt;
@@ -12439,7 +12439,7 @@ remove
 スキル
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;character&quot;&gt;
 &lt;ul&gt;
-&lt;$list filter=&quot;[all[current]addsuffix[/]addsuffix&lt;childName&gt;indexes[]sort[]]&quot; variable=&quot;skill&quot;&gt;
+&lt;$list filter=&quot;[&lt;_fullName&gt;indexes[]sort[]]&quot; variable=&quot;skill&quot;&gt;
 &lt;li&gt;
 &lt;$macrocall $name=&quot;setField&quot; data=&lt;&lt;skill&gt;&gt; to=&quot;skill&quot; text=&lt;&lt;skill&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
 &lt;ul&gt;
@@ -12492,6 +12492,22 @@ remove
 &lt;/$set&gt;
 &lt;/$set&gt;
 \end
+\define listLevel()
+スキル
+&lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;deck&quot;&gt;
+&lt;ul&gt;
+&lt;$list filter=&quot;[&lt;_fullName&gt;indexes[]sort[]]&quot; variable=&quot;skill&quot;&gt;
+&lt;li&gt;
+&lt;$set name=&quot;level&quot; tiddler=&lt;&lt;_fullName&gt;&gt; index=&lt;&lt;skill&gt;&gt;&gt;
+&lt;$list variable=&quot;face&quot; filter=&quot;[all[current]addsuffix[/Fit-]addsuffix&lt;level&gt;get[icon]addprefix[{{]addsuffix[}}]addsuffix&lt;skill&gt;]&quot;&gt;
+&lt;$macrocall $name=&quot;setField&quot; data=&lt;&lt;skill&gt;&gt; to=&quot;skill&quot; text=&lt;&lt;face&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
+&lt;/$list&gt;
+&lt;/$set&gt;
+&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;
+&lt;/$set&gt;
+\end
 
 | キャラクター | スキル &lt;&lt;linkSkill&gt;&gt; |h
 |&lt;&lt;addTiddler index:&quot;character&quot; tag:&quot;Character&quot;&gt;&gt; |&lt;&lt;addTiddler index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |
@@ -12502,12 +12518,13 @@ remove
 | スキル | デッキ | 相性 |h
 |&lt;&lt;addTiddler index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |&lt;&lt;addTiddler index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt; |^&lt;&lt;selectLevel&gt;&gt; |
 |&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt; |&lt;&lt;select index:&quot;deck&quot; filter:&quot;tag[Deck]&quot;&gt;&gt; |~|
-|&lt;&lt;candidateList index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt; |&lt;|~|</pre>
+|&lt;&lt;candidateList index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt; |&lt;|~|
+|&lt;&lt;listLevel&gt;&gt; |&lt;|~|</pre>
 </div>
-<div created="20201224064254432" modified="20201227090348386" title="遊戯王Duel Links/DataHolder" type="application/json">
+<div created="20201224064254432" modified="20201227093517565" title="遊戯王Duel Links/DataHolder" type="application/json">
 <pre>{
     &quot;workCharacter&quot;: &quot;十六夜アキ&quot;,
-    &quot;skill&quot;: &quot;ドローセンス:光&quot;,
+    &quot;skill&quot;: &quot;香水戦術(アロマ・タクティクス)&quot;,
     &quot;workSkill&quot;: &quot;利便ジャー&amp;デス・ドラゴン&quot;,
     &quot;character&quot;: &quot;海馬モクバ(DSOD)&quot;,
     &quot;deck&quot;: &quot;アロマ&quot;
