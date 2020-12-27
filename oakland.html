@@ -12385,7 +12385,7 @@ $text$
 <div created="20201223120237428" modified="20201224064856646" tags="ライザのアトリエ Item" title="ライザのアトリエ/彗星岩">
 <pre></pre>
 </div>
-<div color="#008040" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20201227030920990" tags="Android" title="遊戯王Duel Links">
+<div color="#008040" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20201227041031413" tags="Android" title="遊戯王Duel Links">
 <pre>\define linkSkill()
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;character&quot;&gt;
 &lt;$set name=&quot;skill&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;skill&quot;&gt;
@@ -12410,12 +12410,12 @@ remove
 &lt;ul&gt;
 &lt;$list filter=&quot;[tag&lt;currentTiddler&gt;tag[Deck]has:index&lt;skill&gt;sortan[]removeprefix&lt;currentTiddler&gt;removeprefix[/]sort[]]&quot; variable=&quot;childName&quot;&gt;
 &lt;li&gt;
-&lt;$set name=&quot;rank&quot; tiddler=&lt;&lt;_fullName&gt;&gt; index=&lt;&lt;skill&gt;&gt;&gt;
-&lt;$set name=&quot;remain&quot; filter=&quot;[[10]subtract&lt;rank&gt;]&quot;&gt;
-&lt;$list filter=&quot;[range&lt;rank&gt;]&quot;&gt;★&lt;/$list&gt;&lt;$list filter=&quot;[range&lt;remain&gt;]&quot;&gt;☆&lt;/$list&gt;
+&lt;$set name=&quot;level&quot; tiddler=&lt;&lt;_fullName&gt;&gt; index=&lt;&lt;skill&gt;&gt;&gt;
+&lt;$list variable=&quot;face&quot; filter=&quot;[all[current]addsuffix[/Fit-]addsuffix&lt;level&gt;get[icon]addprefix[{{]addsuffix[}}]addsuffix&lt;childName&gt;]&quot;&gt;
+&lt;$macrocall $name=&quot;setField&quot; data=&lt;&lt;childName&gt;&gt; to=&quot;deck&quot; text=&lt;&lt;face&gt;&gt; class=&quot;tc-btn-invisible&quot;/&gt;
+&lt;/$list&gt;
 &lt;/$set&gt;
-&lt;/$set&gt;
-&lt;&lt;childName&gt;&gt;&lt;/li&gt;
+&lt;/li&gt;
 &lt;/$list&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -12444,16 +12444,11 @@ remove
 &lt;$set name=&quot;level&quot; tiddler=&lt;&lt;fit&gt;&gt; field=&quot;level&quot;&gt;
 &lt;$set name=&quot;icon&quot; tiddler=&lt;&lt;fit&gt;&gt; field=&quot;icon&quot;&gt;
 &lt;$set name=&quot;description&quot; tiddler=&lt;&lt;fit&gt;&gt; field=&quot;description&quot;&gt;
-&lt;$radio index=&lt;&lt;skill&gt;&gt; value=&lt;&lt;level&gt;&gt;&gt; &lt;&lt;description&gt;&gt;&lt;/$radio&gt;&lt;br/&gt;
+&lt;$radio index=&lt;&lt;skill&gt;&gt; value=&lt;&lt;level&gt;&gt;&gt; &lt;$transclude tiddler=&lt;&lt;icon&gt;&gt;/&gt;&lt;&lt;description&gt;&gt;&lt;/$radio&gt;&lt;br/&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$list&gt;
-&lt;!-- $radio index=&lt;&lt;skill&gt;&gt; value=&quot;10&quot;&gt; 勝負を決める&lt;/$radio&gt;&lt;br/&gt;
-&lt;$radio index=&lt;&lt;skill&gt;&gt; value=&quot;7&quot;&gt; 有利になる&lt;/$radio&gt;&lt;br/&gt;
-&lt;$radio index=&lt;&lt;skill&gt;&gt; value=&quot;3&quot;&gt; ピンチに役立つ&lt;/$radio&gt;&lt;br/&gt;
-&lt;$radio index=&lt;&lt;skill&gt;&gt; value=&quot;1&quot;&gt; 無駄ではない&lt;/$radio&gt;&lt;br/&gt;
-&lt;$radio index=&lt;&lt;skill&gt;&gt;&gt; 不要&lt;/$radio&gt;&lt;br/ --&gt;
 &lt;/$list&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
@@ -12472,13 +12467,13 @@ remove
 |&lt;&lt;candidateList index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt; |&lt;|~|
 |&lt;&lt;listCharacter&gt;&gt; |&lt;|~|</pre>
 </div>
-<div created="20201224064254432" modified="20201227012756382" title="遊戯王Duel Links/DataHolder" type="application/json">
+<div created="20201224064254432" modified="20201227041140661" title="遊戯王Duel Links/DataHolder" type="application/json">
 <pre>{
     &quot;workCharacter&quot;: &quot;十六夜アキ&quot;,
-    &quot;skill&quot;: &quot;香水戦術(アロマ・タクティクス)&quot;,
+    &quot;skill&quot;: &quot;ディフェンス・チャージ&quot;,
     &quot;workSkill&quot;: &quot;利便ジャー&amp;デス・ドラゴン&quot;,
     &quot;deck&quot;: &quot;アロマ&quot;,
-    &quot;character&quot;: &quot;孔雀舞&quot;
+    &quot;character&quot;: &quot;海馬モクバ(DSOD)&quot;
 }</pre>
 </div>
 <div created="20201227023518111" description="不要" icon="$:/images/fa5/regular/frown" modified="20201227023840071" tags="[[遊戯王Duel Links]] Fit" title="遊戯王Duel Links/Fit-0">
@@ -12517,11 +12512,12 @@ remove
 <div created="20201224081951967" modified="20201224081951967" tags="[[遊戯王Duel Links]] Skill" title="遊戯王Duel Links/アイアイ・アイアン">
 <pre></pre>
 </div>
-<div created="20201225004350918" modified="20201227031107163" tags="[[遊戯王Duel Links]] Deck" title="遊戯王Duel Links/アロマ" type="application/json">
+<div created="20201225004350918" modified="20201227041137387" tags="[[遊戯王Duel Links]] Deck" title="遊戯王Duel Links/アロマ" type="application/json">
 <pre>{
     &quot;LP増強α&quot;: &quot;1&quot;,
     &quot;絆の力!&quot;: &quot;7&quot;,
-    &quot;香水戦術(アロマ・タクティクス)&quot;: &quot;1&quot;
+    &quot;香水戦術(アロマ・タクティクス)&quot;: &quot;1&quot;,
+    &quot;ディフェンス・チャージ&quot;: &quot;10&quot;
 }</pre>
 </div>
 <div created="20201224074645161" modified="20201224075910032" tags="[[遊戯王Duel Links]] Character" title="遊戯王Duel Links/イシズ・イシュタール" type="application/json">
