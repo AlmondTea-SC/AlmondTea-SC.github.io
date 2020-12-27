@@ -10512,7 +10512,7 @@ Error message and password prompt
 <div created="20201218234816879" modified="20201227025054469" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20201207055701361" modified="20201227030953999" title="$:/state/sidebar">
+<div created="20201207055701361" modified="20201227043718433" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20201207045155385" modified="20201227014653265" title="$:/state/tab--1498284803">
@@ -10536,7 +10536,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201227030934311" list="[[遊戯王Duel Links/Fit-1]] [[遊戯王Duel Links/Fit-3]] [[遊戯王Duel Links/Fit-7]] [[遊戯王Duel Links/Fit-10]] ライザのアトリエ [[遊戯王Duel Links]]" modified="20201227030950243" title="$:/StoryList">
+<div created="20201227030934311" list="[[遊戯王Duel Links/アロマ]] ライザのアトリエ [[遊戯王Duel Links]]" modified="20201227043711241" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -12387,7 +12387,7 @@ $text$
 <div created="20201223120237428" modified="20201224064856646" tags="ライザのアトリエ Item" title="ライザのアトリエ/彗星岩">
 <pre></pre>
 </div>
-<div color="#008040" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20201227041031413" tags="Android" title="遊戯王Duel Links">
+<div color="#008040" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20201227043922880" tags="Android" title="遊戯王Duel Links">
 <pre>\define linkSkill()
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;character&quot;&gt;
 &lt;$set name=&quot;skill&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;skill&quot;&gt;
@@ -12443,11 +12443,11 @@ remove
 &lt;$set name=&quot;skill&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;skill&quot;&gt;
 &lt;$list filter=&quot;[&lt;_fullName&gt;is[tiddler]]&quot;&gt;
 &lt;$list filter=&quot;[tag&lt;label&gt;tag[Fit]!sortan[]]&quot; variable=&quot;fit&quot;&gt;
-&lt;$set name=&quot;level&quot; tiddler=&lt;&lt;fit&gt;&gt; field=&quot;level&quot;&gt;
 &lt;$set name=&quot;icon&quot; tiddler=&lt;&lt;fit&gt;&gt; field=&quot;icon&quot;&gt;
 &lt;$set name=&quot;description&quot; tiddler=&lt;&lt;fit&gt;&gt; field=&quot;description&quot;&gt;
+&lt;$list variable=&quot;level&quot; filter=&quot;[&lt;fit&gt;]getindex[level]&quot;&gt;
 &lt;$radio index=&lt;&lt;skill&gt;&gt; value=&lt;&lt;level&gt;&gt;&gt; &lt;$transclude tiddler=&lt;&lt;icon&gt;&gt;/&gt;&lt;&lt;description&gt;&gt;&lt;/$radio&gt;&lt;br/&gt;
-&lt;/$set&gt;
+&lt;/$list&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$list&gt;
@@ -12469,13 +12469,13 @@ remove
 |&lt;&lt;candidateList index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt; |&lt;|~|
 |&lt;&lt;listCharacter&gt;&gt; |&lt;|~|</pre>
 </div>
-<div created="20201224064254432" modified="20201227042946770" title="遊戯王Duel Links/DataHolder" type="application/json">
+<div created="20201224064254432" modified="20201227043307101" title="遊戯王Duel Links/DataHolder" type="application/json">
 <pre>{
     &quot;workCharacter&quot;: &quot;十六夜アキ&quot;,
-    &quot;skill&quot;: &quot;LP増強α&quot;,
+    &quot;skill&quot;: &quot;あーばよ!&quot;,
     &quot;workSkill&quot;: &quot;利便ジャー&amp;デス・ドラゴン&quot;,
     &quot;character&quot;: &quot;海馬モクバ(DSOD)&quot;,
-    &quot;deck&quot;: &quot;剣闘獣&quot;
+    &quot;deck&quot;: &quot;アロマ&quot;
 }</pre>
 </div>
 <div created="20201227023518111" description="不要" icon="$:/images/fa5/regular/frown" modified="20201227023840071" tags="[[遊戯王Duel Links]] Fit" title="遊戯王Duel Links/Fit-0">
@@ -12514,12 +12514,13 @@ remove
 <div created="20201224081951967" modified="20201224081951967" tags="[[遊戯王Duel Links]] Skill" title="遊戯王Duel Links/アイアイ・アイアン">
 <pre></pre>
 </div>
-<div created="20201225004350918" modified="20201227041137387" tags="[[遊戯王Duel Links]] Deck" title="遊戯王Duel Links/アロマ" type="application/json">
+<div created="20201225004350918" modified="20201227043355847" tags="[[遊戯王Duel Links]] Deck" title="遊戯王Duel Links/アロマ" type="application/json">
 <pre>{
     &quot;LP増強α&quot;: &quot;1&quot;,
     &quot;絆の力!&quot;: &quot;7&quot;,
     &quot;香水戦術(アロマ・タクティクス)&quot;: &quot;1&quot;,
-    &quot;ディフェンス・チャージ&quot;: &quot;10&quot;
+    &quot;ディフェンス・チャージ&quot;: &quot;10&quot;,
+    &quot;あーばよ!&quot;: &quot;&quot;
 }</pre>
 </div>
 <div created="20201224074645161" modified="20201224075910032" tags="[[遊戯王Duel Links]] Character" title="遊戯王Duel Links/イシズ・イシュタール" type="application/json">
@@ -12791,9 +12792,10 @@ remove
     &quot;希望の戦士 No.39&quot;: &quot;true&quot;
 }</pre>
 </div>
-<div created="20201227042853912" modified="20201227042948793" tags="[[遊戯王Duel Links]] Deck" title="遊戯王Duel Links/剣闘獣" type="application/json">
+<div created="20201227042853912" modified="20201227043240604" tags="[[遊戯王Duel Links]] Deck" title="遊戯王Duel Links/剣闘獣" type="application/json">
 <pre>{
-    &quot;LP増強α&quot;: &quot;1&quot;
+    &quot;LP増強α&quot;: &quot;1&quot;,
+    &quot;オーバーレイ・ゲイン&quot;: &quot;1&quot;
 }</pre>
 </div>
 <div created="20201225114154252" modified="20201226004856554" tags="[[遊戯王Duel Links]] Character" title="遊戯王Duel Links/孔雀舞" type="application/json">
