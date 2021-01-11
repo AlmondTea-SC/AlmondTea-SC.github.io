@@ -10591,7 +10591,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="ライザのアトリエ [[遊戯王Duel Links]]" title="$:/StoryList">
+<div list="[[遊戯王Duel Links]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -10648,15 +10648,15 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;360&quot;
+            &quot;text&quot;: &quot;768&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;640&quot;
+            &quot;text&quot;: &quot;1024&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
-            &quot;text&quot;: &quot;ja-JP&quot;
+            &quot;text&quot;: &quot;ja&quot;
         }
     }
 }</pre>
@@ -12572,7 +12572,7 @@ $text$
 <div created="20201223120237428" modified="20201224064856646" tags="ライザのアトリエ Item" title="ライザのアトリエ/彗星岩">
 <pre></pre>
 </div>
-<div color="#669d34" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20201228014239801" tags="Android iOS" title="遊戯王Duel Links">
+<div color="#669d34" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20210111081812604" tags="Android iOS" title="遊戯王Duel Links">
 <pre>\define linkSkill()
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;character&quot;&gt;
 &lt;$set name=&quot;skill&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;skill&quot;&gt;
@@ -12661,19 +12661,24 @@ remove
 &lt;/$set&gt;
 \end
 
-| キャラクター | スキル &lt;&lt;linkSkill&gt;&gt; |h
-|&lt;&lt;addTiddler index:&quot;character&quot; tag:&quot;Character&quot;&gt;&gt; |&lt;&lt;addTiddler index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |
-|&lt;&lt;select index:&quot;character&quot; filter:&quot;tag[Character]&quot;&gt;&gt; |&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt; |
-|&lt;&lt;candidateList index:&quot;character&quot; tag:&quot;Character&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |&lt;|
-|^&lt;&lt;listSkill&gt;&gt; |^&lt;&lt;listCharacter&gt;&gt; |
+| キャラクター |h
+|&lt;&lt;addTiddler index:&quot;character&quot; tag:&quot;Character&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;character&quot; tag:&quot;Character&quot;&gt;&gt; |
+|&lt;&lt;select index:&quot;character&quot; filter:&quot;tag[Character]&quot;&gt;&gt; |
+|&lt;&lt;listSkill&gt;&gt; |
+|&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt;&lt;br/&gt;&lt;&lt;linkSkill&gt;&gt; |
 
-| デッキ | スキル | 相性 |h
-|&lt;&lt;addTiddler index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt; |&lt;&lt;addTiddler index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |^&lt;&lt;selectLevel&gt;&gt; |
-|&lt;&lt;select index:&quot;deck&quot; filter:&quot;tag[Deck]&quot;&gt;&gt; |&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt; |~|
-|&lt;&lt;candidateList index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |&lt;|~|
-|&lt;&lt;listLevel&gt;&gt; |&lt;|~|</pre>
+| スキル |h
+|&lt;&lt;addTiddler index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;skill&quot; tag:&quot;Skill&quot;&gt;&gt; |
+|&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt; |
+|&lt;&lt;listCharacter&gt;&gt; |
+
+| デッキ |h
+|&lt;&lt;addTiddler index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt; |
+|&lt;&lt;select index:&quot;deck&quot; filter:&quot;tag[Deck]&quot;&gt;&gt; |
+|&lt;&lt;listLevel&gt;&gt; |
+|&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt;&lt;br/&gt;&lt;&lt;selectLevel&gt;&gt; |</pre>
 </div>
-<div created="20201224064254432" modified="20210109003919856" title="遊戯王Duel Links/DataHolder" type="application/json">
+<div created="20201224064254432" modified="20210111081408072" title="遊戯王Duel Links/DataHolder" type="application/json">
 <pre>{
     &quot;workCharacter&quot;: &quot;十六夜アキ&quot;,
     &quot;workSkill&quot;: &quot;利便ジャー&amp;デス・ドラゴン&quot;,
