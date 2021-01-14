@@ -219,6 +219,8 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/showeditpreview</li>
+
 <li>$:/state/sidebar</li>
 
 <li>$:/state/tab-1749438307</li>
@@ -11117,7 +11119,10 @@ Error message and password prompt
 <div created="20201207044459504" modified="20201207044502353" title="$:/SiteTitle">
 <pre>樫のWiki</pre>
 </div>
-<div created="20210114070414002" modified="20210114070414002" title="$:/state/sidebar">
+<div created="20210114071507256" modified="20210114071507256" title="$:/state/showeditpreview">
+<pre>yes</pre>
+</div>
+<div created="20210114070414002" modified="20210114071556869" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210114070154062" modified="20210114070154062" title="$:/state/tab-1749438307">
@@ -11126,13 +11131,13 @@ Error message and password prompt
 <div created="20210114070156017" modified="20210114070156017" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20210114070407725" modified="20210114070411536" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20210114070407725" modified="20210114071211350" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[遊戯王Duel Links]]" title="$:/StoryList">
+<div created="20210114071217833" list="[[遊戯王Duel Links]]" modified="20210114071217833" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -11284,9 +11289,15 @@ Error message and password prompt
 <div color="#ff6250" created="20201207052333227" icon="$:/core/images/home-button" modified="20201228014009452" title="Menu">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201207051224061" modified="20201207051718051" tags="$:/tags/Stylesheet mySystemTiddler" title="myStyleSheet" type="text/css">
+<div created="20201207051224061" modified="20210114071441429" tags="$:/tags/Stylesheet mySystemTiddler" title="myStyleSheet" type="text/css">
 <pre>nav.tc-menubar li.tc-menubar-item .tc-drop-down svg {
     fill: #333353;
+}
+
+.at-flex {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }</pre>
 </div>
 <div color="#ff6250" created="20201227021531155" icon="$:/images/fa5/solid/cog" modified="20201228014256782" tags="Menu" title="mySystemTiddler">
@@ -12096,7 +12107,7 @@ $text$
 <div created="20201223120237428" modified="20201224064856646" tags="ライザのアトリエ Item" title="ライザのアトリエ/彗星岩">
 <pre></pre>
 </div>
-<div color="#669d34" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20210111081812604" tags="Android iOS" title="遊戯王Duel Links">
+<div color="#669d34" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20210114071545126" tags="Android iOS" title="遊戯王Duel Links">
 <pre>\define linkSkill()
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;character&quot;&gt;
 &lt;$set name=&quot;skill&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;skill&quot;&gt;
@@ -12185,6 +12196,8 @@ remove
 &lt;/$set&gt;
 \end
 
+&lt;div class=&quot;at-flex&quot;&gt;
+
 | キャラクター |h
 |&lt;&lt;addTiddler index:&quot;character&quot; tag:&quot;Character&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;character&quot; tag:&quot;Character&quot;&gt;&gt; |
 |&lt;&lt;select index:&quot;character&quot; filter:&quot;tag[Character]&quot;&gt;&gt; |
@@ -12200,7 +12213,9 @@ remove
 |&lt;&lt;addTiddler index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;deck&quot; tag:&quot;Deck&quot;&gt;&gt; |
 |&lt;&lt;select index:&quot;deck&quot; filter:&quot;tag[Deck]&quot;&gt;&gt; |
 |&lt;&lt;listLevel&gt;&gt; |
-|&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt;&lt;br/&gt;&lt;&lt;selectLevel&gt;&gt; |</pre>
+|&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt;&lt;br/&gt;&lt;&lt;selectLevel&gt;&gt; |
+
+&lt;/div&gt;</pre>
 </div>
 <div created="20201224064254432" modified="20210114065347880" title="遊戯王Duel Links/DataHolder" type="application/json">
 <pre>{
