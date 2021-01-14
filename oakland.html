@@ -931,6 +931,8 @@ Error message and password prompt
 
 <li>遊戯王Duel Links/融合ヒーロー</li>
 
+<li>遊戯王Duel Links/藍神</li>
+
 <li>遊戯王Duel Links/絆の力!</li>
 
 </ul>
@@ -10567,7 +10569,7 @@ Error message and password prompt
 <div created="20201218234816879" modified="20201227025054469" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20201207055701361" modified="20201228050627012" title="$:/state/sidebar">
+<div created="20201207055701361" modified="20210114064152558" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20201207045155385" modified="20201228045452376" title="$:/state/tab--1498284803">
@@ -10591,7 +10593,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[遊戯王Duel Links]]" title="$:/StoryList">
+<div created="20210114064151007" list="[[遊戯王Duel Links]]" modified="20210114064157723" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -10600,7 +10602,7 @@ Error message and password prompt
 <div created="20201207051944324" list="JumpToolbar HomeToolbar" modified="20201207051944324" title="$:/tags/TopLeftBar">
 <pre></pre>
 </div>
-<div created="20201207045152966" modified="20201228050911881" title="$:/temp/advancedsearch">
+<div created="20201207045152966" modified="20210114065024357" title="$:/temp/advancedsearch">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10648,11 +10650,11 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;768&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1024&quot;
+            &quot;text&quot;: &quot;1080&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -11781,14 +11783,16 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div color="#0061fe" created="20201207052400297" icon="$:/images/fa5/brands/playstation" modified="20201228013952668" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201223020509283" modified="20201224064537709" tags="$:/tags/Macro" title="system/addTiddler">
+<div created="20201223020509283" modified="20210114065334695" tags="$:/tags/Macro" title="system/addTiddler">
 <pre>\define addTiddler(index:&quot;name&quot; tag:&quot;tag&quot; state:&quot;DataHolder&quot;)
 &lt;$set name=&quot;indexName&quot; value=&quot;$index$&quot;&gt;
 &lt;$set name=&quot;tagName&quot; value=&quot;$tag$&quot;&gt;
 &lt;$set name=&quot;stateTiddler&quot; value=&quot;$state$&quot;&gt;
+&lt;div class=&quot;at-$tag$&quot;&gt;
 &lt;$edit-text tiddler=&lt;&lt;_state&gt;&gt; index=&lt;&lt;indexName&gt;&gt; tag='input'/&gt;
 &lt;$button class=&quot;tc-btn-invisible&quot;&gt;
 &lt;$action-setfield $tiddler=&lt;&lt;_state&gt;&gt; $index=&lt;&lt;indexName&gt;&gt;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-focus-selector&quot; $param=&quot;.at-$tag$ input&quot;/&gt;
 {{$:/core/images/close-button}}
 &lt;/$button&gt;
 &lt;$set name=&quot;title&quot; tiddler=&lt;&lt;_state&gt;&gt; index=&lt;&lt;indexName&gt;&gt;&gt;
@@ -11801,6 +11805,7 @@ add
 &lt;/$list&gt;
 &lt;/$list&gt;
 &lt;/$set&gt;
+&lt;/div&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
@@ -12678,13 +12683,13 @@ remove
 |&lt;&lt;listLevel&gt;&gt; |
 |&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt;&lt;br/&gt;&lt;&lt;selectLevel&gt;&gt; |</pre>
 </div>
-<div created="20201224064254432" modified="20210111081408072" title="遊戯王Duel Links/DataHolder" type="application/json">
+<div created="20201224064254432" modified="20210114065347880" title="遊戯王Duel Links/DataHolder" type="application/json">
 <pre>{
     &quot;workCharacter&quot;: &quot;十六夜アキ&quot;,
     &quot;workSkill&quot;: &quot;利便ジャー&amp;デス・ドラゴン&quot;,
-    &quot;character&quot;: &quot;九十九遊馬&amp;アストラル&quot;,
     &quot;deck&quot;: &quot;シンクロ・コネクション&quot;,
-    &quot;skill&quot;: &quot;オーバーレイ・ゲイン&quot;
+    &quot;skill&quot;: &quot;オーバーレイ・ゲイン&quot;,
+    &quot;character&quot;: &quot;藍神&quot;
 }</pre>
 </div>
 <div created="20201227023518111" description="不要" icon="$:/images/fa5/regular/frown" modified="20201227023840071" tags="[[遊戯王Duel Links]] Fit" title="遊戯王Duel Links/Fit-0">
@@ -13210,6 +13215,9 @@ remove
 <pre></pre>
 </div>
 <div created="20201224074412076" modified="20201224074412076" tags="[[遊戯王Duel Links]] Skill" title="遊戯王Duel Links/融合ヒーロー">
+<pre></pre>
+</div>
+<div created="20210114065350471" modified="20210114065350471" tags="[[遊戯王Duel Links]] Character" title="遊戯王Duel Links/藍神">
 <pre></pre>
 </div>
 <div created="20201224080855592" modified="20201224080855592" tags="[[遊戯王Duel Links]] Skill" title="遊戯王Duel Links/絆の力!">
