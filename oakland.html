@@ -219,8 +219,6 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
-<li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/menubar</li>
-
 <li>$:/state/showeditpreview</li>
 
 <li>$:/state/sidebar</li>
@@ -264,6 +262,8 @@ Error message and password prompt
 <li>myToc</li>
 
 <li>PS4</li>
+
+<li>SaveToolbar</li>
 
 <li>system/addTiddler</li>
 
@@ -765,7 +765,7 @@ Error message and password prompt
 <div created="20201207054820772" modified="20201207054928679" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/control-panel">
 <pre>show</pre>
 </div>
-<div created="20201207054844117" modified="20210119021307003" title="$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/menubar">
+<div created="20201207054844117" modified="20210119021225120" title="$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/menubar">
 <pre>yes</pre>
 </div>
 <div created="20201207053942219" modified="20201207053942957" title="$:/config/plugins/menubar/breakpoint">
@@ -11131,16 +11131,13 @@ Error message and password prompt
 <div created="20201207044459504" modified="20201207044502353" title="$:/SiteTitle">
 <pre>樫のWiki</pre>
 </div>
-<div created="20210119021303965" modified="20210119021303965" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/menubar">
-<pre>yes</pre>
-</div>
 <div created="20210114071507256" modified="20210114071507256" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20210114070414002" modified="20210119021255630" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20210114070414002" modified="20210119021515278" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
-<div created="20210114070154062" modified="20210119021301806" title="$:/state/tab-1749438307">
+<div created="20210114070154062" modified="20210119021219180" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div created="20210114070156017" modified="20210114070156017" title="$:/state/tab-2065006209">
@@ -11152,7 +11149,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210119021258590" list="$:/ControlPanel [[遊戯王Duel Links]]" modified="20210119021258590" title="$:/StoryList">
+<div created="20210119021357958" list="[[遊戯王Duel Links]]" modified="20210119021357958" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -11304,7 +11301,7 @@ Error message and password prompt
 <div color="#ff6250" created="20201207052333227" icon="$:/core/images/home-button" modified="20201228014009452" title="Menu">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
 </div>
-<div created="20201207051224061" modified="20210114071441429" tags="$:/tags/Stylesheet mySystemTiddler" title="myStyleSheet" type="text/css">
+<div created="20201207051224061" modified="20210119021209901" tags="$:/tags/Stylesheet mySystemTiddler" title="myStyleSheet" type="text/css">
 <pre>nav.tc-menubar li.tc-menubar-item .tc-drop-down svg {
     fill: #333353;
 }
@@ -11327,6 +11324,9 @@ Error message and password prompt
 </div>
 <div color="#0061fe" created="20201207052400297" icon="$:/images/fa5/brands/playstation" modified="20201228013952668" tags="Menu" title="PS4">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
+</div>
+<div created="20210119021428168" modified="20210119021509557" tags="$:/tags/TopLeftBar mySystemTiddler" title="SaveToolbar">
+<pre>{{$:/core/ui/Buttons/save-wiki}}</pre>
 </div>
 <div created="20201223020509283" modified="20210114065334695" tags="$:/tags/Macro" title="system/addTiddler">
 <pre>\define addTiddler(index:&quot;name&quot; tag:&quot;tag&quot; state:&quot;DataHolder&quot;)
@@ -12232,7 +12232,7 @@ remove
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20201224064254432" modified="20210119020144153" title="遊戯王Duel Links/DataHolder" type="application/json">
+<div created="20201224064254432" modified="20210119020258596" title="遊戯王Duel Links/DataHolder" type="application/json">
 <pre>{
     &quot;workCharacter&quot;: &quot;十六夜アキ&quot;,
     &quot;workSkill&quot;: &quot;利便ジャー&amp;デス・ドラゴン&quot;,
