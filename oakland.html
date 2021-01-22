@@ -221,6 +221,8 @@ Error message and password prompt
 
 <li>$:/state/advancedsearch/currentTab</li>
 
+<li>$:/state/Icon List--1862055715</li>
+
 <li>$:/state/showeditpreview</li>
 
 <li>$:/state/sidebar</li>
@@ -11146,6 +11148,9 @@ Error message and password prompt
 <div created="20210122022257937" modified="20210122022257937" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/Standard</pre>
 </div>
+<div created="20210122022915894" modified="20210122022915894" title="$:/state/Icon List--1862055715">
+<pre></pre>
+</div>
 <div created="20210114071507256" modified="20210114071507256" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
@@ -11170,7 +11175,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210122022254866" list="[[遊戯王Duel Links]]" modified="20210122022412582" title="$:/StoryList">
+<div created="20210122022254866" list="[[遊戯王Duel Links]]" modified="20210122022815806" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -11297,12 +11302,27 @@ Error message and password prompt
 <div created="20201207050423843" modified="20201207050605974" tags="$:/tags/TopLeftBar mySystemTiddler" title="HomeToolbar">
 <pre>&lt;$link to=&quot;Menu&quot;&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;{{$:/core/images/home-button}}&lt;/$button&gt;&lt;/$link&gt;</pre>
 </div>
-<div created="20201224070529980" modified="20201227023056424" tags="mySystemTiddler" title="icon">
-<pre>&lt;table&gt;
-&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/Image]sort[]]&quot;&gt;
-&lt;tr&gt;&lt;td&gt;&lt;$transclude/&gt;&lt;/td&gt;&lt;td&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/td&gt;&lt;td&gt;&lt;$macrocall $name=&quot;copy-to-clipboard&quot; src=&lt;&lt;currentTiddler&gt;&gt;&gt; &lt;/tr&gt;
+<div created="20201224070529980" modified="20210122022908449" tags="mySystemTiddler" title="icon">
+<pre>&lt;$set name=&quot;keywordTiddler&quot; value=&lt;&lt;qualify &quot;$:/state/Icon List&quot;&gt;&gt;&gt;
+&lt;div class=&quot;tc-search icon-search&quot;&gt;
+&lt;$edit-text tiddler=&lt;&lt;keywordTiddler&gt;&gt; tag=&quot;input&quot;/&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;keywordTiddler&gt;&gt; text=&quot;&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-focus-selector&quot; $param=&quot;&quot;&quot;.icon-search input&quot;&quot;&quot;/&gt;
+{{$:/core/images/close-button}}
+&lt;/$button&gt;
+&lt;/div&gt;
+
+&lt;$set name=&quot;keyword&quot; tiddler=&lt;&lt;keywordTiddler&gt;&gt; field=&quot;text&quot;&gt;
+&lt;$list filter=&quot;[all[tiddlers+shadows]tag[$:/tags/Image]sort[title]search:title,description,keyword&lt;keyword&gt;]&quot;&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot; tooltip=&lt;&lt;currentTiddler&gt;&gt; message=&quot;tm-copy-to-clipboard&quot; param=&lt;&lt;currentTiddler&gt;&gt;&gt;
+&lt;span style=&quot;font-size:2em;&quot;&gt;
+&lt;$transclude/&gt;
+&lt;/span&gt;
+&lt;/$button&gt;
 &lt;/$list&gt;
-&lt;/table&gt;</pre>
+&lt;/$set&gt;
+&lt;/$set&gt;</pre>
 </div>
 <div color="#0061fe" created="20201228013534093" icon="$:/images/fa5/brands/apple" modified="20201228013947650" tags="Menu" title="iOS">
 <pre>&lt;&lt;myToc&gt;&gt;</pre>
