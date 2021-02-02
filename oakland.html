@@ -10929,7 +10929,7 @@ exports.random = function(source,operator,options) {
 <div created="20210122022257937" modified="20210202081724690" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/Standard</pre>
 </div>
-<div created="20210202082403415" modified="20210202084151876" title="$:/state/editNote-1742676373">
+<div created="20210202082403415" modified="20210202085255848" title="$:/state/editNote-1742676373">
 <pre>hide</pre>
 </div>
 <div created="20210122022915894" modified="20210122022915894" title="$:/state/Icon List--1862055715">
@@ -10959,7 +10959,7 @@ exports.random = function(source,operator,options) {
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210202080506898" list="[[遊戯王Duel Links/闇遊戯]] system/editNote ライザのアトリエ2 [[遊戯王Duel Links]]" modified="20210202083446531" title="$:/StoryList">
+<div created="20210202080506898" list="system/editNote ライザのアトリエ2 [[遊戯王Duel Links]]" modified="20210202085305751" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -11225,26 +11225,35 @@ $text$
 <div created="20201224015502772" modified="20201224015515732" tags="$:/tags/Macro" title="system/dataHolder">
 <pre>\define dataHolder() $(currentTiddler)$/DataHolder</pre>
 </div>
-<div created="20210202080531754" modified="20210202084139961" tags="$:/tags/Macro" title="system/editNote">
+<div created="20210202080531754" modified="20210202085555720" tags="$:/tags/Macro" title="system/editNote">
 <pre>\define editNote(index:&quot;selected&quot; field:&quot;text&quot; filter:&quot;&quot; class:&quot;&quot; state:&quot;DataHolder&quot;)
 &lt;$set name=&quot;indexName&quot; value=&quot;$index$&quot;&gt;
 &lt;$set name=&quot;stateTiddler&quot; value=&quot;$state$&quot;&gt;
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&lt;&lt;indexName&gt;&gt;&gt;
+&lt;$list filter=&quot;[&lt;_fullName&gt;is[tiddler]]&quot; variable=&quot;dummy&quot;&gt;
 &lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;qualify &quot;$:/state/editNote&quot;&gt;&gt; text=&quot;show&quot;&gt;
+
 &lt;$button set=&lt;&lt;qualify &quot;$:/state/editNote&quot;&gt;&gt; setTo=&quot;show&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 {{$:/core/images/edit-button}}
 &lt;/$button&gt;
+
 &lt;$transclude tiddler=&lt;&lt;_fullName&gt;&gt; field=&lt;&lt;__field__&gt;&gt; /&gt;
+
 &lt;/$reveal&gt;
 &lt;$reveal type=&quot;match&quot; state=&lt;&lt;qualify &quot;$:/state/editNote&quot;&gt;&gt; text=&quot;show&quot;&gt;
+
 &lt;$button set=&lt;&lt;qualify &quot;$:/state/editNote&quot;&gt;&gt; setTo=&quot;hide&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 {{$:/core/images/done-button}}
 &lt;/$button&gt;
+
 &lt;$edit-text tiddler=&lt;&lt;_fullName&gt;&gt; field=&lt;&lt;__field__&gt;&gt; tag=&quot;textarea&quot; focus=&quot;yes&quot;/&gt;
+
 &lt;/$reveal&gt;
+&lt;/$list&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
+&lt;div style=&quot;clear:both;&quot;/&gt;
 \end</pre>
 </div>
 <div created="20210202073800364" modified="20210202080221118" tags="$:/tags/Macro" title="system/randomPick">
@@ -11983,10 +11992,11 @@ $text$
 <div created="20201223120237428" modified="20201224064856646" tags="ライザのアトリエ Item" title="ライザのアトリエ/彗星岩">
 <pre></pre>
 </div>
-<div color="#669d34" created="20210131050650887" icon="$:/images/fa5/solid/dice-d6" modified="20210202080422627" tags="PS4" title="ライザのアトリエ2">
+<div color="#669d34" created="20210131050650887" icon="$:/images/fa5/solid/dice-d6" modified="20210202085445834" tags="PS4" title="ライザのアトリエ2">
 <pre>マップ
 &lt;&lt;addTiddler index:&quot;map&quot; tag:&quot;Map&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;map&quot; tag:&quot;Map&quot;&gt;&gt;
 &lt;&lt;select index:&quot;map&quot; filter:&quot;tag[Map]&quot;&gt;&gt; 
+&lt;&lt;editNote index:&quot;map&quot; field:&quot;text&quot;&gt;&gt;
 
 &lt;&lt;randomPick index:&quot;map&quot; filter:&quot;tag[Map]&quot;&gt;&gt;
 </pre>
@@ -11994,7 +12004,7 @@ $text$
 <div created="20210131045928330" modified="20210131050402233" title="ライザのアトリエ2/DataHolder" type="application/json">
 <pre>{}</pre>
 </div>
-<div color="#669d34" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20210202084019911" tags="Android iOS" title="遊戯王Duel Links">
+<div color="#669d34" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20210202085626527" tags="Android iOS" title="遊戯王Duel Links">
 <pre>\define linkSkill()
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;character&quot;&gt;
 &lt;$set name=&quot;skill&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;skill&quot;&gt;
@@ -12083,7 +12093,7 @@ remove
 &lt;/$set&gt;
 \end
 
-&lt;&lt;editNote index:&quot;character&quot; field:&quot;note&quot;&gt;&gt;
+&lt;&lt;editNote index:&quot;deck&quot; field:&quot;text&quot;&gt;&gt;
 
 &lt;div class=&quot;at-flex&quot;&gt;
 
@@ -12228,7 +12238,7 @@ remove
 <div created="20201228021119918" modified="20201228021119918" tags="[[遊戯王Duel Links]] Deck" title="遊戯王Duel Links/ガガガエクシーズ">
 <pre></pre>
 </div>
-<div created="20210122021950196" modified="20210122021950196" tags="[[遊戯王Duel Links]] Deck" title="遊戯王Duel Links/ガンズ・オブ・デスペラード">
+<div created="20210122021950196" modified="20210202085254736" tags="[[遊戯王Duel Links]] Deck" title="遊戯王Duel Links/ガンズ・オブ・デスペラード">
 <pre></pre>
 </div>
 <div created="20201224080601425" modified="20201224080601425" tags="[[遊戯王Duel Links]] Skill" title="遊戯王Duel Links/シークレット・ドロー">
@@ -12379,12 +12389,7 @@ remove
 <div created="20201224074553453" modified="20201224074553453" tags="[[遊戯王Duel Links]] Skill" title="遊戯王Duel Links/闇の力">
 <pre></pre>
 </div>
-<div created="20201224064805764" modified="20210202084146393" note="強いぞ
-強い!
-
-
-* あ
-* い" tags="[[遊戯王Duel Links]] Character" title="遊戯王Duel Links/闇遊戯" type="application/json">
+<div created="20201224064805764" modified="20210202085311993" tags="[[遊戯王Duel Links]] Character" title="遊戯王Duel Links/闇遊戯" type="application/json">
 <pre>{
     &quot;闇の力&quot;: &quot;true&quot;,
     &quot;魔導招来&quot;: &quot;true&quot;,
