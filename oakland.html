@@ -173,6 +173,8 @@ Error message and password prompt
 
 <li>$:/core</li>
 
+<li>$:/core/modules/filters/random.js</li>
+
 <li>$:/DefaultTiddlers</li>
 
 <li>$:/GitHub/Branch</li>
@@ -206,6 +208,8 @@ Error message and password prompt
 <li>$:/images/fa5/solid/cog</li>
 
 <li>$:/images/fa5/solid/dice-d6</li>
+
+<li>$:/Import</li>
 
 <li>$:/isEncrypted</li>
 
@@ -10675,6 +10679,49 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20150330232032570" modified="20150330233059182" module-type="filteroperator" tags="" title="$:/core/modules/filters/random.js" type="application/javascript">
+<pre>/*\
+title: $:/core/modules/filters/random.js
+type: application/javascript
+module-type: filteroperator
+
+Filter operator that selects one tiddler for each unique value of the specified field
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+&quot;use strict&quot;;
+
+/*
+Export our filter function
+*/
+exports.random = function(source,operator,options) {
+	var results = [];
+	// Convert to an array	
+	source(function(tiddler,title) {
+		results.push(title);
+	});		
+	// Get random slice from the array
+	var limit = Math.min(results.length,parseInt(operator.operand,10));
+	for (var i=0; i&lt;limit; i++)
+	{
+		var p = Math.floor(Math.random()*results.length);
+		var temp = results[i];
+		results[i] = results[p];
+		results[p] = temp;
+	}
+	if(operator.prefix === &quot;!&quot;) {
+		results = results.slice(-limit);
+	} else {
+		results = results.slice(0,limit);
+	}	
+	return results;
+};
+
+})();</pre>
+</div>
 <div created="20201207052718018" modified="20201207052718018" title="$:/DefaultTiddlers">
 <pre>[list[$:/StoryList]]</pre>
 </div>
@@ -10725,6 +10772,11 @@ Error message and password prompt
 </div>
 <div caption="dice-d6 (Solid)" tags="$:/tags/Image [[Font Awesome 5]] Solid" title="$:/images/fa5/solid/dice-d6">
 <pre>&lt;svg class=&quot;tc-image-dice-d6 tc-image-button&quot; width=&quot;22pt&quot; height=&quot;22pt&quot; viewBox=&quot;0 0 448 512&quot;&gt;&lt;path d=&quot;M422.19 109.95L256.21 9.07c-19.91-12.1-44.52-12.1-64.43 0L25.81 109.95c-5.32 3.23-5.29 11.27.06 14.46L224 242.55l198.14-118.14c5.35-3.19 5.38-11.22.05-14.46zm13.84 44.63L240 271.46v223.82c0 12.88 13.39 20.91 24.05 14.43l152.16-92.48c19.68-11.96 31.79-33.94 31.79-57.7v-197.7c0-6.41-6.64-10.43-11.97-7.25zM0 161.83v197.7c0 23.77 12.11 45.74 31.79 57.7l152.16 92.47c10.67 6.48 24.05-1.54 24.05-14.43V271.46L11.97 154.58C6.64 151.4 0 155.42 0 161.83z&quot;/&gt;&lt;/svg&gt;</pre>
+</div>
+<div status="complete" title="$:/Import">
+<pre>The following tiddlers were imported:
+
+# [[$:/core/modules/filters/random.js]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10898,9 +10950,9 @@ Error message and password prompt
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>no</pre>
+<pre>yes</pre>
 </div>
-<div created="20210202073737802" list="system/randomPick system/setField ライザのアトリエ2 [[遊戯王Duel Links]]" modified="20210202074804657" title="$:/StoryList">
+<div created="20210202073737802" list="$:/Import system/randomPick system/setField ライザのアトリエ2 [[遊戯王Duel Links]]" modified="20210202074804657" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
