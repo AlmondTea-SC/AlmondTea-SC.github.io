@@ -173,8 +173,6 @@ Error message and password prompt
 
 <li>$:/core</li>
 
-<li>$:/core/modules/filters/random.js</li>
-
 <li>$:/DefaultTiddlers</li>
 
 <li>$:/GitHub/Branch</li>
@@ -10679,49 +10677,6 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20150330232032570" modified="20150330233059182" module-type="filteroperator" tags="" title="$:/core/modules/filters/random.js" type="application/javascript">
-<pre>/*\
-title: $:/core/modules/filters/random.js
-type: application/javascript
-module-type: filteroperator
-
-Filter operator that selects one tiddler for each unique value of the specified field
-
-\*/
-(function(){
-
-/*jslint node: true, browser: true */
-/*global $tw: false */
-&quot;use strict&quot;;
-
-/*
-Export our filter function
-*/
-exports.random = function(source,operator,options) {
-	var results = [];
-	// Convert to an array	
-	source(function(tiddler,title) {
-		results.push(title);
-	});		
-	// Get random slice from the array
-	var limit = Math.min(results.length,parseInt(operator.operand,10));
-	for (var i=0; i&lt;limit; i++)
-	{
-		var p = Math.floor(Math.random()*results.length);
-		var temp = results[i];
-		results[i] = results[p];
-		results[p] = temp;
-	}
-	if(operator.prefix === &quot;!&quot;) {
-		results = results.slice(-limit);
-	} else {
-		results = results.slice(0,limit);
-	}	
-	return results;
-};
-
-})();</pre>
-</div>
 <div created="20201207052718018" modified="20201207052718018" title="$:/DefaultTiddlers">
 <pre>[list[$:/StoryList]]</pre>
 </div>
@@ -10776,7 +10731,285 @@ exports.random = function(source,operator,options) {
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/core/modules/filters/random.js]]</pre>
+# [[$:/config/AutoSave]]
+# [[$:/config/fa5/decorate-extdoclinks]]
+# [[$:/config/fa5/decorate-extlinks]]
+# [[$:/config/fa5/decorate-syslinks]]
+# [[$:/config/fa5/decorate-wk-extlinks]]
+# [[$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/control-panel]]
+# [[$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/menubar]]
+# [[$:/config/plugins/menubar/breakpoint]]
+# [[$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/contents]]
+# [[$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/pagecontrols]]
+# [[$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/search]]
+# [[$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/sidebar]]
+# [[$:/config/RelinkOnRename]]
+# [[$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/new-here]]
+# [[$:/DefaultTiddlers]]
+# [[$:/GitHub/Branch]]
+# [[$:/GitHub/Filename]]
+# [[$:/GitHub/Path]]
+# [[$:/GitHub/Repo]]
+# [[$:/GitHub/Username]]
+# [[$:/images/fa5/brands/android]]
+# [[$:/images/fa5/brands/apple]]
+# [[$:/images/fa5/brands/playstation]]
+# [[$:/images/fa5/regular/frown]]
+# [[$:/images/fa5/regular/grimace]]
+# [[$:/images/fa5/regular/grin]]
+# [[$:/images/fa5/regular/grin-stars]]
+# [[$:/images/fa5/regular/grin-wink]]
+# [[$:/images/fa5/regular/meh]]
+# [[$:/images/fa5/solid/cog]]
+# [[$:/images/fa5/solid/dice-d6]]
+# [[$:/isEncrypted]]
+# [[$:/palette]]
+# [[$:/plugins/tiddlywiki/menubar]]
+# [[$:/SiteSubtitle]]
+# [[$:/SiteTitle]]
+# [[$:/status/RequireReloadDueToPluginChange]]
+# [[$:/tags/MenuBar]]
+# [[$:/tags/TopLeftBar]]
+# [[$:/themes/tiddlywiki/snowwhite]]
+# [[$:/themes/tiddlywiki/vanilla]]
+# [[$:/themes/tiddlywiki/vanilla/options/sidebarlayout]]
+# [[Android]]
+# [[HomeToolbar]]
+# [[icon]]
+# [[iOS]]
+# [[JumpToolbar]]
+# [[Menu]]
+# [[myStyleSheet]]
+# [[mySystemTiddler]]
+# [[myToc]]
+# [[PS4]]
+# [[system/addTiddler]]
+# [[system/candidateList]]
+# [[system/childName]]
+# [[system/copyField]]
+# [[system/dataHolder]]
+# [[system/select]]
+# [[system/setField]]
+# [[system/utilities]]
+# [[ライザのアトリエ]]
+# [[ライザのアトリエ/DataHolder]]
+# [[ライザのアトリエ/アイヒェ]]
+# [[ライザのアトリエ/アクア鉱]]
+# [[ライザのアトリエ/アマタイト鉱]]
+# [[ライザのアトリエ/アンバーライト]]
+# [[ライザのアトリエ/イナズマ鉱]]
+# [[ライザのアトリエ/ウィングプラント]]
+# [[ライザのアトリエ/エグゾフィッシュ]]
+# [[ライザのアトリエ/エメラルドグラス]]
+# [[ライザのアトリエ/オオカブト]]
+# [[ライザのアトリエ/きれいな貝殻]]
+# [[ライザのアトリエ/きれいな水]]
+# [[ライザのアトリエ/クーケンフルーツ]]
+# [[ライザのアトリエ/クミネの実]]
+# [[ライザのアトリエ/クミネの毒液]]
+# [[ライザのアトリエ/ケモノ肉]]
+# [[ライザのアトリエ/コゲクサ]]
+# [[ライザのアトリエ/コベリナイト]]
+# [[ライザのアトリエ/サビついた剣]]
+# [[ライザのアトリエ/サルディン]]
+# [[ライザのアトリエ/シャボン草]]
+# [[ライザのアトリエ/スイートリーフ]]
+# [[ライザのアトリエ/スカイバブル]]
+# [[ライザのアトリエ/スピリットフェザー]]
+# [[ライザのアトリエ/スピリットフラワー]]
+# [[ライザのアトリエ/セイタカトーン]]
+# [[ライザのアトリエ/デルフィローズ]]
+# [[ライザのアトリエ/トーン]]
+# [[ライザのアトリエ/トゲトゲ]]
+# [[ライザのアトリエ/ナナシ草]]
+# [[ライザのアトリエ/ノライモ]]
+# [[ライザのアトリエ/パールクリスタル]]
+# [[ライザのアトリエ/ハチの巣]]
+# [[ライザのアトリエ/プニゼリー]]
+# [[ライザのアトリエ/ぷにぷに玉・金]]
+# [[ライザのアトリエ/ぷにぷに玉・黒]]
+# [[ライザのアトリエ/ぷにぷに玉・青]]
+# [[ライザのアトリエ/ぷにぷに玉・緑]]
+# [[ライザのアトリエ/プルムル]]
+# [[ライザのアトリエ/ペントナイト]]
+# [[ライザのアトリエ/マグネマルモア]]
+# [[ライザのアトリエ/メディウム薬骨]]
+# [[ライザのアトリエ/ヤギミルク]]
+# [[ライザのアトリエ/やわやかい砂]]
+# [[ライザのアトリエ/よく燃える樹皮]]
+# [[ライザのアトリエ/ラピス・パピヨン]]
+# [[ライザのアトリエ/ランタン草]]
+# [[ライザのアトリエ/ローズビー]]
+# [[ライザのアトリエ/安らぎの花]]
+# [[ライザのアトリエ/異界のコア]]
+# [[ライザのアトリエ/汚染された腐葉土]]
+# [[ライザのアトリエ/化石樹]]
+# [[ライザのアトリエ/何かのタマゴ]]
+# [[ライザのアトリエ/甘露岩]]
+# [[ライザのアトリエ/巨大なツメ]]
+# [[ライザのアトリエ/共振の玉石]]
+# [[ライザのアトリエ/苦い根っこ]]
+# [[ライザのアトリエ/古き騎士の紋章]]
+# [[ライザのアトリエ/古代の石柱]]
+# [[ライザのアトリエ/古代樹の枝]]
+# [[ライザのアトリエ/香る蜜木]]
+# [[ライザのアトリエ/紙くず]]
+# [[ライザのアトリエ/自然油]]
+# [[ライザのアトリエ/七色葡萄]]
+# [[ライザのアトリエ/七煌原石]]
+# [[ライザのアトリエ/若木の枝葉]]
+# [[ライザのアトリエ/小さな晶石]]
+# [[ライザのアトリエ/新鮮な肉]]
+# [[ライザのアトリエ/正体不明の原石]]
+# [[ライザのアトリエ/生ゴミ]]
+# [[ライザのアトリエ/創生の逆さ石]]
+# [[ライザのアトリエ/束縛する鋼糸]]
+# [[ライザのアトリエ/大きな羽根]]
+# [[ライザのアトリエ/大きな骨]]
+# [[ライザのアトリエ/大貝の白玉]]
+# [[ライザのアトリエ/中和剤・青]]
+# [[ライザのアトリエ/超鋼ギア]]
+# [[ライザのアトリエ/土魚の暴牙]]
+# [[ライザのアトリエ/動物の毛皮]]
+# [[ライザのアトリエ/燃えカス]]
+# [[ライザのアトリエ/燃える砂]]
+# [[ライザのアトリエ/白灰砂]]
+# [[ライザのアトリエ/病忘れの花]]
+# [[ライザのアトリエ/風化した石材]]
+# [[ライザのアトリエ/泡立つ水]]
+# [[ライザのアトリエ/魔獣の毒袋]]
+# [[ライザのアトリエ/魔獣の背ビレ]]
+# [[ライザのアトリエ/魔獣の鱗]]
+# [[ライザのアトリエ/魔石の欠片]]
+# [[ライザのアトリエ/彗星岩]]
+# [[遊戯王Duel Links]]
+# [[遊戯王Duel Links/DataHolder]]
+# [[遊戯王Duel Links/Fit-0]]
+# [[遊戯王Duel Links/Fit-1]]
+# [[遊戯王Duel Links/Fit-10]]
+# [[遊戯王Duel Links/Fit-3]]
+# [[遊戯王Duel Links/Fit-7]]
+# [[遊戯王Duel Links/LP増強α]]
+# [[遊戯王Duel Links/LP増強β]]
+# [[遊戯王Duel Links/LP増強γ]]
+# [[遊戯王Duel Links/LP増強δ]]
+# [[遊戯王Duel Links/LP増強Ω]]
+# [[遊戯王Duel Links/あーばよ!]]
+# [[遊戯王Duel Links/アイアイ・アイアン]]
+# [[遊戯王Duel Links/アロマ]]
+# [[遊戯王Duel Links/イシズ・イシュタール]]
+# [[遊戯王Duel Links/インセクター羽蛾]]
+# [[遊戯王Duel Links/ウォリアーズ・ブースター]]
+# [[遊戯王Duel Links/ヴォルカニック・バーン・デッキ]]
+# [[遊戯王Duel Links/エド・フェニックス]]
+# [[遊戯王Duel Links/エンジェル・バトン]]
+# [[遊戯王Duel Links/オースチン・オブライエン]]
+# [[遊戯王Duel Links/オーバーレイ・ゲイン]]
+# [[遊戯王Duel Links/おとり戦術]]
+# [[遊戯王Duel Links/オルタナティブ(白龍)]]
+# [[遊戯王Duel Links/お前の力はオレには通用しない]]
+# [[遊戯王Duel Links/カードをめくるだけの亡霊]]
+# [[遊戯王Duel Links/カオス・フィールドを駆け抜けろ!!]]
+# [[遊戯王Duel Links/ガガガエクシーズ]]
+# [[遊戯王Duel Links/シークレット・ドロー]]
+# [[遊戯王Duel Links/シンクロ・コネクション]]
+# [[遊戯王Duel Links/スリカエ]]
+# [[遊戯王Duel Links/ダイナソー竜崎]]
+# [[遊戯王Duel Links/ディフェンス・チャージ]]
+# [[遊戯王Duel Links/デュエルスタンバイ]]
+# [[遊戯王Duel Links/デュエル飯]]
+# [[遊戯王Duel Links/ドラグニティ・オーバードライブ]]
+# [[遊戯王Duel Links/ドラゴニック・リンカネーション]]
+# [[遊戯王Duel Links/ドローセンス:ハイレベル]]
+# [[遊戯王Duel Links/ドローセンス:ローレベル]]
+# [[遊戯王Duel Links/ドローセンス:闇]]
+# [[遊戯王Duel Links/ドローセンス:炎]]
+# [[遊戯王Duel Links/ドローセンス:光]]
+# [[遊戯王Duel Links/ドローセンス:水]]
+# [[遊戯王Duel Links/ドローセンス:地]]
+# [[遊戯王Duel Links/ドローセンス:風]]
+# [[遊戯王Duel Links/ドローセンス:魔法・罠]]
+# [[遊戯王Duel Links/ドローパス]]
+# [[遊戯王Duel Links/ナンバーズ・ルール]]
+# [[遊戯王Duel Links/はい! デュエル飯よ!]]
+# [[遊戯王Duel Links/バランス]]
+# [[遊戯王Duel Links/バンデット・キース]]
+# [[遊戯王Duel Links/ヒーロー・ジェネレーション]]
+# [[遊戯王Duel Links/ヒーローの戦う舞台]]
+# [[遊戯王Duel Links/ファイアー・リロード]]
+# [[遊戯王Duel Links/フェアリー・リターン]]
+# [[遊戯王Duel Links/フライング寄生]]
+# [[遊戯王Duel Links/ブリキの凱旋]]
+# [[遊戯王Duel Links/ブレイズ・キャノン準備!]]
+# [[遊戯王Duel Links/ブレイズ・キャノン展開!]]
+# [[遊戯王Duel Links/ヘビースターター]]
+# [[遊戯王Duel Links/マジックコンボ]]
+# [[遊戯王Duel Links/モンスターチェンジ・進化]]
+# [[遊戯王Duel Links/ライフコスト0]]
+# [[遊戯王Duel Links/ラスト・ギャンブル]]
+# [[遊戯王Duel Links/リスタート]]
+# [[遊戯王Duel Links/リベンジャー&amp;デス・ドラゴン]]
+# [[遊戯王Duel Links/レベル上昇]]
+# [[遊戯王Duel Links/闇の地平より現れるもの]]
+# [[遊戯王Duel Links/闇の力]]
+# [[遊戯王Duel Links/闇遊戯]]
+# [[遊戯王Duel Links/運を味方に!]]
+# [[遊戯王Duel Links/運命のステージ]]
+# [[遊戯王Duel Links/炎王の復活]]
+# [[遊戯王Duel Links/海の伝説]]
+# [[遊戯王Duel Links/海馬モクバ(DM)]]
+# [[遊戯王Duel Links/海馬モクバ(DSOD)]]
+# [[遊戯王Duel Links/海馬瀬人(DM)]]
+# [[遊戯王Duel Links/海馬瀬人(DSOD)]]
+# [[遊戯王Duel Links/凱旋の真紅眼]]
+# [[遊戯王Duel Links/梶木漁太]]
+# [[遊戯王Duel Links/観月小鳥]]
+# [[遊戯王Duel Links/奇跡のドロー]]
+# [[遊戯王Duel Links/希望の戦士 No.39]]
+# [[遊戯王Duel Links/鬼柳京介]]
+# [[遊戯王Duel Links/虚無の波動]]
+# [[遊戯王Duel Links/恐竜王国]]
+# [[遊戯王Duel Links/恐竜重撃]]
+# [[遊戯王Duel Links/九十九遊馬&amp;アストラル]]
+# [[遊戯王Duel Links/剣闘獣]]
+# [[遊戯王Duel Links/孔雀舞]]
+# [[遊戯王Duel Links/香水戦術(アロマ・タクティクス)]]
+# [[遊戯王Duel Links/昆虫結束&lt;毒鱗粉&gt;]]
+# [[遊戯王Duel Links/根性]]
+# [[遊戯王Duel Links/鮫の領域]]
+# [[遊戯王Duel Links/十六夜アキ]]
+# [[遊戯王Duel Links/勝利の方程式は全て揃った!]]
+# [[遊戯王Duel Links/城之内克也(DM)]]
+# [[遊戯王Duel Links/深海の帝王 No.32]]
+# [[遊戯王Duel Links/真崎杏子(DM)]]
+# [[遊戯王Duel Links/神代凌牙]]
+# [[遊戯王Duel Links/進化した最強ドラゴン]]
+# [[遊戯王Duel Links/聖なる守護]]
+# [[遊戯王Duel Links/聖騎士]]
+# [[遊戯王Duel Links/赤き竜の痣:ドラゴン・ヘッド]]
+# [[遊戯王Duel Links/赤き竜の痣:ドラゴン・レッグ]]
+# [[遊戯王Duel Links/戦士たちの草原]]
+# [[遊戯王Duel Links/戦力補充]]
+# [[遊戯王Duel Links/調律]]
+# [[遊戯王Duel Links/超重]]
+# [[遊戯王Duel Links/頂に立つ者]]
+# [[遊戯王Duel Links/沈黙の戦士]]
+# [[遊戯王Duel Links/弟子の召喚]]
+# [[遊戯王Duel Links/天使の微笑み]]
+# [[遊戯王Duel Links/不動遊星]]
+# [[遊戯王Duel Links/武田鉄男]]
+# [[遊戯王Duel Links/武藤遊戯(DSOD)]]
+# [[遊戯王Duel Links/粉砕!]]
+# [[遊戯王Duel Links/墓所封印]]
+# [[遊戯王Duel Links/墓標からのリベンジャー]]
+# [[遊戯王Duel Links/魔導招来]]
+# [[遊戯王Duel Links/魔力カウンターブースト]]
+# [[遊戯王Duel Links/未来予知]]
+# [[遊戯王Duel Links/遊城十代]]
+# [[遊戯王Duel Links/融合の使い手]]
+# [[遊戯王Duel Links/融合ヒーロー]]
+# [[遊戯王Duel Links/藍神]]
+# [[遊戯王Duel Links/絆の力!]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10922,23 +11155,23 @@ exports.random = function(source,operator,options) {
 <div created="20201207044459504" modified="20201207044502353" title="$:/SiteTitle">
 <pre>樫のWiki</pre>
 </div>
-<div created="20210122022257937" modified="20210202073301774" title="$:/state/advancedsearch/currentTab">
-<pre>$:/core/ui/AdvancedSearch/System</pre>
+<div created="20210122022257937" modified="20210122022257937" title="$:/state/advancedsearch/currentTab">
+<pre>$:/core/ui/AdvancedSearch/Standard</pre>
 </div>
 <div created="20210122022915894" modified="20210122022915894" title="$:/state/Icon List--1862055715">
 <pre></pre>
 </div>
-<div created="20210114071507256" modified="20210202071900072" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20210114071507256" modified="20210131045514225" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
-<div created="20210114070414002" modified="20210202071123707" title="$:/state/sidebar">
+<div created="20210114070414002" modified="20210202073728240" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20210122022138679" modified="20210122022138679" title="$:/state/tab--1240436422">
 <pre>$:/core/ui/TiddlerInfo/Tagging</pre>
 </div>
-<div created="20210122022257937" modified="20210202073301774" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/System</pre>
+<div created="20210122022257937" modified="20210122022257937" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Standard</pre>
 </div>
 <div created="20210114070154062" modified="20210119021219180" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Plugins</pre>
@@ -10946,13 +11179,13 @@ exports.random = function(source,operator,options) {
 <div created="20210114070156017" modified="20210114070156017" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20210114070407725" modified="20210131050243084" title="$:/state/tab/sidebar--595412856">
+<div created="20210114070407725" modified="20210202073733223" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>yes</pre>
+<pre>no</pre>
 </div>
-<div created="20210202071036323" list="$:/Import $:/AdvancedSearch system/randomPick system/utilities system/select system/dataHolder system/copyField system/candidateList system/addTiddler system/childName system/setField system/copyField ライザのアトリエ2 [[遊戯王Duel Links]]" modified="20210202073256858" title="$:/StoryList">
+<div created="20210202073737802" list="system/randomPick $:/AdvancedSearch system/setField ライザのアトリエ2 [[遊戯王Duel Links]]" modified="20210202074804657" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -11218,18 +11451,16 @@ $text$
 <div created="20201224015502772" modified="20201224015515732" tags="$:/tags/Macro" title="system/dataHolder">
 <pre>\define dataHolder() $(currentTiddler)$/DataHolder</pre>
 </div>
-<div created="20210202072859485" modified="20210202073657335" tags="$:/tags/Macro" title="system/randomPick">
-<pre>\define select(index:&quot;selected&quot; filter state:&quot;DataHolder&quot;)
+<div created="20210202073800364" modified="20210202075438007" tags="$:/tags/Macro" title="system/randomPick">
+<pre>\define randomPick(text:&quot;Random&quot; index:&quot;selected&quot; filter:&quot;&quot; class:&quot;&quot; state:&quot;DataHolder&quot;)
 &lt;$set name=&quot;indexName&quot; value=&quot;$index$&quot;&gt;
 &lt;$set name=&quot;stateTiddler&quot; value=&quot;$state$&quot;&gt;
-&lt;$select tiddler=&lt;&lt;_state&gt;&gt;  index=&lt;&lt;indexName&gt;&gt;&gt;
-&lt;$list filter=&quot;[tag&lt;currentTiddler&gt;$filter$removeprefix&lt;currentTiddler&gt;removeprefix[/]sort[]]&quot;&gt;
-&lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/option&gt;
+&lt;$button class=&quot;$class$&quot;&gt;
+&lt;$list filter=&quot;[tag&lt;currentTiddler&gt;$filter$removeprefix&lt;currentTiddler&gt;removeprefix[/]random[1]]&quot; variable=&quot;picked&quot;&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;_state&gt;&gt; $index=&quot;$index$&quot; $value=&lt;&lt;picked&gt;&gt;/&gt;
+&lt;&lt;picked&gt;&gt;
 &lt;/$list&gt;
-&lt;/$select&gt;
-&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
-&lt;$action-setfield $tiddler=&lt;&lt;_state&gt;&gt; $index=&lt;&lt;indexName&gt;&gt;/&gt;
-{{$:/core/images/close-button}}
+$text$
 &lt;/$button&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
@@ -11965,7 +12196,7 @@ $text$
 <div created="20210131045928330" modified="20210131050402233" title="ライザのアトリエ2/DataHolder" type="application/json">
 <pre>{}</pre>
 </div>
-<div color="#669d34" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20210114071545126" tags="Android iOS" title="遊戯王Duel Links">
+<div color="#669d34" created="20201224064107352" icon="$:/images/fa5/solid/dice-d6" modified="20210202075221250" tags="Android iOS" title="遊戯王Duel Links">
 <pre>\define linkSkill()
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;character&quot;&gt;
 &lt;$set name=&quot;skill&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&quot;skill&quot;&gt;
@@ -12053,6 +12284,8 @@ remove
 &lt;/ul&gt;
 &lt;/$set&gt;
 \end
+
+&lt;&lt;randomPick index:&quot;character&quot; filter:&quot;tag[Character]&quot;&gt;&gt;
 
 &lt;div class=&quot;at-flex&quot;&gt;
 
