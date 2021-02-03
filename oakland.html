@@ -223,6 +223,8 @@ Error message and password prompt
 
 <li>$:/state/advancedsearch/currentTab</li>
 
+<li>$:/state/editNote--1764137960</li>
+
 <li>$:/state/editNote-1742676373</li>
 
 <li>$:/state/editNote-74968525</li>
@@ -10971,10 +10973,13 @@ exports.random = function(source,operator,options) {
 <div created="20210122022257937" modified="20210202081724690" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/Standard</pre>
 </div>
+<div created="20210203123216338" modified="20210203123513706" title="$:/state/editNote--1764137960">
+<pre>hide</pre>
+</div>
 <div created="20210202082403415" modified="20210202085705529" title="$:/state/editNote-1742676373">
 <pre>hide</pre>
 </div>
-<div created="20210203062412709" modified="20210203121331095" title="$:/state/editNote-74968525">
+<div created="20210203062412709" modified="20210203123508600" title="$:/state/editNote-74968525">
 <pre>hide</pre>
 </div>
 <div created="20210122022915894" modified="20210122022915894" title="$:/state/Icon List--1862055715">
@@ -10983,7 +10988,7 @@ exports.random = function(source,operator,options) {
 <div created="20210114071507256" modified="20210131045514225" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210114070414002" modified="20210203122737051" title="$:/state/sidebar">
+<div created="20210114070414002" modified="20210203124031197" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210122022138679" modified="20210122022138679" title="$:/state/tab--1240436422">
@@ -11004,7 +11009,7 @@ exports.random = function(source,operator,options) {
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210203120137055" list="[[ラクガキ キングダム]] ライザのアトリエ2 [[遊戯王Duel Links]]" modified="20210203122646224" title="$:/StoryList">
+<div created="20210203120137055" list="[[ラクガキ キングダム]] ライザのアトリエ2 [[遊戯王Duel Links]]" modified="20210203123717277" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -11226,7 +11231,7 @@ add
 &lt;/$set&gt;
 \end</pre>
 </div>
-<div created="20201223075415378" modified="20201224073253934" tags="$:/tags/Macro" title="system/candidateList">
+<div created="20201223075415378" modified="20210203124025989" tags="$:/tags/Macro" title="system/candidateList">
 <pre>\define candidateList(index:&quot;name&quot; tag:&quot;tag&quot; state:&quot;DataHolder&quot;)
 &lt;$set name=&quot;indexName&quot; value=&quot;$index$&quot;&gt;
 &lt;$set name=&quot;tagName&quot; value=&quot;$tag$&quot;&gt;
@@ -11235,7 +11240,7 @@ add
 &lt;$list filter=&quot;[&lt;childName&gt;minlength[1]]&quot; variable=&quot;dummy&quot;&gt;
 &lt;ul&gt;
 &lt;$list filter=&quot;[tag&lt;currentTiddler&gt;tag&lt;tagName&gt;prefix&lt;_fullName&gt;sort[]!&lt;_fullName&gt;]&quot; variable=&quot;candidate&quot;&gt;
-&lt;$list filter=&quot;[&lt;candidate&gt;split[/]rest[]join[/]]&quot; variable=&quot;name&quot;&gt;
+&lt;$list filter=&quot;[&lt;candidate&gt;removeprefix&lt;currentTiddler&gt;removeprefix[/]]&quot; variable=&quot;name&quot;&gt;
 &lt;li&gt;
 &lt;$button class=&quot;tc-btn-invisible tc-tiddlylink&quot;&gt;
 &lt;$action-setfield $tiddler=&lt;&lt;_state&gt;&gt; $index=&lt;&lt;indexName&gt;&gt; $value=&lt;&lt;name&gt;&gt;/&gt;
@@ -11270,14 +11275,13 @@ $text$
 <div created="20201224015502772" modified="20201224015515732" tags="$:/tags/Macro" title="system/dataHolder">
 <pre>\define dataHolder() $(currentTiddler)$/DataHolder</pre>
 </div>
-<div created="20210202080531754" modified="20210203120533466" tags="$:/tags/Macro" title="system/editNote">
+<div created="20210202080531754" modified="20210203123608849" tags="$:/tags/Macro" title="system/editNote">
 <pre>\define editNote(index:&quot;selected&quot; field:&quot;text&quot; filter:&quot;&quot; class:&quot;&quot; state:&quot;DataHolder&quot;)
 &lt;$set name=&quot;indexName&quot; value=&quot;$index$&quot;&gt;
 &lt;$set name=&quot;stateTiddler&quot; value=&quot;$state$&quot;&gt;
 &lt;$set name=&quot;childName&quot; tiddler=&lt;&lt;dataHolder&gt;&gt; index=&lt;&lt;indexName&gt;&gt;&gt;
 &lt;$list filter=&quot;[&lt;_fullName&gt;is[tiddler]]&quot; variable=&quot;dummy&quot;&gt;
 &lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;qualify &quot;$:/state/editNote&quot;&gt;&gt; text=&quot;show&quot;&gt;
-
 &lt;$button set=&lt;&lt;qualify &quot;$:/state/editNote&quot;&gt;&gt; setTo=&quot;show&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 {{$:/core/images/edit-button}}
 &lt;/$button&gt;
@@ -11292,9 +11296,7 @@ $text$
 &lt;$button set=&lt;&lt;qualify &quot;$:/state/editNote&quot;&gt;&gt; setTo=&quot;hide&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 {{$:/core/images/done-button}}
 &lt;/$button&gt;
-
 &lt;$edit-text tiddler=&lt;&lt;_fullName&gt;&gt; field=&lt;&lt;__field__&gt;&gt; tag=&quot;textarea&quot; focus=&quot;yes&quot;/&gt;
-
 &lt;/$reveal&gt;
 &lt;/$list&gt;
 &lt;/$set&gt;
@@ -12058,7 +12060,7 @@ $text$
 &lt;&lt;editNote index:&quot;scenario&quot; field:&quot;text&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20210203121847288" modified="20210203121847288" title="ラクガキ キングダム/DataHolder" type="application/json">
+<div created="20210203121847288" modified="20210203124046076" title="ラクガキ キングダム/DataHolder" type="application/json">
 <pre>{
     &quot;scenario&quot;: &quot;ラクガキカルテット&quot;
 }</pre>
@@ -12075,9 +12077,9 @@ $text$
 |ボスバトル曲 ||||||||
 |伝説のバトル曲 ||||||||</pre>
 </div>
-<div created="20210203120628987" modified="20210203122711147" title="ラクガキ キングダム/ラクガキカルテット/DataHolder" type="application/json">
+<div created="20210203120628987" modified="20210203124105753" title="ラクガキ キングダム/ラクガキカルテット/DataHolder" type="application/json">
 <pre>{
-    &quot;episode&quot;: &quot;ギブアンドテイク&quot;
+    &quot;episode&quot;: &quot;竜馬がやって来た その2&quot;
 }</pre>
 </div>
 <div created="20210203070447328" modified="20210203122314061" tags="Episode [[ラクガキ キングダム/ラクガキカルテット]]" title="ラクガキ キングダム/ラクガキカルテット/カンタブリア料理 その2">
