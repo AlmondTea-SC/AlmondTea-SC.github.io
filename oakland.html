@@ -11041,13 +11041,13 @@ exports.random = function(source,operator,options) {
 <div created="20210122022257937" modified="20210202081724690" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/Standard</pre>
 </div>
-<div created="20210203123216338" modified="20210211113802116" title="$:/state/editNote--1764137960">
+<div created="20210203123216338" modified="20210211114852193" title="$:/state/editNote--1764137960">
 <pre>hide</pre>
 </div>
 <div created="20210202082403415" modified="20210202085705529" title="$:/state/editNote-1742676373">
 <pre>hide</pre>
 </div>
-<div created="20210203062412709" modified="20210211114152042" title="$:/state/editNote-74968525">
+<div created="20210203062412709" modified="20210211114913050" title="$:/state/editNote-74968525">
 <pre>hide</pre>
 </div>
 <div created="20210211113626610" modified="20210211113627693" title="$:/state/episodeTitle--1865581995">
@@ -12149,15 +12149,11 @@ $text$
 <div created="20210131045928330" modified="20210131050402233" title="ライザのアトリエ2/DataHolder" type="application/json">
 <pre>{}</pre>
 </div>
-<div color="#669d34" created="20210203060835506" icon="$:/images/fa5/solid/dice-d6" modified="20210211114121479" tags="Android iOS" title="ラクガキ キングダム">
+<div color="#669d34" created="20210203060835506" icon="$:/images/fa5/solid/dice-d6" modified="20210211114842834" tags="Android iOS" title="ラクガキ キングダム">
 <pre>シナリオ
 &lt;&lt;addTiddler index:&quot;scenario&quot; tag:&quot;Scenario&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;scenario&quot; tag:&quot;Scenario&quot;&gt;&gt;
 &lt;&lt;select index:&quot;scenario&quot; filter:&quot;tag[Scenario]&quot;&gt;&gt; 
 &lt;&lt;editNote index:&quot;scenario&quot; field:&quot;text&quot;&gt;&gt;
-
-&lt;$tiddler tiddler=&quot;ラクガキ キングダム/ラクガキカルテット/Test&quot;&gt;
-&lt;$transclude tiddler=&quot;ラクガキキングダム/エピソード&quot;/&gt;
-&lt;/$tiddler&gt;
 
 |属性|キャラクター|&lt;|&lt;|h
 |!氷|ゆっきー(風)|アイスティー||
@@ -12172,11 +12168,14 @@ $text$
     &quot;scenario&quot;: &quot;ラクガキカルテット&quot;
 }</pre>
 </div>
-<div created="20210203115908337" modified="20210203115939193" tags="[[ラクガキ キングダム]] Scenario" title="ラクガキ キングダム/ラクガキカルテット">
+<div created="20210203115908337" modified="20210211114907664" tags="[[ラクガキ キングダム]] Scenario" title="ラクガキ キングダム/ラクガキカルテット">
 <pre>エピソード
 &lt;&lt;addTiddler index:&quot;episode&quot; tag:&quot;Episode&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;episode&quot; tag:&quot;Episode&quot;&gt;&gt;
 &lt;&lt;select index:&quot;episode&quot; filter:&quot;tag[Episode]&quot;&gt;&gt; 
-&lt;&lt;editNote index:&quot;episode&quot; field:&quot;text&quot;&gt;&gt;</pre>
+&lt;&lt;editNote index:&quot;episode&quot; field:&quot;text&quot;&gt;&gt;
+
+&lt;&lt;transclude index:&quot;episode&quot; template:&quot;ラクガキキングダム/エピソード&quot;&gt;&gt;
+</pre>
 </div>
 <div created="20210203120628987" modified="20210211092931854" title="ラクガキ キングダム/ラクガキカルテット/DataHolder" type="application/json">
 <pre>{
