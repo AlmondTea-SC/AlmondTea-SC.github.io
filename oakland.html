@@ -237,6 +237,8 @@ Error message and password prompt
 
 <li>$:/state/episodeTitle-1437910395</li>
 
+<li>$:/state/episodeTitle-1583468528</li>
+
 <li>$:/state/episodeTitle-251967510</li>
 
 <li>$:/state/Icon List--1862055715</li>
@@ -506,8 +508,6 @@ Error message and password prompt
 <li>ラクガキ キングダム/ラクガキカルテット</li>
 
 <li>ラクガキ キングダム/ラクガキカルテット/DataHolder</li>
-
-<li>ラクガキ キングダム/ラクガキカルテット/Test</li>
 
 <li>ラクガキ キングダム/ラクガキカルテット/ウサギ跳び</li>
 
@@ -11041,13 +11041,13 @@ exports.random = function(source,operator,options) {
 <div created="20210122022257937" modified="20210202081724690" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/Standard</pre>
 </div>
-<div created="20210203123216338" modified="20210211114852193" title="$:/state/editNote--1764137960">
+<div created="20210203123216338" modified="20210211115501876" title="$:/state/editNote--1764137960">
 <pre>hide</pre>
 </div>
 <div created="20210202082403415" modified="20210202085705529" title="$:/state/editNote-1742676373">
 <pre>hide</pre>
 </div>
-<div created="20210203062412709" modified="20210211114913050" title="$:/state/editNote-74968525">
+<div created="20210203062412709" modified="20210211115315581" title="$:/state/editNote-74968525">
 <pre>hide</pre>
 </div>
 <div created="20210211113626610" modified="20210211113627693" title="$:/state/episodeTitle--1865581995">
@@ -11062,6 +11062,9 @@ exports.random = function(source,operator,options) {
 <div created="20210211092953535" modified="20210211093001560" title="$:/state/episodeTitle-1437910395">
 <pre>edit</pre>
 </div>
+<div created="20210211115410581" modified="20210211115451301" title="$:/state/episodeTitle-1583468528">
+<pre>view</pre>
+</div>
 <div created="20210211095218269" modified="20210211113732512" title="$:/state/episodeTitle-251967510">
 <pre>edit</pre>
 </div>
@@ -11071,8 +11074,8 @@ exports.random = function(source,operator,options) {
 <div created="20210114071507256" modified="20210131045514225" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210114070414002" modified="20210211113913565" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20210114070414002" modified="20210211115515460" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20210122022138679" modified="20210122022138679" title="$:/state/tab--1240436422">
 <pre>$:/core/ui/TiddlerInfo/Tagging</pre>
@@ -11092,7 +11095,7 @@ exports.random = function(source,operator,options) {
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210211113923556" list="system/transclude system/editNote [[ラクガキ キングダム/ラクガキカルテット/Test]] [[ラクガキ キングダム]] ラクガキキングダム/エピソード ライザのアトリエ2 [[遊戯王Duel Links]]" modified="20210211113923556" title="$:/StoryList">
+<div list="[[ラクガキ キングダム]] ライザのアトリエ2 [[遊戯王Duel Links]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -11429,7 +11432,7 @@ $text$
 &lt;/$set&gt;
 \end</pre>
 </div>
-<div created="20210211114207207" modified="20210211114600840" tags="$:/tags/Macro" title="system/transclude">
+<div created="20210211114207207" modified="20210211115353355" tags="$:/tags/Macro" title="system/transclude">
 <pre>\define transclude(index:&quot;selected&quot; template class:&quot;&quot; state:&quot;DataHolder&quot;)
 &lt;$set name=&quot;indexName&quot; value=&quot;$index$&quot;&gt;
 &lt;$set name=&quot;stateTiddler&quot; value=&quot;$state$&quot;&gt;
@@ -11437,7 +11440,7 @@ $text$
 &lt;$list filter=&quot;[&lt;_fullName&gt;is[tiddler]]&quot; variable=&quot;dummy&quot;&gt;
 &lt;$tiddler tiddler=&lt;&lt;_fullName&gt;&gt;&gt;
 
-&lt;$transclude field=&quot;$template$&quot; /&gt;
+&lt;$transclude tiddler=&quot;$template$&quot; /&gt;
 
 &lt;/$tiddler&gt;
 \end</pre>
@@ -12149,7 +12152,7 @@ $text$
 <div created="20210131045928330" modified="20210131050402233" title="ライザのアトリエ2/DataHolder" type="application/json">
 <pre>{}</pre>
 </div>
-<div color="#669d34" created="20210203060835506" icon="$:/images/fa5/solid/dice-d6" modified="20210211114842834" tags="Android iOS" title="ラクガキ キングダム">
+<div color="#669d34" created="20210203060835506" icon="$:/images/fa5/solid/dice-d6" modified="20210211115237658" tags="Android iOS" title="ラクガキ キングダム">
 <pre>シナリオ
 &lt;&lt;addTiddler index:&quot;scenario&quot; tag:&quot;Scenario&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;scenario&quot; tag:&quot;Scenario&quot;&gt;&gt;
 &lt;&lt;select index:&quot;scenario&quot; filter:&quot;tag[Scenario]&quot;&gt;&gt; 
@@ -12168,27 +12171,21 @@ $text$
     &quot;scenario&quot;: &quot;ラクガキカルテット&quot;
 }</pre>
 </div>
-<div created="20210203115908337" modified="20210211114907664" tags="[[ラクガキ キングダム]] Scenario" title="ラクガキ キングダム/ラクガキカルテット">
+<div created="20210203115908337" modified="20210211115135181" tags="[[ラクガキ キングダム]] Scenario" title="ラクガキ キングダム/ラクガキカルテット">
 <pre>エピソード
 &lt;&lt;addTiddler index:&quot;episode&quot; tag:&quot;Episode&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;episode&quot; tag:&quot;Episode&quot;&gt;&gt;
 &lt;&lt;select index:&quot;episode&quot; filter:&quot;tag[Episode]&quot;&gt;&gt; 
 &lt;&lt;editNote index:&quot;episode&quot; field:&quot;text&quot;&gt;&gt;
 
-&lt;&lt;transclude index:&quot;episode&quot; template:&quot;ラクガキキングダム/エピソード&quot;&gt;&gt;
-</pre>
+&lt;&lt;transclude index:&quot;episode&quot; template:&quot;ラクガキキングダム/エピソード&quot;&gt;&gt;</pre>
 </div>
-<div created="20210203120628987" modified="20210211092931854" title="ラクガキ キングダム/ラクガキカルテット/DataHolder" type="application/json">
+<div created="20210203120628987" modified="20210211115019211" title="ラクガキ キングダム/ラクガキカルテット/DataHolder" type="application/json">
 <pre>{
     &quot;episode&quot;: &quot;ウサギ跳び&quot;
 }</pre>
 </div>
-<div ability-1="" count="2" created="20210211074920063" fight-1="" modified="20210211113737592" tags="[[ラクガキ キングダム/ラクガキカルテット]] Episode" technic-1="↑" title="ラクガキ キングダム/ラクガキカルテット/Test" title-1="タイトル1アイス" title-2="タイトル2">
-<pre>{{||ラクガキキングダム/エピソード}}</pre>
-</div>
-<div ability-1="" count="1" created="20210209062257941" modified="20210211113801003" tags="[[ラクガキ キングダム/ラクガキカルテット]] Episode" title="ラクガキ キングダム/ラクガキカルテット/ウサギ跳び" title-1="『ウサギ跳び』">
-<pre>| 選択肢 | 絵心 | やる気 | POW | SPD | TEC | MND | スキル |h
-|『ウサギ跳び』 ||||↑||↑|ウィンドキック|
-|普通にトレーニング ||||||||</pre>
+<div ability-1="ウィンドキック" count="2" created="20210209062257941" mind-1="↑" modified="20210211115500349" speed-1="↑" tags="[[ラクガキ キングダム/ラクガキカルテット]] Episode" title="ラクガキ キングダム/ラクガキカルテット/ウサギ跳び" title-1="『ウサギ跳び』" title-2="普通にトレーニング">
+<pre></pre>
 </div>
 <div created="20210203070447328" modified="20210205052424280" tags="Episode [[ラクガキ キングダム/ラクガキカルテット]]" title="ラクガキ キングダム/ラクガキカルテット/カンタブリア料理 その2">
 <pre>| 選択肢 | 絵心 | やる気 | POW | SPD | TEC | MND | スキル |h
