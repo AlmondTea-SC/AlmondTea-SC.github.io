@@ -343,6 +343,14 @@ Error message and password prompt
 
 <li>$:/state/tab/sidebar--595412856</li>
 
+<li>$:/state/ライザのアトリエ2/DataHolder</li>
+
+<li>$:/state/ラクガキ キングダム/DataHolder</li>
+
+<li>$:/state/ラクガキ キングダム/ラクガキカルテット/DataHolder</li>
+
+<li>$:/state/遊戯王Duel Links/DataHolder</li>
+
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
 <li>$:/StoryList</li>
@@ -402,8 +410,6 @@ Error message and password prompt
 <li>system/utilities</li>
 
 <li>ライザのアトリエ</li>
-
-<li>ライザのアトリエ/DataHolder</li>
 
 <li>ライザのアトリエ/アイヒェ</li>
 
@@ -585,17 +591,11 @@ Error message and password prompt
 
 <li>ライザのアトリエ2</li>
 
-<li>ライザのアトリエ2/DataHolder</li>
-
 <li>ライザのアトリエ2/船着き場</li>
 
 <li>ラクガキ キングダム</li>
 
-<li>ラクガキ キングダム/DataHolder</li>
-
 <li>ラクガキ キングダム/ラクガキカルテット</li>
-
-<li>ラクガキ キングダム/ラクガキカルテット/DataHolder</li>
 
 <li>ラクガキ キングダム/ラクガキカルテット/ウサギ跳び</li>
 
@@ -686,8 +686,6 @@ Error message and password prompt
 <li>ラクガキキングダム/エピソード</li>
 
 <li>遊戯王Duel Links</li>
-
-<li>遊戯王Duel Links/DataHolder</li>
 
 <li>遊戯王Duel Links/Fit-0</li>
 
@@ -11297,8 +11295,8 @@ exports.random = function(source,operator,options) {
 <div created="20210114071507256" modified="20210131045514225" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210114070414002" modified="20210212044839989" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20210114070414002" modified="20210212045729563" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20210122022138679" modified="20210122022138679" title="$:/state/tab--1240436422">
 <pre>$:/core/ui/TiddlerInfo/Tagging</pre>
@@ -11315,10 +11313,32 @@ exports.random = function(source,operator,options) {
 <div created="20210114070407725" modified="20210202080504716" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
+<div created="20210212045549240" modified="20210212045549240" title="$:/state/ライザのアトリエ2/DataHolder" type="application/json">
+<pre>{
+    &quot;map&quot;: &quot;船着き場&quot;
+}</pre>
+</div>
+<div created="20210212045540708" modified="20210212045540708" title="$:/state/ラクガキ キングダム/DataHolder" type="application/json">
+<pre>{
+    &quot;scenario&quot;: &quot;ラクガキカルテット&quot;
+}</pre>
+</div>
+<div created="20210212045543770" modified="20210212045543770" title="$:/state/ラクガキ キングダム/ラクガキカルテット/DataHolder" type="application/json">
+<pre>{
+    &quot;episode&quot;: &quot;ウサギ跳び&quot;
+}</pre>
+</div>
+<div created="20210212045434631" modified="20210212045611270" title="$:/state/遊戯王Duel Links/DataHolder" type="application/json">
+<pre>{
+    &quot;character&quot;: &quot;天城カイト&quot;,
+    &quot;skill&quot;: &quot;銀河光子&quot;,
+    &quot;deck&quot;: &quot;アロマ&quot;
+}</pre>
+</div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210212044853222" list="[[ラクガキ キングダム/ラクガキカルテット/白鳳亭怪異譚 其の壱]] system/dataHolder [[遊戯王Duel Links/DataHolder]] [[ラクガキ キングダム/ラクガキカルテット/DataHolder]] [[ラクガキ キングダム/DataHolder]] ライザのアトリエ2/DataHolder ライザのアトリエ/DataHolder system/candidateList [[ラクガキ キングダム]] ライザのアトリエ2 [[遊戯王Duel Links]]" modified="20210212045210122" title="$:/StoryList">
+<div created="20210212045326803" list="[[ラクガキ キングダム]] ライザのアトリエ2 [[遊戯王Duel Links]]" modified="20210212045716929" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201207054742783" list="$:/plugins/tiddlywiki/menubar/items/hamburger $:/plugins/tiddlywiki/menubar/items/topleftbar $:/plugins/tiddlywiki/menubar/items/contents $:/plugins/tiddlywiki/menubar/items/pagecontrols $:/plugins/tiddlywiki/menubar/items/search $:/plugins/tiddlywiki/menubar/items/server $:/plugins/tiddlywiki/menubar/items/toprightbar $:/plugins/tiddlywiki/menubar/items/sidebar" modified="20201207054742783" title="$:/tags/MenuBar">
@@ -11581,7 +11601,7 @@ $text$
 &lt;/$set&gt;
 \end</pre>
 </div>
-<div created="20201224015502772" modified="20210212045205985" tags="$:/tags/Macro" title="system/dataHolder">
+<div created="20201224015502772" modified="20210212045531672" tags="$:/tags/Macro" title="system/dataHolder">
 <pre>\define dataHolder() $:/state/$(currentTiddler)$/DataHolder</pre>
 </div>
 <div created="20210202080531754" modified="20210203123608849" tags="$:/tags/Macro" title="system/editNote">
@@ -11668,8 +11688,8 @@ $text$
 &lt;/$tiddler&gt;
 \end</pre>
 </div>
-<div created="20201224014301970" modified="20201224064203309" tags="$:/tags/Macro" title="system/utilities">
-<pre>\define _state() $(currentTiddler)$/$(stateTiddler)$
+<div created="20201224014301970" modified="20210212045415359" tags="$:/tags/Macro" title="system/utilities">
+<pre>\define _state() $:/state/$(currentTiddler)$/$(stateTiddler)$
 \define _tags() [[$(currentTiddler)$]] $(tagName)$
 \define _fullName() $(currentTiddler)$/$(childName)$</pre>
 </div>
@@ -11763,14 +11783,6 @@ $text$
 &lt;/$set&gt;
 &lt;/td&gt;
 &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</pre>
-</div>
-<div created="20201219050004802" modified="20201228050618550" tags="ライザのアトリエ" title="ライザのアトリエ/DataHolder" type="application/json">
-<pre>{
-    &quot;targetItem&quot;: &quot;共振の玉石&quot;,
-    &quot;baseItem&quot;: &quot;異界のコア&quot;,
-    &quot;memo4&quot;: &quot;創生の逆さ石&quot;,
-    &quot;workingItem&quot;: &quot;エグゾフィッシュ&quot;
-}</pre>
 </div>
 <div created="20201220055507552" modified="20201224064856629" tags="ライザのアトリエ Item" title="ライザのアトリエ/アイヒェ">
 <pre></pre>
@@ -12372,11 +12384,6 @@ $text$
 &lt;&lt;randomPick index:&quot;map&quot; filter:&quot;tag[Map]&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20210131045928330" modified="20210212041458170" title="ライザのアトリエ2/DataHolder" type="application/json">
-<pre>{
-    &quot;map&quot;: &quot;船着き場&quot;
-}</pre>
-</div>
 <div created="20210212041458858" modified="20210212041839819" tags="ライザのアトリエ2 Map" title="ライザのアトリエ2/船着き場">
 <pre>クーケン島
 
@@ -12398,11 +12405,6 @@ $text$
 |!光|怒車(氷)|富士さん||
 </pre>
 </div>
-<div created="20210203121847288" modified="20210203124046076" title="ラクガキ キングダム/DataHolder" type="application/json">
-<pre>{
-    &quot;scenario&quot;: &quot;ラクガキカルテット&quot;
-}</pre>
-</div>
 <div created="20210203115908337" modified="20210211131701809" tags="[[ラクガキ キングダム]] Scenario" title="ラクガキ キングダム/ラクガキカルテット">
 <pre>エピソード
 &lt;&lt;addTiddler index:&quot;episode&quot; tag:&quot;Episode&quot;&gt;&gt;&lt;&lt;candidateList index:&quot;episode&quot; tag:&quot;Episode&quot;&gt;&gt;
@@ -12410,11 +12412,6 @@ $text$
 &lt;&lt;editNote index:&quot;episode&quot; field:&quot;text&quot;&gt;&gt;
 
 &lt;&lt;transclude index:&quot;episode&quot; template:&quot;ラクガキキングダム/エピソード&quot;&gt;&gt;</pre>
-</div>
-<div created="20210203120628987" modified="20210212032238306" title="ラクガキ キングダム/ラクガキカルテット/DataHolder" type="application/json">
-<pre>{
-    &quot;episode&quot;: &quot;自己中ギャンブラー その2&quot;
-}</pre>
 </div>
 <div ability-1="ウィンドキック" count="2" created="20210209062257941" mind-1="↑" modified="20210211115500349" speed-1="↑" tags="[[ラクガキ キングダム/ラクガキカルテット]] Episode" title="ラクガキ キングダム/ラクガキカルテット/ウサギ跳び" title-1="『ウサギ跳び』" title-2="普通にトレーニング">
 <pre></pre>
@@ -12731,15 +12728,6 @@ remove
 |&lt;&lt;select index:&quot;skill&quot; filter:&quot;tag[Skill]&quot;&gt;&gt;&lt;br/&gt;&lt;&lt;selectLevel&gt;&gt; |
 
 &lt;/div&gt;</pre>
-</div>
-<div created="20201224064254432" modified="20210208121900171" title="遊戯王Duel Links/DataHolder" type="application/json">
-<pre>{
-    &quot;workCharacter&quot;: &quot;十六夜アキ&quot;,
-    &quot;workSkill&quot;: &quot;利便ジャー&amp;デス・ドラゴン&quot;,
-    &quot;deck&quot;: &quot;剣闘獣&quot;,
-    &quot;character&quot;: &quot;天城カイト&quot;,
-    &quot;skill&quot;: &quot;エクシーズ・キラー&quot;
-}</pre>
 </div>
 <div created="20201227023518111" description="不要" icon="$:/images/fa5/regular/frown" modified="20201227023840071" tags="[[遊戯王Duel Links]] Fit" title="遊戯王Duel Links/Fit-0">
 <pre></pre>
